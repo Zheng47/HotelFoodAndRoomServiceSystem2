@@ -1,0 +1,158 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    background-color: #EDF0F2;
+}
+
+/*For header*/
+    #header {
+        display: flex;
+        align-items: center;
+/*        background-color: peachpuff;*/
+        height: 17vh;
+        width:  95vw;
+    }
+    #logoImg {
+        height: 70%;
+        width: 6vw;
+        margin-left: 3vw;
+    }
+
+    #logoLbl {
+        font-family: 'Times New Roman';
+        margin-left: 2vw;
+    }
+
+/*For main content*/
+    
+    .mainContainer {
+        height: 83vh;
+        width: 95vw;
+        display:flex; 
+        justify-content: center;
+        margin: 10vh 0vw 0vh 2vw;
+    }
+
+    #loginContent {
+        background-color: white;
+        height: 120%;
+        width: 35%;
+        float: left;
+        margin: 0vh auto 0vh 5vw;
+        border-radius: 10px;
+    }
+
+    #loginLbl {
+        display: block;
+        font-family: 'Times New Roman';
+        font-size: 5vh;
+        font-weight: bold;
+        margin: 5vh 0vw 0vh 2vw;
+    }
+
+    #loginInfo {
+        display:block;
+        margin: 0vh 0vw 0vh 2vw;
+        color:gray;
+    }
+
+    #emailLbl {
+        display: block;
+        margin: 4vh 0vw 0vh 2vw;
+    }
+
+    #emailErrorLbl {
+        margin: 0vh 0vw 0vh 2vw;
+        color:red;
+        font-size: 1vw;
+    }
+
+    #emailTxtBox {
+        display: block;
+        background-color: #EDF0F2;
+        margin: 1vh 0vw 0vh 2vw;
+        height: 7%;
+        width: 85%;
+        padding-left: 1vw;
+        border: 0.5px solid black;
+        border-radius: 5px;
+    }
+
+    #passwordLbl {
+        display: block;
+        margin: 4vh 0vw 0vh 2vw;
+    }
+
+    #passwordErrorLbl {
+        margin: 0vh 0vw 0vh 2vw;
+        color: red;
+        font-size: 1vw;
+    }
+
+    #passwordTxtBox {
+        display: block;
+        background-color: #EDF0F2;
+        margin: 1vh 0vw 0vh 2vw;
+        height: 7%;
+        width: 85%;
+        padding-left: 1vw;
+        border: 0.5px solid black;
+        border-radius: 5px;
+    }
+
+    #userNotFoundLbl {
+        display:block;
+        margin: 6vh 0vw 2vh 2vw;
+        font-size: 2vh;
+        color: red;
+    }
+    #guestLogin {
+        margin: 4vh 0vw 0vh 23vw;
+        border: 0px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    #guestLogin:hover {
+        color: blue;
+    }
+
+    #loginBtn {
+        background-color: #101540;
+        color: white;
+        display: block;
+        margin: 0vh 0vw 0vh 2vw;
+        height: 9%;
+        width: 88%;
+        border: 0.5px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #loginBtn:hover {
+        color:blue;
+    }
+
+    #hotelLogoContainer {
+        height: 100%;
+        width: 60%;
+        float: right;
+        margin: 0vh 0vw 0vh auto;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    #logoImg2 {
+        height: 95%;
+        width: 65%;
+    }
+
+/*For footer*/
+    #footer {
+/*        background-color: peachpuff; */
+        height: 20vh;
+        width: 95vw ;
+    }

@@ -38,7 +38,7 @@ body {
     #hotelLogo {
         margin: 0vh 0vw 0vh 25vw;
         height: 100%;
-        width: 10%;
+        width: 7%;
     }
 
     #hotelName {
@@ -66,7 +66,7 @@ body {
         display: flex; 
         flex-direction: row;
         justify-content: center;
-        background: linear-gradient(to top, #7D7F9F, white);
+        background: linear-gradient(to top, #7D7F9F, white, #7D7F9F);
         height: 100vh;
         width: 100%;
     }

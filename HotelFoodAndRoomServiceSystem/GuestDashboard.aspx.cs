@@ -33,5 +33,23 @@ namespace HotelFoodAndRoomServiceSystem
         {
             Response.Redirect("Hotel-RoomService.aspx");
         }
+
+        protected void mainteReqBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = true;
+            maintenanceRequestForm.Visible = true;
+        }
+
+        protected void exitFormBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            maintenanceRequestForm.Visible = false;
+        }
+
+        protected void submitBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            maintenanceRequestForm.Visible = false;
+        }
     }
 }

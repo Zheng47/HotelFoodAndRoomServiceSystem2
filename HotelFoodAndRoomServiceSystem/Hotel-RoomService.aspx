@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
 
         <header id="roomServiceHeader">
-            <asp:Button ID="dashBoardBtn" Cssclass="textFont" runat="server" Text="Return to Dashboard" Onclick="dashBoardBtn_Click"/>
+            <asp:Button ID="dashBoardBtn" Cssclass="textFont" runat="server" Text="<<Return to Dashboard" Onclick="dashBoardBtn_Click"/>
             <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png"  id="hotelLogo"/>
             <asp:Label ID="hotelName" runat="server" CssClass="textFont" Text="H+ HOTEL" />
             <asp:Button ID="shoppingCartBtn" runat="server" />

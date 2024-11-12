@@ -35,7 +35,8 @@
                 </div>
             </div>
             <div id="servicesBtnContainer">
-                <asp:Button id="foodAndBeveragesBtn" runat="server" Text="Food & Beverages" />
+                <asp:Button id="foodServicesBtn" runat="server" Text="Food Services" />
+                <asp:Button ID="roomServicesBtn" runat="server" Text="Room Services" OnClick="roomServicesBtn_Click"/>
                 <asp:Button id="mainteReqBtn" runat="server" Text="Maintenance Request"/>
             </div>
             <asp:Button id="logoutBtn" runat="server" Text="LOG OUT" OnClick="logoutBtn_Click"/>            

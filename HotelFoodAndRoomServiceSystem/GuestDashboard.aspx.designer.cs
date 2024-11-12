@@ -114,13 +114,22 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.ListItem amenitiesLbl;
 
         /// <summary>
-        /// foodAndBeveragesBtn control.
+        /// foodServicesBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodAndBeveragesBtn;
+        protected global::System.Web.UI.WebControls.Button foodServicesBtn;
+
+        /// <summary>
+        /// roomServicesBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button roomServicesBtn;
 
         /// <summary>
         /// mainteReqBtn control.

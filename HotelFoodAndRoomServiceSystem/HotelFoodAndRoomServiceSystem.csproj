@@ -120,8 +120,10 @@
   <ItemGroup>
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminLogin.aspx" />
+    <Content Include="CssFiles\RoomService.css" />
     <Content Include="GuestLoginPage.aspx" />
     <Content Include="GuestDashboard.aspx" />
+    <Content Include="Hotel-RoomService.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="GuestDashboard.aspx.designer.cs">
       <DependentUpon>GuestDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel-RoomService.aspx.cs">
+      <DependentUpon>Hotel-RoomService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hotel-RoomService.aspx.designer.cs">
+      <DependentUpon>Hotel-RoomService.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace HotelFoodAndRoomServiceSystem
 {
 
 
-    public partial class AdminLogin
+    public partial class Hotel_RoomService
     {
 
         /// <summary>
@@ -24,6 +24,15 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// dashBoardBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button dashBoardBtn;
+
+        /// <summary>
         /// hotelName control.
         /// </summary>
         /// <remarks>
@@ -33,111 +42,129 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label hotelName;
 
         /// <summary>
-        /// hotelNameDescription control.
+        /// shoppingCartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hotelNameDescription;
+        protected global::System.Web.UI.WebControls.Button shoppingCartBtn;
 
         /// <summary>
-        /// loginLbl control.
+        /// subContainer1Lbl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginLbl;
+        protected global::System.Web.UI.WebControls.Label subContainer1Lbl1;
 
         /// <summary>
-        /// loginInfo control.
+        /// subContainer1Description1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginInfo;
+        protected global::System.Web.UI.WebControls.Label subContainer1Description1;
 
         /// <summary>
-        /// emailLbl control.
+        /// laundryAndDryServicesBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLbl;
+        protected global::System.Web.UI.WebControls.Button laundryAndDryServicesBtn;
 
         /// <summary>
-        /// emailErrorLbl control.
+        /// subContainer1Lbl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailErrorLbl;
+        protected global::System.Web.UI.WebControls.Label subContainer1Lbl2;
 
         /// <summary>
-        /// emailTxtBox control.
+        /// subContainer1Description2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxtBox;
+        protected global::System.Web.UI.WebControls.Label subContainer1Description2;
 
         /// <summary>
-        /// passwordLbl control.
+        /// spaServicesBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordLbl;
+        protected global::System.Web.UI.WebControls.Button spaServicesBtn;
 
         /// <summary>
-        /// passwordErrorLbl control.
+        /// subContainer2Lbl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordErrorLbl;
+        protected global::System.Web.UI.WebControls.Label subContainer2Lbl1;
 
         /// <summary>
-        /// passwordTxtBox control.
+        /// subContainer2Description1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordTxtBox;
+        protected global::System.Web.UI.WebControls.Label subContainer2Description1;
 
         /// <summary>
-        /// guestLogin control.
+        /// houseKeepingServicesBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guestLogin;
+        protected global::System.Web.UI.WebControls.Button houseKeepingServicesBtn;
 
         /// <summary>
-        /// userNotFoundLbl control.
+        /// subContainer2Lbl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userNotFoundLbl;
+        protected global::System.Web.UI.WebControls.Label subContainer2Lbl2;
 
         /// <summary>
-        /// loginBtn control.
+        /// subContainer2Description2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.Label subContainer2Description2;
+
+        /// <summary>
+        /// massageServicesBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button massageServicesBtn;
+
+        /// <summary>
+        /// hotelNameFooter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hotelNameFooter;
     }
 }

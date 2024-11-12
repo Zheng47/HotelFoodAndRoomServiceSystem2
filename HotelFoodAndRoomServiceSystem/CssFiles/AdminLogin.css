@@ -1,4 +1,7 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+body {
     margin: 0;
     padding: 0;
     height: auto;
@@ -6,74 +9,89 @@
     background-color: #EDF0F2;
 }
 
-/*For header*/
-    #header {
-        display: flex;
-        align-items: center;
-/*        background-color: peachpuff;*/
-        height: 17vh;
-        width:  95vw;
-    }
-    #logoImg {
-        height: 70%;
-        width: 6vw;
-        margin-left: 3vw;
+
+.mainContainer {
+    background-image: url('gallery/food and room services elements/images/pexels-iram-shehzad-45081404-27945635.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 120vh;
+    max-height: 120vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+    .mainContainer:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 120vh;
+        max-height: 120vh;
+        width: 100%;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 1;
     }
 
-    #logoLbl {
-        font-family: 'Times New Roman';
-        margin-left: 2vw;
-    }
-
-/*For main content*/
-    
-    .mainContainer {
-        height: 83vh;
-        width: 95vw;
-        display:flex; 
-        justify-content: center;
-        margin: 10vh 0vw 0vh 2vw;
-    }
-
+/*FOR LOGIN CONTENT*/
     #loginContent {
         background-color: white;
-        height: 120%;
+        min-height: 80%;
+        max-height: 80%;
         width: 35%;
-        float: left;
-        margin: 0vh auto 0vh 5vw;
-        border-radius: 10px;
+        float: right;
+        margin: 10vh 5vw 10vh auto;
+        box-shadow: 0px 0px 30px rgb(0, 0, 0, 0.9);
+        z-index: 2;
+    }
+
+    #barColor {
+        margin:0;
+        height: 3%;
+        background-color: #005FC7;
+        width: 100%;
+        box-shadow: 1px 10px 30px rgb(0 0 0, 0.3);
     }
 
     #loginLbl {
         display: block;
-        font-family: 'Times New Roman';
-        font-size: 5vh;
+        font-family: Poppins;
+        font-size: 4vh;
         font-weight: bold;
         margin: 5vh 0vw 0vh 2vw;
     }
 
     #loginInfo {
-        display:block;
+        display: block;
         margin: 0vh 0vw 0vh 2vw;
-        color:gray;
+        font-family: Poppins;
+        font-size: 2.5vh;
+        color: gray;
     }
 
     #emailLbl {
+        font-family: Poppins;
+        font-size: 2.5vh;
         display: block;
         margin: 4vh 0vw 0vh 2vw;
     }
 
     #emailErrorLbl {
+        font-size: 2vh;
+        font-family: Poppins;
         margin: 0vh 0vw 0vh 2vw;
-        color:red;
+        color: red;
         font-size: 1vw;
     }
 
     #emailTxtBox {
+        font-family: Poppins;
         display: block;
         background-color: #EDF0F2;
-        margin: 1vh 0vw 0vh 2vw;
-        height: 7%;
+        margin: 0vh 0vw 0vh 2vw;
+        height: 6%;
         width: 85%;
         padding-left: 1vw;
         border: 0.5px solid black;
@@ -81,21 +99,26 @@
     }
 
     #passwordLbl {
+        font-family: Poppins;
+        font-size: 2.5vh;
         display: block;
         margin: 4vh 0vw 0vh 2vw;
     }
 
     #passwordErrorLbl {
+        font-family: Poppins;
+        font-size: 2vh;
         margin: 0vh 0vw 0vh 2vw;
         color: red;
         font-size: 1vw;
     }
 
     #passwordTxtBox {
+        font-family: Poppins;
         display: block;
         background-color: #EDF0F2;
-        margin: 1vh 0vw 0vh 2vw;
-        height: 7%;
+        margin: 0vh 0vw 0vh 2vw;
+        height: 6%;
         width: 85%;
         padding-left: 1vw;
         border: 0.5px solid black;
@@ -103,23 +126,26 @@
     }
 
     #userNotFoundLbl {
-        display:block;
-        margin: 6vh 0vw 2vh 2vw;
+        font-family: Poppins;
+        display: block;
+        margin: 2vh 0vw 2vh 2vw;
         font-size: 2vh;
         color: red;
     }
     #guestLogin {
-        margin: 4vh 0vw 0vh 23vw;
+        font-family: Poppins;
+        margin: 4vh 0vw 0vh 20vw;
         border: 0px;
         background-color: transparent;
         cursor: pointer;
     }
 
-    #guestLogin:hover {
-        color: blue;
-    }
+        #guestLogin:hover {
+            color: blue;
+        }
 
     #loginBtn {
+        font-family: Poppins;
         background-color: #101540;
         color: white;
         display: block;
@@ -135,24 +161,43 @@
         color:blue;
     }
 
+/*FOR HOTEL LOGO AND NAME*/
     #hotelLogoContainer {
-        height: 100%;
-        width: 60%;
-        float: right;
-        margin: 0vh 0vw 0vh auto;
+        min-height: 80%;
+        max-height:80%;
+        width: 65%;
+        float: left;
+        margin: 10vh auto 10vh 5vw;
         display:flex;
+        flex-direction: row;
         justify-content:center;
         align-items: center;
+        z-index: 2;
     }
 
-    #logoImg2 {
-        height: 95%;
-        width: 65%;
+    #hotelLogo {
+        height: 30%;
+        width: 22%;
     }
 
-/*For footer*/
-    #footer {
-/*        background-color: peachpuff; */
-        height: 20vh;
-        width: 95vw ;
+    #hotelNameAndDescriptionLayout {
+        height: 30%;
+        width: 50%;
+        margin: 0vh 0vw 0vh 2vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hotelName {
+        margin: 0vh 0vw 0vh 0vw;
+        font-family: Poppins;
+        font-style: italic;
+        font-size: 10vh;
+        font-weight: bolder;
+        color: #005FC7;
+    }
+
+    #hotelNameDescription {
+        font-family: Poppins;
+        color: white;
     }

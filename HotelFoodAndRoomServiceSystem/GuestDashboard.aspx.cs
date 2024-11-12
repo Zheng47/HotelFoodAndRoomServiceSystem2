@@ -28,5 +28,10 @@ namespace HotelFoodAndRoomServiceSystem
             Session.Abandon();
             Response.Redirect("GuestLoginPage.aspx");
         }
+
+        protected void roomServicesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Hotel-RoomService.aspx");
+        }
     }
 }

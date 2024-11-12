@@ -9,12 +9,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <header id="header">
-            <img src ="CssFiles/Gallery/Food And Room Services Elements/Icons/hotel.png" id="logoImg" />
-            <asp:Label ID="logoLbl" runat="server">HOTEL MOTEL</asp:Label>
-        </header>
         <div class="mainContainer">
+            <div id="hotelLogoContainer">
+                <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" id="hotelLogo"/>
+                <div id="hotelNameAndDescriptionLayout">
+                    <asp:Label ID="hotelName" runat="server" Text="H+ HOTEL" />
+                    <asp:Label ID="hotelNameDescription" runat="server" Text="Sign in to your account" />
+                </div>
+            </div>
             <div id="loginContent">
+                <div id="barColor" ></div>
                 <asp:Label ID="loginLbl" runat="server">Login</asp:Label> <br />
                 <asp:Label ID="loginInfo" runat="server">Login to access your admin account.</asp:Label> <br />
 
@@ -30,11 +34,7 @@
                 <asp:Label ID="userNotFoundLbl" runat="server"></asp:Label>
                 <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click"/>
             </div>
-            <div id="hotelLogoContainer">
-                <img src ="CssFiles/Gallery/Food And Room Services Elements/Icons/hotel.png" id="logoImg2" /> 
-            </div>
         </div>
-        <footer id="footer"></footer>
     </form>
 </body>
 </html>

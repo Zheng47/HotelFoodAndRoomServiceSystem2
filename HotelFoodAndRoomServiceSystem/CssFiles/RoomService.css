@@ -1,0 +1,244 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    background-color: peachpuff;
+}
+
+    
+.textFont { /*FOR TEXT FONT*/
+    font-family: Poppins;
+}
+
+/*FOR HEADER CONTENT*/
+    #roomServiceHeader {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        height: 15vh;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+
+    #dashBoardBtn {
+        border: 0;
+        margin: 0vh 0vw 0vh 2vw;
+        background-color: transparent;
+        font-size: 3vh;
+        cursor: pointer;
+    }
+
+    #dashBoardBtn:hover {
+        color: blue;
+    }
+
+    #hotelLogo {
+        margin: 0vh 0vw 0vh 25vw;
+        height: 100%;
+        width: 10%;
+    }
+
+    #hotelName {
+        margin: 0vh 0vw 0vh 0vw;
+        font-size: 3vh;
+        font-weight: bold;
+    }
+
+    #shoppingCartBtn {
+        background-color:transparent;
+        background-image: url('gallery/food and room services elements/icons/navbar/grocery-store.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 0;
+        height: 45%;
+        width: 3%;
+        float: right;
+        margin: 0vh 2vw 0vh auto;
+        cursor: pointer;
+    }
+
+/*FOR MAIN CONTENT*/
+    #mainContainer {
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+        background: linear-gradient(to top, #7D7F9F, white);
+        height: 100vh;
+        width: 100%;
+    }
+
+    #subContainer1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0vh 2vw 0vh 0vw;
+        height: 100%;
+        width: 40%;
+    }
+    /*CONTENT'S CSS OF subContainer1*/
+
+        #laundryDryServices {
+            display: flex;
+            flex-direction: column;
+            margin: 0vh 0vw 5vh 0vw;
+            background-color: #101450;
+            color: white;
+            height: 40%;
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        #subContainer1Logo1 {
+            margin: 2vh 0vw 0vh 1vw;
+            height: 40%;
+            width: 30%;
+        }
+
+        #subContainer1Lbl1 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 3vh;
+        }
+
+        #subContainer1Description1 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 2vh;
+            width: 70%;
+            word-wrap: break-word;
+        }
+
+        #spaServices {
+            display: flex;
+            flex-direction: column;
+            background-color: #101450;
+            color: white;
+            height: 40%;
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        #subContainer1Logo2 {
+            margin: 2vh 0vw 0vh 1vw;
+            height: 40%;
+            width: 30%;
+        }
+
+        #subContainer1Lbl2 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 3vh;
+        }
+
+        #subContainer1Description2 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 2vh;
+            width: 70%;
+            word-wrap: break-word;
+        }
+
+
+    #subContainer2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0vh 0vw 0vh 2vw;
+        height: 100%;
+        width: 40%;
+    }
+
+    /*CONTENT'S CSS OF subContainer2 */
+
+        #houseKeepingServices {
+            display: flex;
+            flex-direction: column;
+            margin: 0vh 0vw 5vh 0vw;
+            background-color: #101450;
+            color: white;
+            height: 40%;
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        #subContainer2Logo1 {
+            margin: 2vh 0vw 0vh 1vw;
+            height: 40%;
+            width: 30%;
+        }
+
+        #subContainer2Lbl1 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 3vh;
+        }
+
+        #subContainer2Description1 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 2vh;
+            width: 70%;
+            word-wrap: break-word;
+        }
+
+        #massageServices {
+            display: flex;
+            flex-direction: column;
+            background-color: #101450;
+            color: white;
+            height: 40%;
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        #subContainer2Logo2 {
+            margin: 2vh 0vw 0vh 1vw;
+            height: 40%;
+            width: 30%;
+        }
+
+        #subContainer2Lbl2 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 3vh;
+        }
+
+        #subContainer2Description2 {
+            margin: 2vh 0vw 0vh 2vw;
+            font-size: 2vh;
+            width: 70%;
+            word-wrap: break-word;
+        }
+
+
+    .servicesBtn {
+        background-color: transparent;
+        background-image: url('gallery/food and room services elements/icons/room services icon/next.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 0;
+        height: 30%;
+        width: 10%;
+        float: right;
+        margin: 0vh 1vw 1vh auto;
+        cursor: pointer;
+    }
+
+/*FOR FOOTER*/
+    #footer {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        height: 17vh;
+        width: 100%;
+        border-top: 1px solid black;
+    }
+
+    #hotelNameFooter {
+        margin: 0vh 0vw 0vh 4vw;
+        color: #101450;
+        font-size: 4vh;
+        font-weight: bold;
+    }
+
+

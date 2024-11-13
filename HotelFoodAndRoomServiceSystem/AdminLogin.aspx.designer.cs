@@ -114,15 +114,6 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.TextBox passwordTxtBox;
 
         /// <summary>
-        /// guestLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guestLogin;
-
-        /// <summary>
         /// userNotFoundLbl control.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,15 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userNotFoundLbl;
+
+        /// <summary>
+        /// guestLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button guestLogin;
 
         /// <summary>
         /// loginBtn control.

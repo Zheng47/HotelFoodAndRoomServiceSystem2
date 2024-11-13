@@ -22,16 +22,19 @@
                 <asp:Label ID="loginLbl" runat="server">Login</asp:Label> <br />
                 <asp:Label ID="loginInfo" runat="server">Login to access your admin account.</asp:Label> <br />
 
-                <asp:Label ID="emailLbl" runat="server">Email*</asp:Label> <br />
-                <asp:Label ID="emailErrorLbl" runat="server"></asp:Label> <br />   
-                <asp:TextBox ID="emailTxtBox" runat="server" placeholder="Enter your email"></asp:TextBox>
+                <div id="subContent">
+                    <asp:Label ID="emailLbl" runat="server">Email*</asp:Label>
+                    <asp:Label ID="emailErrorLbl" runat="server"></asp:Label> <br />   
+                    <asp:TextBox ID="emailTxtBox" runat="server" placeholder="Enter your email"></asp:TextBox>
+                    <asp:Label ID="passwordLbl" runat="server">Password*</asp:Label>
+                    <asp:Label ID="passwordErrorLbl" runat="server"></asp:Label> <br />   
+                    <asp:TextBox ID="passwordTxtBox" runat="server" placeholder="minimum 8 characters" TextMode="Password"></asp:TextBox>
 
-                <asp:Label ID="passwordLbl" runat="server">Password*</asp:Label> <br />
-                <asp:Label ID="passwordErrorLbl" runat="server"></asp:Label> <br />   
-                <asp:TextBox ID="passwordTxtBox" runat="server" placeholder="minimum 8 characters" TextMode="Password"></asp:TextBox>
-
-                <asp:Button ID="guestLogin" runat="server" Text="Sign in as guest?" OnClick="guestLogin_Click" />
-                <asp:Label ID="userNotFoundLbl" runat="server"></asp:Label>
+                    <div id="subContent2">
+                        <asp:Label ID="userNotFoundLbl" runat="server"></asp:Label>
+                        <asp:Button ID="guestLogin" runat="server" Text="Sign in as guest?" OnClick="guestLogin_Click" />
+                    </div>
+                </div>
                 <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click"/>
             </div>
         </div>

@@ -365,6 +365,7 @@ body {
 /*FOR SERVICE REQUEST INTERFACE*/
 
     #serviceRequestPanel {
+        background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
         flex-grow: 1;
         margin: 0;
         height: 120vh;

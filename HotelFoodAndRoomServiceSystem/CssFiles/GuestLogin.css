@@ -11,7 +11,7 @@ body {
 
 .mainContainer {
     margin: 0;
-    height: 120vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -48,7 +48,7 @@ body {
 
     #hotelLogo {
         height: 30%;
-        width: 22%;
+        width: 20%;
     }
 
     #hotelNameAndDescriptionContainer {
@@ -80,7 +80,7 @@ body {
     #subContainer {
         background-color: white;
         height: 80%;
-        width: 35%;
+        width: 30%;
         float: right;
         margin: 0vh 8vw 0vh auto;
         border: 1px solid black;
@@ -89,15 +89,14 @@ body {
     }
     #barColor {
         background-color: #005FC7;
-        height: 3%;
+        height: 2%;
         width: 100%;
         box-shadow: 1px 10px 30px rgb(0 0 0, 0.3);
     }
 
     #loginLbl{
         display: block;
-        margin-left: 30px;
-        margin-top: 50px;
+        margin: 4vh 0vw 0vh 2vw;
         font-family: Poppins ;
         font-weight: bold;
         font-size: 4vh;
@@ -107,27 +106,27 @@ body {
     .subContent {
         width: 100%;
         height: 45%;
-        margin-top: 20px;
+        margin: 2vh 0vw 0vh 0vw;
     }
     #emailLbl {
         display: block;
-        margin: 1vh 0vw 0vh 3vw;
+        margin: 1vh 0vw 0vh 2.5vw;
         font-family: Poppins;
-        font-size: 3vh;
+        font-size: 2.5vh;
     }
 
     #emailErrorLbl {
-        margin: 1vh 0vw 0vh 3vw;
+        margin: 1vh 0vw 0vh 2.5vw;
         font-family: Poppins;
         color: #ca0606;
-        font-size: 2vh;
+        font-size: 1vh;
     }
 
     #emailTxtBox {
         display: block;
-        margin: 0vh 0vw 0vh 3vw;
+        margin: 0vh 0vw 0vh 2.5vw;
         width: 80%;
-        height: 40px;
+        height: 15%;
         background-color: #EDF0F2;
         border-radius: 5px;
         border: 0.5px solid gray;
@@ -137,23 +136,23 @@ body {
 
     #passwordLbl {
         display: block;
-        margin: 1vh 0vw 0vh 3vw;
+        margin: 0vh 0vw 0vh 2.5vw;
         font-family: Poppins;
-        font-size: 3vh;
+        font-size: 2.5vh;
     }
 
     #passwordErrorLbl {
-        margin: 1vh 0vw 0vh 3vw;
+        margin: 1vh 0vw 0vh 2.5vw;
         font-family: Poppins;
         color: #9b0707;
-        font-size: 2vh;
+        font-size: 1vh;
     }
 
     #passwordTxtBox {
         display: block;
-        margin: 0vh 0vw 0vh 3vw;
+        margin: 0vh 0vw 0vh 2.5vw;
         width: 80%;
-        height: 40px;
+        height: 15%;
         background-color: #EDF0F2;
         border-radius: 5px;
         border: 0.5px solid gray;
@@ -162,7 +161,7 @@ body {
     }
 
     #userNotFoundLbl {
-        margin: 0vh 0vw 1vh 3vw;
+        margin: 2vh 0vw 0vh 3vw;
         font-family: Poppins;
         color: #9b0707;
         font-size: 2vh;
@@ -174,7 +173,7 @@ body {
         color:white;
         font-family:Poppins;
         font-size: 16px;
-        margin: 4vh 0vw 0vh 3.5vw;
+        margin: 10vh 0vw 0vh 3vw;
         width: 80%;
         height:45px;
         border-radius:10px;
@@ -195,7 +194,8 @@ body {
     }
 
     #adminLoginBtn {
-        margin: 0vh 0vw 0vh 20vw;
+        float: right;
+        margin: 2vh 2vw 0vh auto;
         background-color:transparent;
         border: 0px;
         cursor: pointer;

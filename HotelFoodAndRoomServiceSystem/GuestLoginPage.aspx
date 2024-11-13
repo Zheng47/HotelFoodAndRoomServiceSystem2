@@ -29,9 +29,9 @@
                     <asp:Label ID="passwordErrorLbl" runat="server"></asp:Label><br />     
                     <asp:TextBox ID="passwordTxtBox" runat="server" placeholder="minimum 8 characters" TextMode="Password"></asp:TextBox> <br />
                         <div id="subContent2">
+                            <asp:Label ID="userNotFoundLbl" runat="server"></asp:Label>
                             <asp:Button ID="adminLoginBtn" runat="server" Text="Login as Admin?" onclick="adminLoginBtn_Click" />
                         </div>
-                    <asp:Label ID="userNotFoundLbl" runat="server"></asp:Label> <br />
                     <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
                 </div>
             </div>

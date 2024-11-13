@@ -15,11 +15,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 120vh;
-    max-height: 120vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0;
 }
 
@@ -28,8 +28,7 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        min-height: 120vh;
-        max-height: 120vh;
+        height: 100%;
         width: 100%;
         background-color: rgba(0,0,0,0.7);
         z-index: 1;
@@ -38,18 +37,17 @@ body {
 /*FOR LOGIN CONTENT*/
     #loginContent {
         background-color: white;
-        min-height: 80%;
-        max-height: 80%;
-        width: 35%;
+        height: 80%;
+        width: 30%;
         float: right;
-        margin: 10vh 5vw 10vh auto;
+        margin: 10vh 8vw 10vh auto;
         box-shadow: 0px 0px 30px rgb(0, 0, 0, 0.9);
         z-index: 2;
     }
 
     #barColor {
         margin:0;
-        height: 3%;
+        height: 2%;
         background-color: #005FC7;
         width: 100%;
         box-shadow: 1px 10px 30px rgb(0 0 0, 0.3);
@@ -60,7 +58,7 @@ body {
         font-family: Poppins;
         font-size: 4vh;
         font-weight: bold;
-        margin: 5vh 0vw 0vh 2vw;
+        margin: 4vh 0vw 0vh 2vw;
     }
 
     #loginInfo {
@@ -71,15 +69,22 @@ body {
         color: gray;
     }
 
+/*FOR SUB CONTENT*/
+    #subContent {
+        width: 100%;
+        height: 50%;
+        margin: 0vh 0vw 0vh 0vw;
+    }
+
     #emailLbl {
+        display: block;
         font-family: Poppins;
         font-size: 2.5vh;
-        display: block;
-        margin: 4vh 0vw 0vh 2vw;
+        margin: 1vh 0vw 0vh 2vw;
     }
 
     #emailErrorLbl {
-        font-size: 2vh;
+        font-size: 1.5vh;
         font-family: Poppins;
         margin: 0vh 0vw 0vh 2vw;
         color: red;
@@ -88,26 +93,25 @@ body {
 
     #emailTxtBox {
         font-family: Poppins;
-        display: block;
         background-color: #EDF0F2;
         margin: 0vh 0vw 0vh 2vw;
-        height: 6%;
-        width: 85%;
+        height: 15%;
+        width: 80%;
         padding-left: 1vw;
         border: 0.5px solid black;
         border-radius: 5px;
     }
 
     #passwordLbl {
+        display: block;
         font-family: Poppins;
         font-size: 2.5vh;
-        display: block;
         margin: 4vh 0vw 0vh 2vw;
     }
 
     #passwordErrorLbl {
         font-family: Poppins;
-        font-size: 2vh;
+        font-size: 1.5vh;
         margin: 0vh 0vw 0vh 2vw;
         color: red;
         font-size: 1vw;
@@ -115,26 +119,33 @@ body {
 
     #passwordTxtBox {
         font-family: Poppins;
-        display: block;
         background-color: #EDF0F2;
         margin: 0vh 0vw 0vh 2vw;
-        height: 6%;
-        width: 85%;
+        height: 15%;
+        width: 80%;
         padding-left: 1vw;
         border: 0.5px solid black;
         border-radius: 5px;
     }
 
+/*FOR SUB CONTENT 2*/
+    #subContent2 {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
     #userNotFoundLbl {
         font-family: Poppins;
-        display: block;
-        margin: 2vh 0vw 2vh 2vw;
+        margin: 4vh 0vw 0vh 2vw;
         font-size: 2vh;
         color: red;
     }
     #guestLogin {
         font-family: Poppins;
-        margin: 4vh 0vw 0vh 20vw;
+        float: right;
+        margin: 4vh 2vw 0vh auto;
         border: 0px;
         background-color: transparent;
         cursor: pointer;
@@ -149,9 +160,9 @@ body {
         background-color: #101540;
         color: white;
         display: block;
-        margin: 0vh 0vw 0vh 2vw;
-        height: 9%;
-        width: 88%;
+        margin: 3vh 0vw 0vh 3vw;
+        height: 45px;
+        width: 80%;
         border: 0.5px solid black;
         border-radius: 10px;
         cursor: pointer;
@@ -163,21 +174,20 @@ body {
 
 /*FOR HOTEL LOGO AND NAME*/
     #hotelLogoContainer {
-        min-height: 80%;
-        max-height:80%;
-        width: 65%;
+        height: 80%;
+        width: 60%;
         float: left;
-        margin: 10vh auto 10vh 5vw;
-        display:flex;
+        margin: 10vh auto 10vh 7vw;
+        display: flex;
         flex-direction: row;
-        justify-content:center;
         align-items: center;
+        justify-content: center;
         z-index: 2;
     }
 
     #hotelLogo {
         height: 30%;
-        width: 22%;
+        width: 20%;
     }
 
     #hotelNameAndDescriptionLayout {
@@ -198,6 +208,7 @@ body {
     }
 
     #hotelNameDescription {
+        margin: 2vh 0vw 0vh 0vw;
         font-family: Poppins;
         color: white;
     }

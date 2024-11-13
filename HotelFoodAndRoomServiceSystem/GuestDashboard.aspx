@@ -39,9 +39,30 @@
             </div>
 
             <div id="servicesBtnContainer">
-                <asp:Button id="foodServicesBtn" runat="server" Text="Food Services" />
-                <asp:Button ID="roomServicesBtn" runat="server" Text="Room Services" OnClick="roomServicesBtn_Click"/>
-                <asp:Button id="mainteReqBtn" runat="server" Text="Maintenance Request" OnClick="mainteReqBtn_Click"/>
+                <div id="foodServicesContainer" class="serviceContainer">
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/food-service.png" class="servicesLogo" />
+                    <asp:Label ID="foodServicesLbl" CssClass="servicesLbl" runat="server" Text="Food Services" />
+                    <div class="serviceContainer2">
+                        <asp:Label ID="foodServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Order food and beverages for your stay."/>
+                        <asp:Button ID="foodServicesBtn" CssClass="servicesBtnLayout" runat="server" OnClick="foodServicesBtn_Click" />
+                    </div>
+                </div>
+                <div id="roomServicesContainer" class="serviceContainer">
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/roomservice.png" class="servicesLogo" />
+                    <asp:Label ID="roomServiceLbl" CssClass="servicesLbl" runat="server" Text="Room Services" />
+                        <div class="serviceContainer2">
+                            <asp:Label ID="roomServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="heheheheh" />
+                            <asp:Button ID="roomServicesBtn" runat="server" CssClass="servicesBtnLayout" OnClick="roomServicesBtn_Click"/>
+                        </div>
+                </div>
+                <div id="mainteReqContainer" class="serviceContainer">
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/Sidebar%20Icons/tools.png" class="servicesLogo" />
+                    <asp:Label ID="maintenanceRequestLbl" CssClass="servicesLbl" runat="server" Text="Maintenance Request" />
+                    <div class="serviceContainer2">
+                        <asp:Label ID="maintenanceRequestDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="hehehehe" />
+                        <asp:Button id="mainteReqBtn" runat="server" CssClass="servicesBtnLayout" OnClick="mainteReqBtn_Click"/>
+                    </div>
+                </div>
             </div>
             
             <asp:Button id="logoutBtn" runat="server" Text="LOG OUT" OnClick="logoutBtn_Click"/>          

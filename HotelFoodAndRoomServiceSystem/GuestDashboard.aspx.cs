@@ -59,6 +59,10 @@ namespace HotelFoodAndRoomServiceSystem
             CloseDB();
             Response.Redirect("GuestLoginPage.aspx");
         }
+        protected void foodServicesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Hotel-FoodService.aspx");
+        }
 
         protected void roomServicesBtn_Click(object sender, EventArgs e)
         {
@@ -118,6 +122,5 @@ namespace HotelFoodAndRoomServiceSystem
                 Console.WriteLine($"Error: {e.Message}");
             }
         }
-
     }
 }

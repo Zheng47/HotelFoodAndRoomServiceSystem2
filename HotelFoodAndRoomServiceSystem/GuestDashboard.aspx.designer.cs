@@ -114,6 +114,24 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.ListItem amenitiesLbl;
 
         /// <summary>
+        /// foodServicesLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label foodServicesLbl;
+
+        /// <summary>
+        /// foodServicesDescriptionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label foodServicesDescriptionLbl;
+
+        /// <summary>
         /// foodServicesBtn control.
         /// </summary>
         /// <remarks>
@@ -123,6 +141,24 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Button foodServicesBtn;
 
         /// <summary>
+        /// roomServiceLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label roomServiceLbl;
+
+        /// <summary>
+        /// roomServicesDescriptionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label roomServicesDescriptionLbl;
+
+        /// <summary>
         /// roomServicesBtn control.
         /// </summary>
         /// <remarks>
@@ -130,6 +166,24 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button roomServicesBtn;
+
+        /// <summary>
+        /// maintenanceRequestLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label maintenanceRequestLbl;
+
+        /// <summary>
+        /// maintenanceRequestDescriptionLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label maintenanceRequestDescriptionLbl;
 
         /// <summary>
         /// mainteReqBtn control.

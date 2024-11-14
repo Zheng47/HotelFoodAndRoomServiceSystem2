@@ -85,5 +85,31 @@ namespace HotelFoodAndRoomServiceSystem
         {
             Response.Redirect("GuestDashboard.aspx");
         }
+
+        protected void searchBtn_Click(object sender, EventArgs e)
+        {
+            string searchItem = searchBar.Text.Trim().ToLower();
+
+            // Filter visibility based on search item using searchBtn
+            americanoContainer.Visible = americanoItem.Text.ToLower().Contains(searchItem);
+            croissantContainer.Visible = croissantItem.Text.ToLower().Contains(searchItem);
+            tapsilogContainer.Visible = tapsilogItem.Text.ToLower().Contains(searchItem);
+            beefSteakContainer.Visible = beefSteakItem.Text.ToLower().Contains(searchItem);
+            plainRiceContainer.Visible = plainRiceItem.Text.ToLower().Contains(searchItem);
+            bottledWaterContainer.Visible = bottledWaterItem.Text.ToLower().Contains(searchItem); 
+        }
+
+        protected void searchBar_TextChanged(object sender, EventArgs e)
+        {
+            string searchItem = searchBar.Text.Trim().ToLower();
+
+            // Filter visibility based on search item using search bar only
+            americanoContainer.Visible = americanoItem.Text.ToLower().Contains(searchItem);
+            croissantContainer.Visible = croissantItem.Text.ToLower().Contains(searchItem);
+            tapsilogContainer.Visible = tapsilogItem.Text.ToLower().Contains(searchItem);
+            beefSteakContainer.Visible = beefSteakItem.Text.ToLower().Contains(searchItem);
+            plainRiceContainer.Visible = plainRiceItem.Text.ToLower().Contains(searchItem);
+            bottledWaterContainer.Visible = bottledWaterItem.Text.ToLower().Contains(searchItem);
+        }
     }
 }

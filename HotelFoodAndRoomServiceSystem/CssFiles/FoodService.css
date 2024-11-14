@@ -85,6 +85,7 @@ header{
         height: 100vh;
         width: 100%;
         background: linear-gradient(to bottom, white, #8CA5AD);
+        overflow-y: auto;
     }
 
     #headerContent {
@@ -123,7 +124,6 @@ header{
         width: 17%;
         border: 0px;
         border-radius: 10px;
-        overflow-y: auto;
     }
 
     .foodImagesLayout{
@@ -141,29 +141,39 @@ header{
         align-items: center;
     }
 
+    .priceContainer{
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0vh 0vw 0vh auto;
+    }
+
     .foodOrBeverageLbl {
         font-size: 2.5vh;
         margin: 0vh 0vw 0vh 1vw;
     }
 
-    #foodOrBeverageCurrencyPrice {
-        margin: 0vh -5vw 0vh auto;
+    .currencyPrice {
+        margin:0;
     }
 
-    #foodOrBeveragePrice {
-        margin: 0vh 2vw 0vh auto;
+    .price {
+        margin: 0vh 0vw 0vh 1vw;
     }
 
-    .foodBeverageContent2{
-        height: 25%;
+    .foodBeverageContent2 {
+        background-color: #EDF0F2;
+        height: 20%;
         width: 85%;
-        margin: 1vh 0vw 0vh 1vw;
+        margin: 1vh 0vw 2vh 1vw;
+        overflow-y: auto;
     }
 
-    #foodOrBeverageDescription {
+    .description {
         width: 100%;
         font-size: 2vh;
-        text-align: justify;
         margin: 0vh 0vw 0vh 0vw;
         word-break: break-word;
     }

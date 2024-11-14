@@ -87,57 +87,327 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label foodAndDrinksLbl;
 
         /// <summary>
-        /// foodAndBeverageItems control.
+        /// americanoContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal foodAndBeverageItems;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl americanoContainer;
 
         /// <summary>
-        /// foodOrBeverageName control.
+        /// americanoItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodOrBeverageName;
+        protected global::System.Web.UI.WebControls.Label americanoItem;
 
         /// <summary>
-        /// foodOrBeverageCurrencyPrice control.
+        /// americanoCurrencyPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodOrBeverageCurrencyPrice;
+        protected global::System.Web.UI.WebControls.Label americanoCurrencyPrice;
 
         /// <summary>
-        /// foodOrBeveragePrice control.
+        /// americanoPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodOrBeveragePrice;
+        protected global::System.Web.UI.WebControls.Label americanoPrice;
 
         /// <summary>
-        /// foodOrBeverageDescription control.
+        /// americanoDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodOrBeverageDescription;
+        protected global::System.Web.UI.WebControls.Label americanoDescription;
 
         /// <summary>
-        /// addToCartBtn control.
+        /// americanoCartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addToCartBtn;
+        protected global::System.Web.UI.WebControls.Button americanoCartBtn;
+
+        /// <summary>
+        /// croissantContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl croissantContainer;
+
+        /// <summary>
+        /// croissantItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label croissantItem;
+
+        /// <summary>
+        /// croissantCurrencyPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label croissantCurrencyPrice;
+
+        /// <summary>
+        /// croissantPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label croissantPrice;
+
+        /// <summary>
+        /// croissantDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label croissantDescription;
+
+        /// <summary>
+        /// croissantCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button croissantCartBtn;
+
+        /// <summary>
+        /// tapsilogContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tapsilogContainer;
+
+        /// <summary>
+        /// tapsilogItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tapsilogItem;
+
+        /// <summary>
+        /// tapsilogCurrencyPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tapsilogCurrencyPrice;
+
+        /// <summary>
+        /// tapsilogPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tapsilogPrice;
+
+        /// <summary>
+        /// tapsilogDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tapsilogDescription;
+
+        /// <summary>
+        /// tapsilogCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button tapsilogCartBtn;
+
+        /// <summary>
+        /// beefSteakContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl beefSteakContainer;
+
+        /// <summary>
+        /// beefSteakItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label beefSteakItem;
+
+        /// <summary>
+        /// beefSteakCurrencyPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label beefSteakCurrencyPrice;
+
+        /// <summary>
+        /// beefSteakPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label beefSteakPrice;
+
+        /// <summary>
+        /// beefSteakDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label beefSteakDescription;
+
+        /// <summary>
+        /// beefSteakCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button beefSteakCartBtn;
+
+        /// <summary>
+        /// plainRiceContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl plainRiceContainer;
+
+        /// <summary>
+        /// plainRiceItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label plainRiceItem;
+
+        /// <summary>
+        /// plainRiceCurrencyPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label plainRiceCurrencyPrice;
+
+        /// <summary>
+        /// plainRicePrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label plainRicePrice;
+
+        /// <summary>
+        /// plainRiceDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label plainRiceDescription;
+
+        /// <summary>
+        /// plainRiceCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button plainRiceCartBtn;
+
+        /// <summary>
+        /// bottledWaterContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bottledWaterContainer;
+
+        /// <summary>
+        /// bottledWaterItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bottledWaterItem;
+
+        /// <summary>
+        /// bottledWaterCurrencyPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bottledWaterCurrencyPrice;
+
+        /// <summary>
+        /// bottledWaterPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bottledWaterPrice;
+
+        /// <summary>
+        /// bottledWaterDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bottledWaterDescription;
+
+        /// <summary>
+        /// bottledWaterCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bottledWaterCartBtn;
     }
 }

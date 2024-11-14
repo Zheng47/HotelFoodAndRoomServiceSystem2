@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Hotel-FoodService.aspx.cs" Inherits="HotelFoodAndRoomServiceSystem.Hotel_FoodService" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Hotel-FoodService.aspx.cs" MaintainScrollPositionOnPostBack="true" Inherits="HotelFoodAndRoomServiceSystem.Hotel_FoodService" %>
 
 <!DOCTYPE html>
 
@@ -24,6 +24,7 @@
                 <asp:Label ID="foodAndDrinksLbl" CssClass="textFont" runat="server" Text="FOOD | DRINKS" />
             </div>
 
+
             <div id="foodAndBeverageList">
 
                 <%-- Americano Item --%>
@@ -39,7 +40,14 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="americanoDescription" runat="server" CssClass="textFont description" Text="A shot of expresso with a deep-tan crema that's smooth and robust and perfectly preserved for your enjoyment." />
                     </div>
-                    <asp:Button ID="americanoCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="americanoCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="americanoDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-"  CommandArgument="americanoQuantity" CausesValidation="false"/>
+                            <asp:TextBox ID="americanoQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="americanoIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="americanoQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
                 <%-- Croissant Item --%>
@@ -55,7 +63,14 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="croissantDescription" runat="server" CssClass="textFont description" Text="A flaky croissant filled with smoky ham and creamy cheese, lightly brushed with egg for a golden finish." />
                     </div>
-                    <asp:Button ID="croissantCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="croissantCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="croissantDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="croissantQuantity"  CausesValidation="false"/>
+                            <asp:TextBox ID="croissantQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="croissantIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="croissantQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
                 <%-- Tapsilog Item --%>
@@ -71,7 +86,14 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="tapsilogDescription" runat="server" CssClass="textFont description" Text="A breakfast meal which consists of sliced beef jerky, known as tapa, a heap of garlic rice, and a fried egg." />
                     </div>
-                    <asp:Button ID="tapsilogCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="tapsilogCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="tapsilogDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="tapsilogQuantity"  CausesValidation="false"/>
+                            <asp:TextBox ID="tapsilogQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="tapsilogIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="tapsilogQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
                 <%-- Beef Steak Item --%>
@@ -87,7 +109,14 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="beefSteakDescription" runat="server" CssClass="textFont description" Text="It is comprised of thin slices of beef and a generous amount of onions. These are stewed in a soy sauce and lemon juice mixture until the beef gets very tender. It is best enjoyed with warm rice." />
                     </div>
-                    <asp:Button ID="beefSteakCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="beefSteakCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="beefSteakDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="beefSteakQuantity" CausesValidation="false" />
+                            <asp:TextBox ID="beefSteakQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="beefSteakIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="beefSteakQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
                 <%-- Plain Rice Item --%>
@@ -103,7 +132,14 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="plainRiceDescription" runat="server" CssClass="textFont description" Text="A hot plain rice that is perfect for your selected dish." />
                     </div>
-                    <asp:Button ID="plainRiceCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="plainRiceCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="plainRiceDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="plainRiceQuantity" CausesValidation="false" />
+                            <asp:TextBox ID="plainRiceQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="plainRiceIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="plainRiceQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
                 <%-- Bottled Water Item --%>
@@ -119,10 +155,18 @@
                     <div class="foodBeverageContent2">
                         <asp:Label ID="bottledWaterDescription" runat="server" CssClass="textFont description" Text="Quench your thirst with this 500ml bottled water." />
                     </div>
-                    <asp:Button ID="bottledWaterCartBtn" runat="server" CssClass="addToCart" />
+                    <div class="btnContainer">
+                        <asp:Button ID="bottledWaterCartBtn" runat="server" CssClass="addToCart" />
+                        <div class="btnContainer2">
+                            <asp:Button ID="bottledWaterDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="bottledWaterQuantity" CausesValidation="false"/>
+                            <asp:TextBox ID="bottledWaterQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
+                            <asp:Button ID="bottledWaterIncrease" runat="server" CssClass="btnIncrease textFont" OnClick="IncreaseQuantity_Click" Text="+" CommandArgument="bottledWaterQuantity" CausesValidation="false" />
+                        </div>
+                    </div>
                 </div>
 
             </div>
+
         </div>
 
         <footer>

@@ -122,6 +122,7 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="CssFiles\FoodService.css" />
     <Content Include="CssFiles\RoomService.css" />
+    <Content Include="CssFiles\ShoppingCart.css" />
     <Content Include="GuestLoginPage.aspx" />
     <Content Include="GuestDashboard.aspx" />
     <Content Include="Hotel-FoodService.aspx" />

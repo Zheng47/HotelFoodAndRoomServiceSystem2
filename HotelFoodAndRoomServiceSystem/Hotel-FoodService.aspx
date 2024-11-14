@@ -15,7 +15,7 @@
             <asp:Label ID="hotelName" CssClass="textFont" runat="server" Text="H+ HOTEL" />
             <asp:TextBox ID="searchBar" AutoPostBack="true" OnTextChanged="searchBar_TextChanged" CssClass="textFont" runat="server" Placeholder="Search item" />
             <asp:Button ID="searchBtn" runat="server" OnClick="searchBtn_Click" />
-            <asp:Button ID="shoppingCartBtn" runat="server" />
+            <asp:Button ID="shoppingCartBtn" runat="server" OnClick="shoppingCartBtn_Click" />
         </header>
 
         <div id="mainContainer">
@@ -41,7 +41,7 @@
                         <asp:Label ID="americanoDescription" runat="server" CssClass="textFont description" Text="A shot of expresso with a deep-tan crema that's smooth and robust and perfectly preserved for your enjoyment." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="americanoCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="americanoCartBtn" runat="server" CssClass="addToCart" OnClick="americanoCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="americanoDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-"  CommandArgument="americanoQuantity" CausesValidation="false"/>
                             <asp:TextBox ID="americanoQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
@@ -64,7 +64,7 @@
                         <asp:Label ID="croissantDescription" runat="server" CssClass="textFont description" Text="A flaky croissant filled with smoky ham and creamy cheese, lightly brushed with egg for a golden finish." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="croissantCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="croissantCartBtn" runat="server" CssClass="addToCart" OnClick="croissantCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="croissantDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="croissantQuantity"  CausesValidation="false"/>
                             <asp:TextBox ID="croissantQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />

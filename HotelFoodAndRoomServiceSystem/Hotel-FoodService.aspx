@@ -29,7 +29,7 @@
 
                 <%-- Americano Item --%>
                 <div runat="server" id="americanoContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/americano.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="americanoItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Americano" />
                         <div class="priceContainer">
@@ -52,7 +52,7 @@
 
                 <%-- Croissant Item --%>
                 <div runat="server" id="croissantContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/croissant.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="croissantItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Croissant" />
                         <div class="priceContainer">
@@ -75,7 +75,7 @@
 
                 <%-- Tapsilog Item --%>
                 <div runat="server" id="tapsilogContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/Tapsilog.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="tapsilogItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Tapsilog" />
                         <div class="priceContainer">
@@ -87,7 +87,7 @@
                         <asp:Label ID="tapsilogDescription" runat="server" CssClass="textFont description" Text="A breakfast meal which consists of sliced beef jerky, known as tapa, a heap of garlic rice, and a fried egg." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="tapsilogCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="tapsilogCartBtn" runat="server" CssClass="addToCart" OnClick="tapsilogCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="tapsilogDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="tapsilogQuantity"  CausesValidation="false"/>
                             <asp:TextBox ID="tapsilogQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
@@ -98,7 +98,7 @@
 
                 <%-- Beef Steak Item --%>
                 <div runat="server" id="beefSteakContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/beefsteak.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="beefSteakItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Beef Steak" />
                         <div class="priceContainer">
@@ -110,7 +110,7 @@
                         <asp:Label ID="beefSteakDescription" runat="server" CssClass="textFont description" Text="It is comprised of thin slices of beef and a generous amount of onions. These are stewed in a soy sauce and lemon juice mixture until the beef gets very tender. It is best enjoyed with warm rice." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="beefSteakCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="beefSteakCartBtn" runat="server" CssClass="addToCart" OnClick="beefSteakCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="beefSteakDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="beefSteakQuantity" CausesValidation="false" />
                             <asp:TextBox ID="beefSteakQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
@@ -121,7 +121,7 @@
 
                 <%-- Plain Rice Item --%>
                 <div runat="server" id="plainRiceContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/plainrice.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="plainRiceItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Plain Rice" />
                         <div class="priceContainer">
@@ -133,7 +133,7 @@
                         <asp:Label ID="plainRiceDescription" runat="server" CssClass="textFont description" Text="A hot plain rice that is perfect for your selected dish." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="plainRiceCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="plainRiceCartBtn" runat="server" CssClass="addToCart" OnClick="plainRiceCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="plainRiceDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="plainRiceQuantity" CausesValidation="false" />
                             <asp:TextBox ID="plainRiceQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
@@ -144,7 +144,7 @@
 
                 <%-- Bottled Water Item --%>
                 <div  runat="server" id="bottledWaterContainer" class="foodOrBeverageContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/nobg.png" class="foodImagesLayout" />
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/bottledwater.jpg" class="foodImagesLayout" />
                     <div class="foodBeverageContent">
                         <asp:Label ID="bottledWaterItem" runat="server" CssClass="textFont foodOrBeverageLbl" Text="Bottled Water" />
                         <div class="priceContainer">
@@ -156,7 +156,7 @@
                         <asp:Label ID="bottledWaterDescription" runat="server" CssClass="textFont description" Text="Quench your thirst with this 500ml bottled water." />
                     </div>
                     <div class="btnContainer">
-                        <asp:Button ID="bottledWaterCartBtn" runat="server" CssClass="addToCart" />
+                        <asp:Button ID="bottledWaterCartBtn" runat="server" CssClass="addToCart" OnClick="bottledWaterCartBtn_Click" />
                         <div class="btnContainer2">
                             <asp:Button ID="bottledWaterDecrease" runat="server" CssClass="btnDecrease textFont" OnClick="DecreaseQuantity_Click" Text="-" CommandArgument="bottledWaterQuantity" CausesValidation="false"/>
                             <asp:TextBox ID="bottledWaterQuantity" CssClass="quantityTxtBox textFont" runat="server" ReadOnly="true" Text="0" />
@@ -170,7 +170,7 @@
         </div>
 
         <footer>
-
+            <asp:Label ID="hotelNameFooter" CssClass="textFont" runat="server" Text="H+ HOTEL" />
         </footer>
     </form>
 </body>

@@ -236,4 +236,11 @@ header{
         width: 100%;
         display: flex;
         align-items: center;
+        color: white;
+    }
+
+    #hotelNameFooter {
+        font-size: 4vh;
+        font-weight: bold;
+        margin: 0vh 0vw 0vh 4vw;
     }

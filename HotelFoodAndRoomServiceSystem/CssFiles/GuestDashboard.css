@@ -119,7 +119,7 @@ body {
         background-color: white;
         height: 100%;
         width: 30%;
-        margin: 0vh 4.5vw 0vh 0vw;
+        margin: 0vh 4vw 0vh 0vw;
         display: flex;
         flex-direction: column;
         border: 0px;
@@ -155,10 +155,11 @@ body {
     }
 
     .servicesDescriptionLbl {
-        font-size: 2.5vh;
-        width: 70%;
+        font-size: 2vh;
+        height: 100%;
+        width: 50%;
         margin: 1vh 0vw 0vh 2vw;
-        word-break: break-word;
+        word-wrap: break-word;
     }
 
     .servicesBtnLayout {
@@ -170,7 +171,6 @@ body {
         border: 0;
         height: 80%;
         width: 15%;
-        float: right;
         margin: 0vh 1vw 0vh auto;
         cursor: pointer;
     }

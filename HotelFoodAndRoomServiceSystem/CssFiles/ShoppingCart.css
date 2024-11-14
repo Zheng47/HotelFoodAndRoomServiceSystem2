@@ -38,7 +38,7 @@ header {
     #hotelLogo {
         height: 100%;
         width: 7%;
-        margin: 0vh 0vw 0vh 22vw;
+        margin: 0vh 0vw 0vh 24.5vw;
     }
 
     #hotelName {
@@ -104,11 +104,42 @@ header {
         flex-direction: row;
     }
 
+    .itemLayout1 {
+        height: 15%;
+        width: 100%;
+        margin: 0vh 0vw 1vh 0vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .itemLayout2 {
         height: 100%;
-        width: 19%;
+        width: 18%;
         display: flex;
         align-items: center;
+        margin: 1vh 0vw 0vh 0vw;
+    }
+
+    .btnLayout {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }   
+
+    .deleteBtn {
+        background-color: red;
+        background-image: url('gallery/food and room services elements/icons/inventory - table icons/white_delete.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        border: 0;
+        border-radius: 5px;
+        height: 50%;
+        width: 30%;
+        cursor: pointer;
     }
 
     .itemLbl {
@@ -120,11 +151,25 @@ header {
         margin: 0vh 0vw 0vh 0.5vw;
     }
 
+    .itemImage {
+        margin: 0vh 0vw 0vh 1.5vw;
+        height: 100%;
+        width: 50%;
+    }
 
-    
 /*FOR FOOTER*/
     footer {
         height: 17vh;
         width: 100%;
         background-color: #101450;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: white;
+    }
+
+    #hotelNameFooter {
+        font-size: 4vh;
+        font-weight: bold;
+        margin: 0vh 0vw 0vh 4vw;
     }

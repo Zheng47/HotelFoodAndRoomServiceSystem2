@@ -119,7 +119,7 @@ body {
         margin: 1vh 0vw 0vh 2.5vw;
         font-family: Poppins;
         color: #ca0606;
-        font-size: 1vh;
+        font-size: 2vh;
     }
 
     #emailTxtBox {
@@ -145,7 +145,7 @@ body {
         margin: 1vh 0vw 0vh 2.5vw;
         font-family: Poppins;
         color: #9b0707;
-        font-size: 1vh;
+        font-size: 2vh;
     }
 
     #passwordTxtBox {

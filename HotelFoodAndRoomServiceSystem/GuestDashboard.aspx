@@ -43,7 +43,7 @@
                     <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/food-service.png" class="servicesLogo" />
                     <asp:Label ID="foodServicesLbl" CssClass="servicesLbl" runat="server" Text="Food Services" />
                     <div class="serviceContainer2">
-                        <asp:Label ID="foodServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Order food and beverages for your stay."/>
+                        <asp:Label ID="foodServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Order meals and beverages delivered to your room."/>
                         <asp:Button ID="foodServicesBtn" CssClass="servicesBtnLayout" runat="server" OnClick="foodServicesBtn_Click" />
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/roomservice.png" class="servicesLogo" />
                     <asp:Label ID="roomServiceLbl" CssClass="servicesLbl" runat="server" Text="Room Services" />
                         <div class="serviceContainer2">
-                            <asp:Label ID="roomServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="heheheheh" />
+                            <asp:Label ID="roomServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Request room cleaning and other services for your stay" />
                             <asp:Button ID="roomServicesBtn" runat="server" CssClass="servicesBtnLayout" OnClick="roomServicesBtn_Click"/>
                         </div>
                 </div>
@@ -59,7 +59,7 @@
                     <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/Sidebar%20Icons/tools.png" class="servicesLogo" />
                     <asp:Label ID="maintenanceRequestLbl" CssClass="servicesLbl" runat="server" Text="Maintenance Request" />
                     <div class="serviceContainer2">
-                        <asp:Label ID="maintenanceRequestDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="hehehehe" />
+                        <asp:Label ID="maintenanceRequestDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Report any maintenance issues for prompt assistance" />
                         <asp:Button id="mainteReqBtn" runat="server" CssClass="servicesBtnLayout" OnClick="mainteReqBtn_Click"/>
                     </div>
                 </div>

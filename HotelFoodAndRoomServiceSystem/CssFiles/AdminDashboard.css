@@ -1,9 +1,18 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 body {
     margin: 0;
     height: auto;
     width: auto;
+}
+
+.textFont {
+    font-family: Poppins;
+}
+
+.textFont2 {
+    font-family: 'IBM Plex Mono';
 }
 
 .mainContainer {
@@ -62,7 +71,6 @@ body {
     }
 
     .servicesButtons {
-        background-color: transparent;
         height: 10vh;
         max-height: 10vh;
         width: 100%;
@@ -76,34 +84,52 @@ body {
     }
 
     #dashboardBtn {
+        background-color: #EAEAEA;
         background-image: url('Gallery/Food And Room Services Elements/Icons/compass.png');
         background-size: 2vw 5vh;
         background-repeat: no-repeat;
         background-position: 10px center;
+        color: blue;
     }
+        #dashboardBtn:hover {
+            background-color: #EAEAEA;
+            color: blue;
+        }
     #serviceRequestBtn {
+        background-color: transparent;
         background-image: url('Gallery/Food And Room Services Elements/Icons/tool.png');
         background-size: 2vw 5vh;
         background-repeat: no-repeat;
         background-position: 10px center;
+        color: black;
     }
+        #serviceRequestBtn:hover {
+            background-color: #EAEAEA;
+            color: blue;
+        }
     #inventoryBtn {
+        background-color: transparent;
         background-image: url('Gallery/Food And Room Services Elements/Icons/inventory.png');
         background-size: 2vw 5vh;
         background-repeat: no-repeat;
         background-position: 10px center;
+        color: black;
     }
+        #inventoryBtn:hover {
+            background-color: #EAEAEA;
+            color: blue;
+        }
     #maintenanceRequestBtn {
         background-image: url('Gallery/Food And Room Services Elements/Icons/tool.png');
         background-size: 2vw 5vh;
         background-repeat: no-repeat;
         background-position: 10px center;
+        color: black;
     }
-
-    .servicesButtons:hover {
-        background-color: #EAEAEA;
-        color: blue;
-    }
+        #maintenanceRequestBtn:hover {
+            background-color: #EAEAEA;
+            color: blue;
+        }
 
     /*FOR FOOTER OF SIDE BAR*/
     #adminInfoContainer {
@@ -168,17 +194,9 @@ body {
 /* DASHBOARD PANEL */
     
     /*FOR STAFF STATUS*/
-    .panel-content {
-        display: none;
-    }
-
-    .panel.content:active {
-        display: block;
-    }
 
     #dashboardPanel {
         background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
-        flex-grow:1;
         margin: 0;
         height: 140vh;
         overflow-y: auto;
@@ -362,13 +380,31 @@ body {
         margin: 0vh 0vw 0vh 2vw;
     }
 
-/*FOR SERVICE REQUEST INTERFACE*/
+    /*REFRESH BUTTON*/
+    #refreshBtn {
+        background-color: #101450;
+        color: white;
+        border: 1px solid white;
+        font-family: Poppins;
+        cursor: pointer;
+        height: 4%;
+        width: 10%;
+        float: right;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 10vh 5vw 0vh auto;
+    }
+
+        #refreshBtn:hover {
+            color: blue;
+        }
+
+/*SERVICE REQUEST PANEL*/
 
     #serviceRequestPanel {
         background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
-        flex-grow: 1;
         margin: 0;
-        height: 120vh;
+        height: 140vh;
         overflow-y: auto;
         scrollbar-width: none;
         width: 84%;
@@ -386,11 +422,10 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
-        min-height: 5vh;
-        max-height: 5vh;
-        min-width: 100%;
-        max-width: 100%;
-        margin: 2vh 0vw 0vh 0vw;
+        height: 5vh;
+        width: 97%;
+        margin: 3vh 0vw 0vh auto;
+     
     }
 
     .taskStatusButtons {
@@ -413,19 +448,121 @@ body {
         color:grey;
     }
 
-/*REFRESH BUTTON*/
-    #refreshBtn {
-        background-color: #101450;
-        color: white;
-        border: 1px solid white;
-        font-family: Poppins;
-        cursor: pointer;
-        height: 4%;
-        width: 10%;
-        float: right;
-        margin: 10vh 5vw 0vh auto;
+/*MAINTENANCE REQUEST PANEL*/
+    #maintenanceRequestPanel {
+        background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
+        margin: 0;
+        height: 140vh;
+        overflow-y: auto;
+        scrollbar-width: none;
+        width: 84%;
     }
 
-    #refreshBtn:hover {
-        color: blue;
+    #maintenanceRequestLbl {
+        display: block;
+        margin: 10vh 0vw 0vh 7vw;
+        font-family: Poppins;
+        font-weight: bold;
+        font-size: 6vh;
+    }
+
+    #maintenanceRequestContainer {
+        background-color: peachpuff;
+        height: 75%;
+        width: 90%;
+        margin: 4vh 2vw 0vh auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+
+    .requestTable {
+        height: 45%;
+        width: 45%;
+        margin: 3vh 0vw 0vh 2vw;
+        border: 0;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 10px 30px rgb(6, 0, 0, 0.3);
+    }
+
+    .requestTableText {
+        font-size: 2.5vh;
+        font-weight: bold;
+    }
+
+    .requestTableContent {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .requestTableContent2 {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .requestTableContent3 {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: 1px solid black;
+    }
+
+    #requestTableContent1 {
+        margin: 2vh 0vw 0vh 0vw;
+    }
+
+    #taskIdLbl {
+        margin: 0vh 0vw 0vh 1vw;
+    }
+
+    #roomNumLbl {
+        margin: 0vh 2vw 0vh auto;
+    }
+
+    #guestNameLbl {
+        margin: 0vh 0vw 0vh 1vw;
+    }
+
+    #issueTitleLbl {
+        font-size: 5vh;
+        margin: 2vh 0vw 0vh 1vw;
+    }
+
+    #issueTitleDescription {
+        height: 50%;
+        width: 90%;
+        font-size: 2vh;
+        margin: 1vh 0vw 0vw 1vw;
+        word-break: break-word;
+        overflow-y: auto;
+    }
+
+    #assignedStaffLbl {
+        font-size: 2vh;
+        margin: 0vh 0vw 0vh 1vw;
+    }
+
+    #assignBtn {
+        background-color: #28A745;
+        height: 100%;
+        width: 20%;
+        font-size: 2vh;
+        font-weight: bold;
+        margin: 0vh 2vw 1vh auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #requestDateLbl {
+        margin: 0vh 0vw 0vh 1vw;
     }

@@ -48,7 +48,15 @@
                 </div>
 
                 <div id="layout3">
-
+                    <div id="orderSummary">
+                        <div id="orderSummaryContent1"><asp:Label ID="orderSummaryLbl" CssClass="textFont" runat="server" Text="Order Summary" /></div>
+                        <div id="orderSummaryContent2">
+                            <asp:Label ID="subTotalLbl" CssClass="textFont" runat="server" Text="Sub Total: ₱" />
+                            <asp:Label ID="shippingFeeLbl" CssClass="textFont" runat="server" Text="Shipping Fee: Free" />
+                        </div>
+                        <div id="orderSummaryContent3"><asp:Label ID="totalLbl" CssClass="textFont" runat="server" Text="Total: " /></div>
+                    </div>
+                    <asp:Button ID="chkOutBtn" CssClass="textFont" runat="server" Text="Check Out!" />
                 </div>
 
             </div>

@@ -86,14 +86,8 @@ header {
     #layout2{
         height: 100%;
         width: 60%;
-        background-color: grey;
         overflow-y: auto;
-    }
-
-    #layout3 {
-        height: 100%;
-        width: 30%;
-        background-color: peachpuff;
+        border: 1px solid #101450;
     }
 
     .itemLayout {
@@ -156,6 +150,84 @@ header {
         height: 100%;
         width: 50%;
     }
+
+/*FOR LAYOUT 3*/
+
+    #layout3 {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #orderSummary {
+        background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
+        height: 70%;
+        width: 95%;
+        margin: 0vh auto 0vh auto;
+        border-radius: 20px;
+    }
+    
+    #orderSummaryContent1 {
+        height: 20%;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        font-size: 4vh;
+        border-bottom: 1px solid #101450;
+    }
+
+    #orderSummaryContent2 {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 3vh;
+    }
+
+    #orderSummaryContent3 {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 2.5vh;
+        border-top: 1px solid #101450;
+    }
+
+    #orderSummaryLbl {
+        margin: 0vh 0vw 0vh 2vw;
+    }
+
+    #subTotalLbl {
+        margin: 4vh auto 0vh 2vw;
+    }
+
+    #shippingFeeLbl {
+        margin: 2vh auto 0vh 2vw;
+    }
+
+    #totalLbl {
+        margin: 0vh 0vw 0vh 2vw;
+    }
+
+    #chkOutBtn {
+        background-color: #101450;
+        height: 10%;
+        width: 95%;
+        margin: 7vh auto 0vh auto;
+        border: 1px solid black;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 3vh;
+    }
+
+    #chkOutBtn:hover {
+        color: blue;
+    }
+
+
 
 /*FOR FOOTER*/
     footer {

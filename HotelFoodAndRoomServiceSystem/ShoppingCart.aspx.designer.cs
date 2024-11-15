@@ -114,12 +114,57 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl itemLayout1;
 
         /// <summary>
-        /// hotelName2 control.
+        /// orderSummaryLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hotelName2;
+        protected global::System.Web.UI.WebControls.Label orderSummaryLbl;
+
+        /// <summary>
+        /// subTotalLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label subTotalLbl;
+
+        /// <summary>
+        /// shippingFeeLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label shippingFeeLbl;
+
+        /// <summary>
+        /// totalLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label totalLbl;
+
+        /// <summary>
+        /// chkOutBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button chkOutBtn;
+
+        /// <summary>
+        /// hotelNameFooter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hotelNameFooter;
     }
 }

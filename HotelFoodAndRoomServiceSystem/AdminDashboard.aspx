@@ -14,13 +14,13 @@
             <div id="sideBarComponent">
                 <div id="hotelIconAndName">
                     <img src="CssFiles/Gallery/Food And Room Services Elements/Images/nobg.png" id ="hotelLogo"/>
-                    <asp:Label ID="hotelNameLbl" runat="server">H+ Hotel</asp:Label>
+                    <asp:Label ID="hotelNameLbl" runat="server">H+ HOTEL</asp:Label>
                 </div>
                 <div id="servicesSelection">
                     <asp:Button ID="dashboardBtn" runat="server" class="servicesButtons" Text="Dashboard" OnClick="dashboardBtn_Click" /> <br />
                     <asp:Button ID="serviceRequestBtn" runat="server" class="servicesButtons" Text="Service Request" OnClick="serviceRequestBtn_Click"/> <br />
                     <asp:Button ID="inventoryBtn" runat="server" class="servicesButtons" Text="Inventory" /> <br />
-                    <asp:Button ID="maintenanceRequestBtn" runat="server" class="servicesButtons" Text="Maintenance Request" />
+                    <asp:Button ID="maintenanceRequestBtn" runat="server" class="servicesButtons" Text="Maintenance Request" OnClick="maintenanceRequestBtn_Click" />
 
                     <footer id="adminInfoContainer">
                         <img src="CssFiles/Gallery/Food And Room Services Elements/Icons/user.png" id="adminIcon"/>
@@ -34,7 +34,7 @@
             </div>
 
 
-            <div id="dashboardPanel" runat="server" class="panel-content">
+            <div id="dashboardPanel" runat="server">
                 <asp:Label ID="overviewLbl" runat="server">Overview</asp:Label>
                 <div class="lineDesign"></div>
                 <div id="staffStatusContainer">
@@ -67,9 +67,9 @@
             </div>
 
 
-           <div id="serviceRequestPanel" runat="server" class="panel-content" >
+           <div id="serviceRequestPanel" runat="server">
                <asp:Label ID="taskBoardLbl" runat="server" Text="Task Board" />
-               <div class="lineDesign" />
+               <div class="lineDesign"></div>
                    <div id="taskBoardStatusLayout">
                        <asp:Button ID="toDoTaskBtn" CssClass="taskStatusButtons" runat="server" Text="To-Do"/>
                        <asp:Label ID="toDoCountLbl" class="taskStatusCount" runat="server" Text="0"/>
@@ -83,6 +83,16 @@
                        <asp:Label ID="completedCountLbl" class="taskStatusCount" runat="server" Text="0" />
                    </div>
            </div>
+
+            <div id="maintenanceRequestPanel" runat="server" >
+                <asp:Label ID="maintenanceRequestLbl" runat="server" Text="Maintenance Request" />
+                <div class="lineDesign"></div>
+
+                <div id="maintenanceRequestContainer">
+                    <asp:Literal ID="maintenanceRequestData" runat="server" />
+                </div>
+
+            </div>
         </div>
     </form>
 </body>

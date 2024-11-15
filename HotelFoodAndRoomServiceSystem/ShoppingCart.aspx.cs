@@ -29,11 +29,14 @@ namespace HotelFoodAndRoomServiceSystem
 
 
             itemLayout1.Controls.Clear();
+            decimal totalPrice = 0;
 
             if (cartItems != null && cartItems.Count > 0)
             {
                 foreach (var item in cartItems)
                 {
+                    totalPrice += item.Total;
+
                     var itemProductLayout = new HtmlGenericControl("div");
                     itemProductLayout.Attributes.Add("class", "itemLayout2");
 
@@ -99,6 +102,8 @@ namespace HotelFoodAndRoomServiceSystem
                     itemLayout1.Controls.Add(itemTotalLayout);
                     itemLayout1.Controls.Add(deleteBtnLayout);
                 }
+
+                subTotalLbl.Text = "Subtotal: ₱" + totalPrice.ToString("N2");
             }
             else
             {
@@ -107,6 +112,8 @@ namespace HotelFoodAndRoomServiceSystem
                 emptyMessage.Attributes.Add("class", "textFont itemLbl");
                 emptyMessage.Text = "Your cart is empty.";
                 itemLayout1.Controls.Add(emptyMessage);
+
+                subTotalLbl.Text = "Sub Total: ₱0.00";
             }
         }
         protected void deleteButton_Click(object sender, EventArgs e)
@@ -125,6 +132,9 @@ namespace HotelFoodAndRoomServiceSystem
                     cartItems.Remove(itemToRemove);
                     // Update the session with the modified cart items
                     Session["CartItems"] = cartItems;
+
+                    decimal newSubtotal = cartItems.Sum(item => item.Total);
+                    subTotalLbl.Text = "Subtotal: ₱" + newSubtotal.ToString("N2");
 
                     // Refresh the cart display
                     displayCartItems();

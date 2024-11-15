@@ -105,7 +105,8 @@ namespace HotelFoodAndRoomServiceSystem
                     divHtml.Append("<div class='historyTable'>");
                     divHtml.Append($"<div class='textFont orderIdColumn'> {row["order_id"]} </div>");
 
-                    divHtml.Append($"<div class='textFont orderDateTimeColumn'> {Convert.ToDateTime(row["order_date"]).ToString("yyyy-MM-dd")} </div>");
+                    DateTime orderDate = Convert.ToDateTime(row["order_date"]);
+                    divHtml.Append($"<div class='textFont orderDateTimeColumn'> {orderDate:yyyy-MM-dd HH:mm:ss} </div>");
 
                     divHtml.Append($"<div class='textFont itemOrderedColumn'> {row["item_ordered"] + " " + "₱" + row["item_price"] + " "  + "("+row["quantity"]+")" } </div>");
 

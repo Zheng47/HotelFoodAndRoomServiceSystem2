@@ -174,7 +174,6 @@ body {
 
 /*FOR SERVICE HISTORY TABLE CONTAINER*/
     .tableContainer {
-        background-color: yellow;
         height: 88%;
         width: 90%;
         margin: 2vh 0vw 0vh 4vw;
@@ -187,7 +186,7 @@ body {
     .historyTable {
         height: 10%;
         width: 100%;
-        background-color: white;
+        background-color: #E5E7EB;
         display: flex;
         align-items: center;
         flex-direction: row;

@@ -154,6 +154,7 @@ namespace HotelFoodAndRoomServiceSystem
 
                 if (reader.Read())
                 {
+                    Session["Email"] = reader["email"];
                     Session["Username"] = reader["username"];
                     Session["RoomNumber"] = reader["room_number"];
                     Session["CheckInDate"] = reader["chk_in_date"];

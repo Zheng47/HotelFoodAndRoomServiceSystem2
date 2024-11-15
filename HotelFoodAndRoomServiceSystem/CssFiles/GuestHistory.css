@@ -1,0 +1,288 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.textFont /*FOR TEXT FONT OF THIS PAGE*/ {
+    font-family: Poppins;
+}
+
+#header {
+    margin: 0;
+    height: 20vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/*OFR HEADER CONTENT*/
+    #hotelLogo {
+        height: 100%;
+        width: 8%;
+        margin-left: 3vw;
+    }
+
+    #hotelName {
+        margin-left: 1vw;
+        font-family: Poppins;
+        font-size: 4vh;
+        font-weight: bold;
+    }
+
+    .headBtnLayout {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0vh 0vw 0vh 15vw;
+    }
+
+    .headBtn {
+        height: 40%;
+        width: 35%;
+        margin: 0vh 2vw 0vh 0vw;
+        cursor: pointer;
+        text-align: right;
+        padding-right: 1vw;
+        font-family: Poppins;
+        font-size: 3vh;
+    }
+
+    #historyBtn {
+        background-color: #101450;
+        background-image: url('gallery/food and room services elements/icons/navbar/white_history.png');
+        background-size: contain;
+        background-position: left 5px top;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #homeBtn {
+        background-color: transparent;
+        background-image: url('gallery/food and room services elements/icons/navbar/home.png');
+        background-size: contain;
+        background-position: left 10px center;
+        background-repeat: no-repeat;
+        border: 0;
+        border-radius: 10px;
+        color: #101450;
+    }
+
+        #homeBtn:hover {
+            background-color: #101450;
+            background-image: url('gallery/food and room services elements/icons/navbar/white_home.png');
+            background-size: contain;
+            background-position: left 10px top;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+            color: white;
+            transition: 0.3s ease-in;
+        }
+
+
+    #userLbl {
+        font-family: Poppins;
+        margin: 0vh 4vw 0vh auto;
+        font-size: 6vh;
+    }
+
+
+#mainContainer {
+    height: 120vh;
+    width: 100%;
+    background: linear-gradient(to bottom, ,white, white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*FOR MAIN CONTENT*/
+    #serviceHistoryLayout {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #serviceHistoryLbl {
+        font-size: 5vh;
+        font-weight: bold;
+        margin: auto auto 0vh 4vw;
+    }
+
+    #barColor {
+        height: 1%;
+        width: 60%;
+        background-color: grey;
+        margin: 0vh auto auto 4vw;
+    }
+
+    #historyContainer{
+       height: 75%;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+    }
+
+/*FOR SERVICE HISTROY BUTTON*/
+    #serviceBtnLayout {
+       height: 10%;
+       width: 80%;
+       background-color: white;
+       margin: 0vh 0vw 0vh 4vw;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+    }
+
+    .serviceHistoryBtn {
+        height: 100%;
+        width: 15%;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        margin: 0vh 2vw 0vh 0vw;
+        padding-left: 4vw;
+    }
+
+    #foodServiceHistoryBtn {
+        background-image: url('gallery/food and room services elements/icons/historyinterface/food-delivery.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+        border-bottom: 2px solid #101450;
+    }
+
+    #roomServiceHistoryBtn {
+        background-image: url('gallery/food and room services elements/icons/historyinterface/service.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+
+/*FOR SERVICE HISTORY TABLE CONTAINER*/
+    .tableContainer {
+        background-color: yellow;
+        height: 88%;
+        width: 90%;
+        margin: 2vh 0vw 0vh 4vw;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+
+    .historyTable {
+        height: 10%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border-bottom: 1px solid;
+    }
+    /*FOR CSS OF FOOD SERVICE HISTORY*/
+
+        .orderIdColumn {
+            height: 100%;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .orderDateTimeColumn {
+            height: 100%;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .itemOrderedColumn {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .statusColumn {
+            height: 100%;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .totalCostColumn {
+            height: 100%;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+    /*FOR CSS OF ROOM SERVICE HISTORY*/
+
+        .requestIdColumn {
+            height: 100%;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .requestDateTimeColumn {
+            height: 100%;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+
+        .serviceTypeColumn {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+        .chargesColumn {
+            height: 100%;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid black;
+            padding-left: 10px;
+            font-size: 2.5vh;
+        }
+

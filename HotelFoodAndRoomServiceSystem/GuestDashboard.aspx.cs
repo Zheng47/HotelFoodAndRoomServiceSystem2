@@ -15,7 +15,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             OpenDB();
 
-            if (Session["Username"] != null)
+            if (Session["Email"] != null)
             {
                 userLbl.Text = "Welcome, " + Session["Username"].ToString();
                 roomNumLbl.Text = "Room Number: " + Session["RoomNumber"].ToString();
@@ -28,6 +28,11 @@ namespace HotelFoodAndRoomServiceSystem
         }
 
         public MySqlConnection dbconn = new MySqlConnection("server=localhost;username=root;password=;database=hotelmanagement");
+
+        protected void historyBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GuestHistory.aspx");
+        }
 
         public void OpenDB()
         {
@@ -122,5 +127,6 @@ namespace HotelFoodAndRoomServiceSystem
                 Console.WriteLine($"Error: {e.Message}");
             }
         }
+
     }
 }

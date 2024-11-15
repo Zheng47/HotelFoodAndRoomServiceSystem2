@@ -83,7 +83,6 @@
                        <asp:Label ID="completedCountLbl" class="taskStatusCount" runat="server" Text="0" />
                    </div>
            </div>
-
         </div>
     </form>
 </body>

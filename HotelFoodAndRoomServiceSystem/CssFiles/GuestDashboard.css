@@ -11,7 +11,7 @@ body {
 /*For header contents*/
     #header {
         margin: 0;
-        height: 15vh;
+        height: 20vh;
         width: 100%;
         background-color: white;
         display:flex;
@@ -21,22 +21,76 @@ body {
 
     #hotelLogo {
         height: 100%;
-        width: 7%;
+        width: 8%;
         margin-left: 3vw;
     }
 
     #logoLbl {
         margin-left: 1vw;
         font-family: Poppins;
-        font-size: 3vh;
+        font-size: 4vh;
         font-weight:bold;
     }
 
+    .headBtnLayout {
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0vh 0vw 0vh 15vw;
+    }
+
+    .headBtn {
+        height: 40%;
+        width: 35%;
+        margin: 0vh 2vw 0vh 0vw;
+        cursor: pointer;
+        text-align: right;
+        padding-right: 1vw;
+        font-family: Poppins;
+        font-size: 3vh;
+
+    }
+
+    #homeBtn {
+        background-color: #101450;
+        background-image: url('gallery/food and room services elements/icons/navbar/white_home.png');
+        background-size: contain;
+        background-position: left 10px top;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #historyBtn {
+        background-color: transparent;
+        background-image: url('gallery/food and room services elements/icons/navbar/history.png');
+        background-size: contain;
+        background-position: left 5px center;
+        background-repeat: no-repeat;
+        border: 0;
+        border-radius: 10px;
+        color: #101450;
+    }
+
+        #historyBtn:hover {
+            background-color: #101450;
+            background-image: url('gallery/food and room services elements/icons/navbar/white_history.png');
+            background-size: contain;
+            background-position: left 5px top;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+            color: white;
+            transition: 0.3s ease-in;
+        }
+
+
     #userLbl {
         font-family: Poppins;
-        float:right;
-        margin-left:auto;
-        margin-right: 100px;
+        margin: 0vh 4vw 0vh auto;
         font-size: 6vh;
     }
 

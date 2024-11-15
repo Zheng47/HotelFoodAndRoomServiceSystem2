@@ -121,8 +121,10 @@
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="CssFiles\FoodService.css" />
+    <Content Include="CssFiles\GuestHistory.css" />
     <Content Include="CssFiles\RoomService.css" />
     <Content Include="CssFiles\ShoppingCart.css" />
+    <Content Include="GuestHistory.aspx" />
     <Content Include="GuestLoginPage.aspx" />
     <Content Include="GuestDashboard.aspx" />
     <Content Include="Hotel-FoodService.aspx" />
@@ -144,6 +146,13 @@
     </Compile>
     <Compile Include="AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuestHistory.aspx.cs">
+      <DependentUpon>GuestHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuestHistory.aspx.designer.cs">
+      <DependentUpon>GuestHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="GuestLoginPage.aspx.cs">
       <DependentUpon>GuestLoginPage.aspx</DependentUpon>

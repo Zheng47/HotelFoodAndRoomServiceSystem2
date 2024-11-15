@@ -14,6 +14,10 @@
         <div id="header"> 
             <img id="hotelLogo" src="CssFiles/Gallery/Food And Room Services Elements/Images/nobg.png" />
             <asp:Label ID="logoLbl" runat="server">H+ HOTEL</asp:Label>
+            <div class="headBtnLayout">
+                <asp:Button ID="homeBtn" CssClass="headBtn" runat="server" Text="Home" />
+                <asp:Button ID="historyBtn" CssClass="headBtn" runat="server" Text="History" OnClick="historyBtn_Click" />
+            </div>
             <asp:Label ID="userLbl" runat="server">Welcome, GUEST</asp:Label>
         </div> 
 

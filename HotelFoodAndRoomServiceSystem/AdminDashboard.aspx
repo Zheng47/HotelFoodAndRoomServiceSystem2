@@ -101,10 +101,28 @@
                 <div class="lineDesign"></div>
 
                 <div id="maintenanceRequestContainer">
-                    <asp:Literal ID="maintenanceRequestData" runat="server" />
+                    <asp:Literal ID="maintenanceRequestData" runat="server"></asp:Literal>
                 </div>
 
+                <asp:Button ID="assignBtn" CssClass="assignBtn" runat="server" Text="ASSIGN" OnClick="assignBtn_Clicked" />
+                <asp:Panel ID="overlay2" CssClass="overlay" runat="server" Visible="false"></asp:Panel>
+
+                <asp:Panel ID="assignStaffPanel" runat="server" Visible="false">
+                    <div class="assignStaffContent textFont2">
+                        <asp:Label ID="taskIdText" runat="server" Text="TASK ID:" />
+                        <asp:TextBox ID="taskIdTxtBox" TextMode="Number" runat="server" Placeholder="Enter Task ID" />
+                    </div>
+                    <div class="assignStaffContent textFont2">
+                        <asp:Label ID="employeeNameText" runat="server" Text="EMPLOYEE NAME: "/>
+                        <asp:TextBox ID="employeeNameTxtBox"  runat="server" Placeholder="Enter employee name (LN, FN MN)" />
+                    </div>
+                    <div class="assignStaffBtnLayout textFont">
+                        <asp:Button ID="assignEmployeeBtn" runat="server" Text="ASSIGN" OnClick="assignEmployeeBtn_Click" />
+                        <asp:Button ID="cancelAssignEmployeeBtn" runat="server" Text="CANCEL" OnClick="cancelAssignEmployeeBtn_Click" />
+                    </div>
+                </asp:Panel>
             </div>
+
         </div>
     </form>
 </body>

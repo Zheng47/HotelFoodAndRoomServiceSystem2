@@ -197,7 +197,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
 
@@ -255,7 +255,7 @@ body {
         border: 1px solid black;
         border-radius: 10px;
         cursor: pointer;
-        margin: 0vh 2vw 0vh 0vw;
+        margin: 0vh 2vw 0vh 2vw;
     }
 
     #cancelBtn {
@@ -554,7 +554,6 @@ body {
     }
 
     #maintenanceRequestContainer {
-        background-color: peachpuff;
         height: 75%;
         width: 90%;
         margin: 4vh 2vw 0vh auto;
@@ -638,18 +637,111 @@ body {
         margin: 0vh 0vw 0vh 1vw;
     }
 
-    #assignBtn {
+    .assignBtn {
         background-color: #28A745;
-        height: 100%;
-        width: 20%;
+        height: 5%;
+        width: 10%;
         font-size: 2vh;
         font-weight: bold;
+        float: right;
         margin: 0vh 2vw 1vh auto;
         border: 1px solid black;
         border-radius: 10px;
         cursor: pointer;
     }
 
+    .assignBtn:hover {
+        color: blue;
+    }
+
     #requestDateLbl {
         margin: 0vh 0vw 0vh 1vw;
+    }
+
+    /*FOR ASSIGN STAFF IN MAINTENANCE REQUEST*/
+    #assignStaffPanel {
+        background-color: white;
+        display: flex;
+        flex-direction:column;
+        height: 40%;
+        width: 30%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .assignStaffContent {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #taskIdText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #taskIdTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+
+    }
+
+    #employeeNameText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #employeeNameTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+    }
+
+    .assignStaffBtnLayout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #assignEmployeeBtn {
+        background-color: #101450;
+        color: white;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+    #assignEmployeeBtn:hover {
+        color: blue;
+    }
+
+    #cancelAssignEmployeeBtn {
+        background-color: white;
+        color: black;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+    #cancelAssignEmployeeBtn:hover {
+        color: blue;
     }

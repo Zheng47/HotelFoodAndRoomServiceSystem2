@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -29,12 +30,13 @@ namespace HotelFoodAndRoomServiceSystem
             {
                 retrieveEmployeesData();
                 ShowOnlyDashboardPanel();
-                updateTotalStaffCount();
+                retrieveTotalStaffCount();
                 retrieveStatusCount();
             }
 
         }
-
+        
+        //DATABASE CONNECTION
         public MySqlConnection dbconn = new MySqlConnection("server=localhost;username=root;password=;database=hotelmanagement");
 
         private void OpenDB()
@@ -61,6 +63,7 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
+        // RETRIEVE EMPLOYEE DATA
         private void retrieveEmployeesData()
         {
             try
@@ -91,6 +94,7 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
+        //RETRIEVE EMPLOYEE STATUS COUNT
         private void retrieveStatusCount ()
         {
             try
@@ -112,7 +116,9 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
-        private void updateTotalStaffCount ()
+        //RETRIEVE EMPLOYEE COUNT 
+
+        private void retrieveTotalStaffCount ()
         {
             try
             {
@@ -185,7 +191,7 @@ namespace HotelFoodAndRoomServiceSystem
             maintenanceRequestPanel.Style["display"] = "none";
 
             retrieveEmployeesData();
-            updateTotalStaffCount();
+            retrieveTotalStaffCount();
             retrieveStatusCount();
         }
 
@@ -241,10 +247,8 @@ namespace HotelFoodAndRoomServiceSystem
 
                 StringBuilder divHtml = new StringBuilder();
 
-                foreach(DataRow row in dataTable.Rows)
+                foreach (DataRow row in dataTable.Rows)
                 {
-
-
                     divHtml.Append("<div class='requestTable'>");
 
                     divHtml.Append("<div id='requestTableContent1' class='requestTableContent requestTableText textFont2'> ");
@@ -262,8 +266,8 @@ namespace HotelFoodAndRoomServiceSystem
                     divHtml.Append("</div>");
 
                     divHtml.Append("<div class='requestTableContent textFont2'>");
-                    divHtml.Append($"<div id='assignedStaffLbl'>{"ASSIGNED EMPLOYEE: " +row["assigned_employee"]}</div>");
-                    divHtml.Append("<button id='assignBtn'>ASSIGN</button>");
+                    divHtml.Append($"<div id='assignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
+
                     divHtml.Append("</div>");
 
                     divHtml.Append("<div class='requestTableContent3 textFont2'>");
@@ -275,6 +279,7 @@ namespace HotelFoodAndRoomServiceSystem
 
                     maintenanceRequestData.Text = divHtml.ToString();
                 }
+
             }
             catch (MySqlException e)
             {
@@ -284,7 +289,64 @@ namespace HotelFoodAndRoomServiceSystem
 
         protected void assignBtn_Clicked (object sender,EventArgs e)
         {
+            overlay2.Visible = true;
+            assignStaffPanel.Visible = true;
+        }
 
+        protected void assignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            String taskID = taskIdTxtBox.Text.ToString();
+            String assignedEmployee = employeeNameTxtBox.Text.ToString();
+
+            assignEmployeeTask(taskID, assignedEmployee);
+
+            overlay2.Visible = false;
+            assignStaffPanel.Visible = false;
+
+            retrieveMaintenanceRequest();
+        }
+
+        protected void cancelAssignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            overlay2.Visible = false;
+            assignStaffPanel.Visible = false;
+        }
+
+
+        // ASSIGN TASK FOR EMPLOYEE
+        private void assignEmployeeTask (String taskID,String assignedEmployee)
+        {
+            try
+            {
+                //ASSIGN EMPLOYEE TO TASK
+                String assignEmployeeOnTask = "UPDATE maintenancerequest SET assigned_employee = @assignedEmployee WHERE task_id = @taskId";
+                MySqlCommand cmd = new MySqlCommand(assignEmployeeOnTask, dbconn);
+                cmd.Parameters.AddWithValue("@assignedEmployee", assignedEmployee);
+                cmd.Parameters.AddWithValue("@taskId", taskID);
+                cmd.ExecuteNonQuery();
+
+                //SPLIT THE FULL NAME OF EMPLOYEE 
+                string[] nameParts = assignedEmployee.Split(',');
+                string lastName = nameParts[0].Trim();
+
+                string firstNameMiddleName = nameParts[1].Trim();
+                string[] nameSplit = firstNameMiddleName.Split(' ');
+
+                string firstName = nameSplit[0];
+                string middleName = string.Join(" ", nameSplit.Skip(1));
+
+                string updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE last_name = @lastName AND first_name = @firstName AND middle_name = @middleName";
+                MySqlCommand updateStatusCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
+                updateStatusCmd.Parameters.AddWithValue("@lastName", lastName);
+                updateStatusCmd.Parameters.AddWithValue("@firstName", firstName);
+                updateStatusCmd.Parameters.AddWithValue("@middleName", middleName);
+                updateStatusCmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

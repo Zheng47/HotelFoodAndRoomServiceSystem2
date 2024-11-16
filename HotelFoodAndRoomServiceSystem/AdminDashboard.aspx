@@ -33,6 +33,18 @@
                 </div>
             </div>
 
+            <%-- FOR CONRFIRMATION OF SIGN OUT --%>
+            <asp:Panel ID="overlay" CssClass="overlay" runat="server" Visible="false"></asp:Panel>
+
+            <asp:Panel ID="confirmSignOutPanel" CssClass="confirmSignOutPanel" runat="server" Visible="false">
+                <asp:Label ID="confirmSignOutLbl" CssClass="textFont" runat="server" Text="Confirm" />
+                <asp:Label ID="signOutQuestionLbl" CssClass="textFont" runat="server" Text="Are you sure you want to log out?" />
+                <div id="buttonSelection">
+                    <asp:Button ID="okBtn" CssClass="textFont" runat="server" Text="OK" OnClick="okBtn_Click"/>
+                    <asp:Button ID="cancelBtn" CssClass="textFont" runat="server" Text="Cancel" OnClick="cancelBtn_Click" />
+                </div>
+            </asp:Panel>
+
 
             <div id="dashboardPanel" runat="server">
                 <asp:Label ID="overviewLbl" runat="server">Overview</asp:Label>

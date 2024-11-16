@@ -131,8 +131,20 @@ namespace HotelFoodAndRoomServiceSystem
         }
         protected void signOutBtn_Click(object sender, EventArgs e)
         {
+            overlay.Visible = true;
+            confirmSignOutPanel.Visible = true;
+        }
+
+        protected void okBtn_Click(object sender, EventArgs e)
+        {
             Session.Abandon();
             Response.Redirect("AdminLogin.aspx");
+        }
+
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            confirmSignOutPanel.Visible = false;
         }
 
         protected void refreshBtn_Click(object sender, EventArgs e)
@@ -274,6 +286,5 @@ namespace HotelFoodAndRoomServiceSystem
         {
 
         }
-
     }
 }

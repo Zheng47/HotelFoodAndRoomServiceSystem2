@@ -186,8 +186,95 @@ body {
         cursor: pointer;
     }
 
-    #signOutBtn:hover {
-        background-color: #EAEAEA;
+
+    
+    /*FOR CONFIRMATION OF SIGN OUT CSS*/
+     
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1;
+    }
+
+    .confirmSignOutPanel {
+        background-color: white;
+        height: 40%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        position: fixed;
+        z-index: 2;
+    }
+
+    #confirmSignOutLbl {
+        height: 20%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding-left: 2vw;
+        font-size: 3.5vh;
+        font-weight: bold;
+        border-bottom: 1px solid #EAEAEA;
+        box-shadow: 0px 10px 30px rgba(49, 38, 38, 0.3);
+    }
+
+    #signOutQuestionLbl {
+        height: 50%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding-left: 2vw;
+        font-size: 3vh;
+        font-weight: bold;
+    }
+
+    #buttonSelection {
+        height: 30%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px -10px 30px rgba(49, 38, 38, 0.3);
+    }
+
+    #okBtn {
+        background-color: #101450;
+        color: white;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0vh 2vw 0vh 0vw;
+    }
+
+    #cancelBtn {
+        background-color: white;
+        color: black;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0vh 2vw 0vh 0vw;
+    }
+
+    #okBtn:hover {
+        color: blue;
+    }
+
+    #cancelBtn:hover {
+        color: blue;
     }
 
 

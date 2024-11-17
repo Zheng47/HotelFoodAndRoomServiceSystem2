@@ -60,15 +60,6 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Button searchBtn;
 
         /// <summary>
-        /// shoppingCartBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button shoppingCartBtn;
-
-        /// <summary>
         /// allMenuLbl control.
         /// </summary>
         /// <remarks>
@@ -132,13 +123,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label americanoDescription;
 
         /// <summary>
-        /// americanoCartBtn control.
+        /// americanoOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button americanoCartBtn;
+        protected global::System.Web.UI.WebControls.Button americanoOrderBtn;
 
         /// <summary>
         /// americanoDecrease control.
@@ -213,13 +204,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label croissantDescription;
 
         /// <summary>
-        /// croissantCartBtn control.
+        /// croissantOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button croissantCartBtn;
+        protected global::System.Web.UI.WebControls.Button croissantOrderBtn;
 
         /// <summary>
         /// croissantDecrease control.
@@ -294,13 +285,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label tapsilogDescription;
 
         /// <summary>
-        /// tapsilogCartBtn control.
+        /// tapsilogOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button tapsilogCartBtn;
+        protected global::System.Web.UI.WebControls.Button tapsilogOrderBtn;
 
         /// <summary>
         /// tapsilogDecrease control.
@@ -375,13 +366,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label beefSteakDescription;
 
         /// <summary>
-        /// beefSteakCartBtn control.
+        /// beefSteakOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button beefSteakCartBtn;
+        protected global::System.Web.UI.WebControls.Button beefSteakOrderBtn;
 
         /// <summary>
         /// beefSteakDecrease control.
@@ -456,13 +447,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label plainRiceDescription;
 
         /// <summary>
-        /// plainRiceCartBtn control.
+        /// plainRiceOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button plainRiceCartBtn;
+        protected global::System.Web.UI.WebControls.Button plainRiceOrderBtn;
 
         /// <summary>
         /// plainRiceDecrease control.
@@ -537,13 +528,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label bottledWaterDescription;
 
         /// <summary>
-        /// bottledWaterCartBtn control.
+        /// bottledWaterOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bottledWaterCartBtn;
+        protected global::System.Web.UI.WebControls.Button bottledWaterOrderBtn;
 
         /// <summary>
         /// bottledWaterDecrease control.
@@ -571,6 +562,96 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button bottledWaterIncrease;
+
+        /// <summary>
+        /// orderedItemPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel orderedItemPanel;
+
+        /// <summary>
+        /// orderThisItemLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label orderThisItemLbl;
+
+        /// <summary>
+        /// itemImageLayout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage itemImageLayout;
+
+        /// <summary>
+        /// itemNameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label itemNameLbl;
+
+        /// <summary>
+        /// itemPriceLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label itemPriceLbl;
+
+        /// <summary>
+        /// itemQuantityLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label itemQuantityLbl;
+
+        /// <summary>
+        /// totalPriceLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label totalPriceLbl;
+
+        /// <summary>
+        /// orderBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button orderBtn;
+
+        /// <summary>
+        /// cancelBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cancelBtn;
+
+        /// <summary>
+        /// overlay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel overlay;
 
         /// <summary>
         /// hotelNameFooter control.

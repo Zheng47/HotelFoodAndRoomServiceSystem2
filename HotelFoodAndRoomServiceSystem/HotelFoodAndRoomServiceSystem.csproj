@@ -123,13 +123,11 @@
     <Content Include="CssFiles\FoodService.css" />
     <Content Include="CssFiles\GuestHistory.css" />
     <Content Include="CssFiles\RoomService.css" />
-    <Content Include="CssFiles\ShoppingCart.css" />
     <Content Include="GuestHistory.aspx" />
     <Content Include="GuestLoginPage.aspx" />
     <Content Include="GuestDashboard.aspx" />
     <Content Include="Hotel-FoodService.aspx" />
     <Content Include="Hotel-RoomService.aspx" />
-    <Content Include="ShoppingCart.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -183,13 +181,6 @@
       <DependentUpon>Hotel-RoomService.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCart.aspx.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ShoppingCart.aspx.designer.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

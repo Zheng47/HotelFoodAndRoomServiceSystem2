@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace HotelFoodAndRoomServiceSystem
@@ -15,13 +17,7 @@ namespace HotelFoodAndRoomServiceSystem
         public MySqlConnection dbconn = new MySqlConnection("server=localhost;username=root;password=;database=hotelmanagement");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (Session["CartItems"] == null)
-                {
-                    Session["CartItems"] = new List<CartItem>();
-                }
-            }
+            OpenDB();
         }
 
         public void OpenDB()
@@ -49,6 +45,7 @@ namespace HotelFoodAndRoomServiceSystem
         protected void dashBoardBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("GuestDashboard.aspx");
+
         }
 
         protected void searchBtn_Click(object sender, EventArgs e)
@@ -101,180 +98,127 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
-        protected void shoppingCartBtn_Click(object sender, EventArgs e)
+        protected void americanoOrderBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ShoppingCart.aspx");
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/americano.jpg";
+            itemNameLbl.Text = americanoItem.Text;
+            itemPriceLbl.Text = americanoPrice.Text;
+            itemQuantityLbl.Text = americanoQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text) ;
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
         }
 
-        protected void americanoCartBtn_Click(object sender, EventArgs e)
+        protected void croissantOrderBtn_Click(object sender, EventArgs e)
         {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/americano.jpg";
-            string itemName = americanoItem.Text;
-            string currencyPrice = americanoCurrencyPrice.Text;
-            string itemPrice = americanoPrice.Text;
-            int quantity = int.Parse(americanoQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/croissant.jpg";
+            itemNameLbl.Text = croissantItem.Text;
+            itemPriceLbl.Text = croissantPrice.Text;
+            itemQuantityLbl.Text = croissantQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text);
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
+        }
+
+        protected void tapsilogOrderBtn_Click(object sender, EventArgs e)
+        {
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/Tapsilog.jpg";
+            itemNameLbl.Text = tapsilogItem.Text;
+            itemPriceLbl.Text = tapsilogPrice.Text;
+            itemQuantityLbl.Text = tapsilogQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text);
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
+        }
+
+        protected void beefSteakOrderBtn_Click(object sender, EventArgs e)
+        {
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/beefsteak.jpg";
+            itemNameLbl.Text = beefSteakItem.Text;
+            itemPriceLbl.Text = beefSteakPrice.Text;
+            itemQuantityLbl.Text = beefSteakQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text);
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
+        }
+
+        protected void plainRiceOrderBtn_Click(object sender, EventArgs e)
+        {
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/plainrice.jpg";
+            itemNameLbl.Text = plainRiceItem.Text;
+            itemPriceLbl.Text = plainRicePrice.Text;
+            itemQuantityLbl.Text = plainRiceQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text);
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
+        }
+
+        protected void bottledWaterOrderBtn_Click(object sender, EventArgs e)
+        {
+            itemImageLayout.Attributes["src"] = "CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/bottledwater.jpg";
+            itemNameLbl.Text = bottledWaterItem.Text;
+            itemPriceLbl.Text = bottledWaterPrice.Text;
+            itemQuantityLbl.Text = bottledWaterQuantity.Text;
+            int totalPrice = Convert.ToInt32(itemPriceLbl.Text) * Convert.ToInt32(itemQuantityLbl.Text);
+            totalPriceLbl.Text = totalPrice.ToString();
+
+            overlay.Visible = true;
+            orderedItemPanel.Visible = true;
+        }
 
 
-            
-            var cartItem = new CartItem
+        protected void orderBtn_Click(object sender, EventArgs e)
+        {
+            String itemName = itemNameLbl.Text;
+            String itemPrice = itemPriceLbl.Text;
+            String quantity = itemQuantityLbl.Text;
+            String totalPrice = totalPriceLbl.Text;
+            String guestName = Session["Username"].ToString();
+
+            insertOrderToDb(itemName, itemPrice, quantity, totalPrice, guestName);
+
+            overlay.Visible = false;
+            orderedItemPanel.Visible = false;
+        }
+
+        private void insertOrderToDb(String itemName, String itemPrice, String quantity, String totalPrice, String guestName)
+        {
+            try
             {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
+                String insertOrder = "INSERT INTO guestfoodservicehistory(order_id, order_date, item_ordered, status, quantity, total_price, item_price, guest_name) VALUES(@1, @2, @3, @4, @5, @6, @7, @8)";
+                MySqlCommand cmd = new MySqlCommand(insertOrder, dbconn);
 
-            var cartItems = (List<CartItem>)Session["CartItems"];
+                cmd.Parameters.AddWithValue("@1", Guid.NewGuid());
+                cmd.Parameters.AddWithValue("@2", DateTime.Now);
+                cmd.Parameters.AddWithValue("@3", itemName);
+                cmd.Parameters.AddWithValue("@4", "Pending");
+                cmd.Parameters.AddWithValue("@5", quantity);
+                cmd.Parameters.AddWithValue("@6", totalPrice);  
+                cmd.Parameters.AddWithValue("@7", itemPrice);     
+                cmd.Parameters.AddWithValue("@8", guestName);
 
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
-        }
-
-        protected void croissantCartBtn_Click(object sender, EventArgs e)
-        {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/croissant.jpg";
-            string itemName = croissantItem.Text;
-            string currencyPrice = croissantCurrencyPrice.Text;
-            string itemPrice = croissantPrice.Text;
-            int quantity = int.Parse(croissantQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
-
-            var cartItem = new CartItem
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
             {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
-
-            var cartItems = (List<CartItem>)Session["CartItems"];
-
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
+                Console.WriteLine(e.Message);
+            }
         }
 
-        protected void tapsilogCartBtn_Click(object sender, EventArgs e)
+        protected void cancelBtn_Click(object sender, EventArgs e)
         {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/Tapsilog.jpg";
-            string itemName = tapsilogItem.Text;
-            string currencyPrice = tapsilogCurrencyPrice.Text;
-            string itemPrice = tapsilogPrice.Text;
-            int quantity = int.Parse(tapsilogQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
-
-            var cartItem = new CartItem
-            {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
-
-            var cartItems = (List<CartItem>)Session["CartItems"];
-
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
-        }
-
-        protected void beefSteakCartBtn_Click(object sender, EventArgs e)
-        {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/beefsteak.jpg";
-            string itemName = beefSteakItem.Text;
-            string currencyPrice = beefSteakCurrencyPrice.Text;
-            string itemPrice = beefSteakPrice.Text;
-            int quantity = int.Parse(beefSteakQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
-
-            var cartItem = new CartItem
-            {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
-
-            var cartItems = (List<CartItem>)Session["CartItems"];
-
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
-        }
-
-        protected void plainRiceCartBtn_Click(object sender, EventArgs e)
-        {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/plainrice.jpg";
-            string itemName = plainRiceItem.Text;
-            string currencyPrice = plainRiceCurrencyPrice.Text;
-            string itemPrice = plainRicePrice.Text;
-            int quantity = int.Parse(plainRiceQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
-
-            var cartItem = new CartItem
-            {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
-
-            var cartItems = (List<CartItem>)Session["CartItems"];
-
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
-        }
-
-        protected void bottledWaterCartBtn_Click(object sender, EventArgs e)
-        {
-            string itemProduct = "CssFiles/Gallery/Food And Room Services Elements/Images/bottledwater.jpg";
-            string itemName = bottledWaterItem.Text;
-            string currencyPrice = bottledWaterCurrencyPrice.Text;
-            string itemPrice = bottledWaterPrice.Text;
-            int quantity = int.Parse(bottledWaterQuantity.Text);
-            decimal total = quantity * int.Parse(itemPrice);
-
-            var cartItem = new CartItem
-            {
-                ItemProduct = itemProduct,
-                ItemName = itemName,
-                CurrencyPrice = currencyPrice,
-                Price = itemPrice,
-                Quantity = quantity,
-                Total = total
-            };
-
-            var cartItems = (List<CartItem>)Session["CartItems"];
-
-            cartItems.Add(cartItem);
-
-            Session["CartItems"] = cartItems;
-        }
-
-        public class CartItem
-        {
-            public string ItemProduct {  get; set; }
-            public string ItemName { get; set; }
-            public string CurrencyPrice { get; set; }
-
-            public string Price { get; set; }
-
-            public int Quantity { get; set; }
-
-            public decimal Total { get; set; }
+            overlay.Visible = false;
+            orderedItemPanel.Visible = false;
         }
     }
 }

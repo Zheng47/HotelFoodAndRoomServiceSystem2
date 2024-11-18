@@ -189,6 +189,9 @@ namespace HotelFoodAndRoomServiceSystem
 
             overlay.Visible = false;
             orderedItemPanel.Visible = false;
+
+            overlay2.Visible = true;
+            confirmedOrderPanel.Visible = true;
         }
 
         private void insertOrderToDb(String itemName, String itemPrice, String quantity, String totalPrice, String guestName)
@@ -219,6 +222,12 @@ namespace HotelFoodAndRoomServiceSystem
         {
             overlay.Visible = false;
             orderedItemPanel.Visible = false;
+        }
+
+        protected void closeBtn_Click(object sender, EventArgs e)
+        {
+            overlay2.Visible = false;
+            confirmedOrderPanel.Visible = false;
         }
     }
 }

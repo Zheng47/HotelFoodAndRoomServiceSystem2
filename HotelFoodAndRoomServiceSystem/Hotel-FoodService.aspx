@@ -179,11 +179,17 @@
                         </div>
                     </div>
                 </asp:Panel>
-            </div>
+                <asp:Panel ID="confirmedOrderPanel" CssClass="textFont" runat="server" Visible="false">
+                    <asp:Label ID="orderRequestedLbl" runat="server" Text=" ORDER HAS BEEN REQUESTED!" />
+                    <asp:Button ID="closeBtn" runat="server" Text="CLOSE" OnClick="closeBtn_Click" />
+                </asp:Panel>
+            </div> 
         </div>
         
         <%-- DIM AND LOCK THE BACKGROUND TO POPUP PANEL --%>
         <asp:Panel ID="overlay" runat="server" CssClass="overlay" Visible="false" />
+
+        <asp:Panel ID="overlay2" runat="server" CssClass="overlay2" Visible="false" />
 
         <footer>
             <asp:Label ID="hotelNameFooter" CssClass="textFont" runat="server" Text="H+ HOTEL" />

@@ -162,5 +162,23 @@ namespace HotelFoodAndRoomServiceSystem
                 Console.WriteLine(e.Message);
             }
         }
+
+        protected void foodServiceRefreshBtn_Click(object sender, EventArgs e)
+        {
+            foodServiceRefreshDeleteLayout.Visible = true;
+            roomServiceRefreshDeleteLayout.Visible = false;
+
+            String guestName = Session["Username"].ToString();
+            retrieveGuestFoodHistory(guestName);
+        }
+
+        protected void roomServiceRefreshBtn_Click(object sender, EventArgs e)
+        {
+            foodServiceRefreshDeleteLayout.Visible = false;
+            roomServiceRefreshDeleteLayout.Visible = true;
+
+            String guestName = Session["Username"].ToString();
+            retrieveGuestRoomServiceHistory(guestName);
+        }
     }
 }

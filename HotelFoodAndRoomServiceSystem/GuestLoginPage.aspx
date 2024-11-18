@@ -33,7 +33,6 @@
                             <asp:Button ID="adminLoginBtn" runat="server" Text="Login as Admin?" onclick="adminLoginBtn_Click" />
                         </div>
                     <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
-
                 </div>
             </div>
 

@@ -645,6 +645,33 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Button cancelBtn;
 
         /// <summary>
+        /// confirmedOrderPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel confirmedOrderPanel;
+
+        /// <summary>
+        /// orderRequestedLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label orderRequestedLbl;
+
+        /// <summary>
+        /// closeBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button closeBtn;
+
+        /// <summary>
         /// overlay control.
         /// </summary>
         /// <remarks>
@@ -652,6 +679,15 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel overlay;
+
+        /// <summary>
+        /// overlay2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel overlay2;
 
         /// <summary>
         /// hotelNameFooter control.

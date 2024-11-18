@@ -165,6 +165,7 @@ namespace HotelFoodAndRoomServiceSystem
         protected void serviceRequestBtn_Click(object sender, EventArgs e)
         {
             ShowOnlyServiceRequestPanel();
+            retrieveFoodServiceRequest();
         }
 
         protected void maintenanceRequestBtn_Click(object sender, EventArgs e)
@@ -233,6 +234,64 @@ namespace HotelFoodAndRoomServiceSystem
             maintenanceRequestPanel.Style["display"] = "block";
         }
 
+        //RETRIEVING GUEST FOOD SERVICE REQUEST 
+        
+        private void retrieveFoodServiceRequest()
+        {
+            try
+            {
+                String retrieveFoodServiceRequestQuery = "SELECT * FROM guestfoodservicehistory";
+                MySqlCommand cmd = new MySqlCommand(retrieveFoodServiceRequestQuery, dbconn);
+
+
+                MySqlDataAdapter dataAdapate = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                dataAdapate.Fill(dataTable);
+
+                StringBuilder divHtml = new StringBuilder();
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    divHtml.Append("<div class='requestTable'>");
+
+                    divHtml.Append("<div id='foodRequestTableContent1' class='foodRequestTableContent foodRequestTableText textFont2'> ");
+                    divHtml.Append($"<div id='foodOrderIdLbl'>{"ORDER ID: " + row["order_id"]}</div>");
+                    divHtml.Append($"<div id='foodRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='foodRequestTableContent foodRequestTableText textFont2'>");
+                    divHtml.Append($"<div id='foodGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='requestTableContent2 textFont'>");
+                    divHtml.Append($"<div id='foodItemNameLbl'>{row["item_ordered"] + " " + "(" + row["quantity"] + ")"}</div>");
+                    divHtml.Append($"<div id='foodPriceLbl'>{"ITEM PRICE: ₱" + row["item_price"]}</div>");
+                    divHtml.Append($"<div id='foodTotalPriceLbl'>{"TOTAL: ₱" + row["total_price"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='foodRequestTableContent textFont2'>");
+                    divHtml.Append($"<div id='foodAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
+                    divHtml.Append($"<div id='foodRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='requestTableContent3 textFont2'>");
+                    DateTime requestDate = Convert.ToDateTime(row["order_date"]);
+                    divHtml.Append($"<div id='foodRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("</div>");
+
+                    foodRequestData.Text = divHtml.ToString();
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+
+        //RETRIEVING GUEST MAINTENANCE REQUEST
         private void retrieveMaintenanceRequest()
         {
             try
@@ -267,7 +326,6 @@ namespace HotelFoodAndRoomServiceSystem
 
                     divHtml.Append("<div class='requestTableContent textFont2'>");
                     divHtml.Append($"<div id='assignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-
                     divHtml.Append("</div>");
 
                     divHtml.Append("<div class='requestTableContent3 textFont2'>");
@@ -287,6 +345,8 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
+
+        //ASSIGNING EMPLOYEE FOR THE MAINTENANCE REQUEST
         protected void assignBtn_Clicked (object sender,EventArgs e)
         {
             overlay2.Visible = true;
@@ -298,7 +358,7 @@ namespace HotelFoodAndRoomServiceSystem
             String taskID = taskIdTxtBox.Text.ToString();
             String assignedEmployee = employeeNameTxtBox.Text.ToString();
 
-            assignEmployeeTask(taskID, assignedEmployee);
+            assignEmployeeTaskToMaintenanceRequest(taskID, assignedEmployee);
 
             overlay2.Visible = false;
             assignStaffPanel.Visible = false;
@@ -314,7 +374,7 @@ namespace HotelFoodAndRoomServiceSystem
 
 
         // ASSIGN TASK FOR EMPLOYEE
-        private void assignEmployeeTask (String taskID,String assignedEmployee)
+        private void assignEmployeeTaskToMaintenanceRequest (String taskID,String assignedEmployee)
         {
             try
             {

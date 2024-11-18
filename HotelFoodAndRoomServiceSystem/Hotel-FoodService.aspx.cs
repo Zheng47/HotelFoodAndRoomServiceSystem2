@@ -184,8 +184,9 @@ namespace HotelFoodAndRoomServiceSystem
             String quantity = itemQuantityLbl.Text;
             String totalPrice = totalPriceLbl.Text;
             String guestName = Session["Username"].ToString();
+            String roomNumber = Session["RoomNumber"].ToString();
 
-            insertOrderToDb(itemName, itemPrice, quantity, totalPrice, guestName);
+            insertOrderToDb(itemName, itemPrice, quantity, totalPrice, guestName, roomNumber);
 
             overlay.Visible = false;
             orderedItemPanel.Visible = false;
@@ -194,11 +195,11 @@ namespace HotelFoodAndRoomServiceSystem
             confirmedOrderPanel.Visible = true;
         }
 
-        private void insertOrderToDb(String itemName, String itemPrice, String quantity, String totalPrice, String guestName)
+        private void insertOrderToDb(String itemName, String itemPrice, String quantity, String totalPrice, String guestName, String roomNumber)
         {
             try
             {
-                String insertOrder = "INSERT INTO guestfoodservicehistory(order_id, order_date, item_ordered, status, quantity, total_price, item_price, guest_name) VALUES(@1, @2, @3, @4, @5, @6, @7, @8)";
+                String insertOrder = "INSERT INTO guestfoodservicehistory(order_id, order_date, item_ordered, status, quantity, total_price, item_price, guest_name, room_number) VALUES(@1, @2, @3, @4, @5, @6, @7, @8, @9)";
                 MySqlCommand cmd = new MySqlCommand(insertOrder, dbconn);
 
                 cmd.Parameters.AddWithValue("@1", Guid.NewGuid());
@@ -209,6 +210,7 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@6", totalPrice);  
                 cmd.Parameters.AddWithValue("@7", itemPrice);     
                 cmd.Parameters.AddWithValue("@8", guestName);
+                cmd.Parameters.AddWithValue("@9", roomNumber);
 
                 cmd.ExecuteNonQuery();
             }

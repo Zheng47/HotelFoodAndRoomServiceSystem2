@@ -285,24 +285,6 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label taskBoardLbl;
 
         /// <summary>
-        /// toDoTaskBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button toDoTaskBtn;
-
-        /// <summary>
-        /// toDoCountLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label toDoCountLbl;
-
-        /// <summary>
         /// foodAndBeveragesTaskBtn control.
         /// </summary>
         /// <remarks>
@@ -373,6 +355,24 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label completedCountLbl;
+
+        /// <summary>
+        /// foodServiceRequestPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel foodServiceRequestPanel;
+
+        /// <summary>
+        /// foodRequestData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal foodRequestData;
 
         /// <summary>
         /// maintenanceRequestPanel control.

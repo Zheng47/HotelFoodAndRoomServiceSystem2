@@ -45,7 +45,7 @@
                 </div>
             </asp:Panel>
 
-
+            <%-- DASHBOARD PANEL --%>
             <div id="dashboardPanel" runat="server">
                 <asp:Label ID="overviewLbl" runat="server">Overview</asp:Label>
                 <div class="lineDesign"></div>
@@ -78,13 +78,11 @@
                     <asp:Button ID="refreshBtn" runat="server" Text="Refresh" Onclick="refreshBtn_Click"/>
             </div>
 
-
+            <%-- SERVICE REQUEST PANEL --%>
            <div id="serviceRequestPanel" runat="server">
                <asp:Label ID="taskBoardLbl" runat="server" Text="Task Board" />
                <div class="lineDesign"></div>
                    <div id="taskBoardStatusLayout">
-                       <asp:Button ID="toDoTaskBtn" CssClass="taskStatusButtons" runat="server" Text="To-Do"/>
-                       <asp:Label ID="toDoCountLbl" class="taskStatusCount" runat="server" Text="0"/>
                        <asp:Button ID="foodAndBeveragesTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food And Beverages" />
                        <asp:Label ID="foodAndBeveragesCountLbl" class="taskStatusCount" runat="server" Text="0" />
                        <asp:Button ID="roomServiceTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service" />
@@ -94,8 +92,13 @@
                        <asp:Button ID="completedTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Completed" />
                        <asp:Label ID="completedCountLbl" class="taskStatusCount" runat="server" Text="0" />
                    </div>
+
+                   <asp:Panel ID="foodServiceRequestPanel" runat="server" Visible="true">
+                        <asp:Literal ID="foodRequestData" runat="server"></asp:Literal>
+                   </asp:Panel>
            </div>
 
+            <%-- MAINTENANCE REQUEST PANEL --%>
             <div id="maintenanceRequestPanel" runat="server" >
                 <asp:Label ID="maintenanceRequestLbl" runat="server" Text="Maintenance Request" />
                 <div class="lineDesign"></div>
@@ -107,6 +110,7 @@
                 <asp:Button ID="assignBtn" CssClass="assignBtn" runat="server" Text="ASSIGN" OnClick="assignBtn_Clicked" />
                 <asp:Panel ID="overlay2" CssClass="overlay" runat="server" Visible="false"></asp:Panel>
 
+                <%-- FOR ASSIGNING EMPLOYEE IN MAINTENANCE REQUEST --%>
                 <asp:Panel ID="assignStaffPanel" runat="server" Visible="false">
                     <div class="assignStaffContent textFont2">
                         <asp:Label ID="taskIdText" runat="server" Text="TASK ID:" />

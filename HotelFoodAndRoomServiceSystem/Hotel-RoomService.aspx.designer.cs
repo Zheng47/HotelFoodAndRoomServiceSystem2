@@ -159,13 +159,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Panel laundryAndDryCleaningServicesPanel;
 
         /// <summary>
-        /// dryCleaning control.
+        /// dryCleaningLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dryCleaning;
+        protected global::System.Web.UI.WebControls.Label dryCleaningLbl;
 
         /// <summary>
         /// dryCleaningDescription control.
@@ -483,22 +483,22 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.TextBox guestNameTxtBox;
 
         /// <summary>
-        /// kgLbl control.
+        /// amountLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kgLbl;
+        protected global::System.Web.UI.WebControls.Label amountLbl;
 
         /// <summary>
-        /// kgTxtBox control.
+        /// amountTxtBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox kgTxtBox;
+        protected global::System.Web.UI.WebControls.TextBox amountTxtBox;
 
         /// <summary>
         /// serviceDescriptionLbl control.
@@ -508,6 +508,42 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label serviceDescriptionLbl;
+
+        /// <summary>
+        /// serviceDescriptionTxtBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox serviceDescriptionTxtBox;
+
+        /// <summary>
+        /// servicePriceCurrencyLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label servicePriceCurrencyLbl;
+
+        /// <summary>
+        /// roomServicePrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label roomServicePrice;
+
+        /// <summary>
+        /// requestBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button requestBtn;
 
         /// <summary>
         /// hotelNameFooter control.

@@ -59,7 +59,7 @@
         <%-- LAUNDRY AND DRY CLEANING CONTENT --%>
         <asp:Panel id="laundryAndDryCleaningServicesPanel" runat="server" CssClass="mainContainer" Visible="false">
             <div class="laundryContent textFont textColor">
-                <asp:Label ID="dryCleaning" CssClass="laundryContentTitle" runat="server" Text="DRY CLEANING" />
+                <asp:Label ID="dryCleaningLbl" CssClass="laundryContentTitle" runat="server" Text="DRY CLEANING" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/DRY%20CLEANING.jpg" class="laundryContentImgLayout"/>
                 <asp:Label ID="dryCleaningDescription" CssClass="laundryContentDescription" runat="server" Text="We provide expert dry cleaning services for your clothing at incredibly low costs." />
                 <asp:Button ID="dryCleaningBtn" CssClass="laundryContentBtn" runat="server" Text="Inquire" OnClick="dryCleaningBtn_Click" />
@@ -68,13 +68,13 @@
                 <asp:Label ID="washLbl" CssClass="laundryContentTitle" runat="server" Text="WASH" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/WASH.jpg" class="laundryContentImgLayout" />
                 <asp:Label ID="washDescripton" CssClass="laundryContentDescription" runat="server" Text="You'll love our services because we'll wash your clothes and deliver them right to your door." />
-                <asp:Button ID="washBtn" CssClass="laundryContentBtn" runat="server" Text="Inquire" />
+                <asp:Button ID="washBtn" CssClass="laundryContentBtn" runat="server" Text="Inquire" OnClick="washBtn_Click" />
             </div>
             <div class="laundryContent textFont textColor">
                 <asp:Label ID="steamIronLbl" CssClass="laundryContentTitle" runat="server" Text="STEAM IRON" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/STEAM%20IRON.jpg" class="laundryContentImgLayout" />
                 <asp:Label ID="steamIronDescription" CssClass="laundryContentDescription" runat="server" Text="You'll love our services because we'll wash your clothes and deliver them right to your door." />
-                <asp:Button ID="steamIronBtn" CssClass="laundryContentBtn" runat="server" Text="Inquire" />
+                <asp:Button ID="steamIronBtn" CssClass="laundryContentBtn" runat="server" Text="Inquire" OnClick="steamIronBtn_Click" />
             </div>
         </asp:Panel>
 
@@ -84,19 +84,19 @@
                 <asp:Label ID="spaPedicureLbl" CssClass="spaServiceContentTitle" runat="server" Text="SPA PEDICURE" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/SPA%20PEDICURE.jpg" class="spaServiceContentImgLayout" />
                 <asp:Label ID="spaPedicureDescription" CssClass="spaServiceContentDescription" runat="server" Text="We provide expert dry cleaning services for your clothing at incredibly low costs." />
-                <asp:Button ID="spaPedicureBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" />
+                <asp:Button ID="spaPedicureBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" OnClick="spaPedicureBtn_Click" />
             </div>
             <div class="spaServiceContent textFont textColor">
                 <asp:Label ID="spaManicureLbl" CssClass="spaServiceContentTitle" runat="server" Text="SPA MANICURE" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/SPA%20MANICURE.jpg" class="spaServiceContentImgLayout" />
                 <asp:Label ID="spaManicureDescription" CssClass="spaServiceContentDescription" runat="server" Text="You'll love our services because we'll wash your clothes and deliver them right to your door." />
-                <asp:Button ID="spaManicureBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" />
+                <asp:Button ID="spaManicureBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" OnClick="spaManicureBtn_Click" />
             </div>
             <div class="spaServiceContent textFont textColor">
                 <asp:Label ID="deepCleansingLbl" CssClass="spaServiceContentTitle" runat="server" Text="DEEP CLEANSING FACIAL SPA" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/DEEP%20CLEANSING.jpg" class="spaServiceContentImgLayout" />
                 <asp:Label ID="deepCleansingDescription" CssClass="spaServiceContentDescription" runat="server" Text="You'll love our services because we'll wash your clothes and deliver them right to your door." />
-                <asp:Button ID="deepCleansingBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" />
+                <asp:Button ID="deepCleansingBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" OnClick="deepCleansingBtn_Click" />
             </div>
         </asp:Panel>
 
@@ -122,25 +122,30 @@
         <asp:Panel ID="inquireForm" CssClass="inquireForm textFont" runat="server" Visible="false">
             <div id="inquireFormHeader">
                 <asp:Label ID="roomServiceFormLbl" runat="server" Text="Room Service Fill Up Form" />
-                <asp:Button ID="closeFormBtn" runat="server" Text="X" />
+                <asp:Button ID="closeFormBtn" runat="server" Text="X" OnClick="closeFormBtn_Click" />
             </div>
             <div id="inquireFormContent">
                 <div class="inquireFormContent2">
                     <asp:Label ID="roomNumberLbl" CssClass="formContentText" runat="server" Text="Room Number*" />
-                    <asp:TextBox ID="roomNumberTxtBox" CssClass="formContentTxtBox" runat="server" TextMode="Number" Placeholder="Enter Room Number" />
+                    <asp:TextBox ID="roomNumberTxtBox" CssClass="formContentTxtBox" runat="server" ReadOnly="true" TextMode="Number" Placeholder="Enter Room Number" />
                     <asp:Label ID="roomServiceTypeLbl" CssClass="formContentText" runat="server" Text="Room Service Type*" />
-                    <asp:TextBox ID="roomServiceTypeTxtBox" CssClass="formContentTxtBox" runat="server" Placeholder="Enter Room Service Type" />                    
+                    <asp:TextBox ID="roomServiceTypeTxtBox" CssClass="formContentTxtBox" ReadOnly="true" runat="server" Placeholder="Enter Room Service Type" />                    
                 </div>
                 <div class="inquireFormContent2">
                     <asp:Label ID="guestNameLbl" CssClass="formContentText" runat="server" Text="Guest Name*" />
                     <asp:TextBox ID="guestNameTxtBox" CssClass="formContentTxtBox" runat="server" ReadOnly="true" />
-                    <asp:Label ID="kgLbl" CssClass="formContentText" runat="server" Text="How many KG*" />
-                    <asp:TextBox ID="kgTxtBox" CssClass="formContentTxtBox" runat="server" TextMode="Number" Placeholder="Minimum 1kg" />   
+                    <asp:Label ID="amountLbl" CssClass="formContentText" runat="server" Text="How many KG*" />
+                    <asp:TextBox ID="amountTxtBox" CssClass="formContentTxtBox" runat="server" TextMode="Number" Placeholder="₱50 per 1kg (Minimum 1kg)" />   
                 </div>
             </div>
             <asp:Label ID="serviceDescriptionLbl" runat="server" Text="Room Service Description*" />
+            <asp:TextBox ID="serviceDescriptionTxtBox" runat="server" TextMode="MultiLine"  Placeholder="Enter Room Service Description" />
+            <div id="requestBtnLayout">
+                <asp:Label ID="servicePriceCurrencyLbl" runat="server" Text="Service Price: ₱" />
+                <asp:Label ID="roomServicePrice" runat="server" Text="0" />
+               <asp:Button ID="requestBtn" runat="server" Text="REQUEST" OnClick="requestBtn_Click" />
+            </div>
         </asp:Panel>
-
 
         <footer id="footer" class="textFont">
             <asp:Label ID="hotelNameFooter" runat="server" Text="H+ HOTEL" />

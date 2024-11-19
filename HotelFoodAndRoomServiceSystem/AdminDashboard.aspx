@@ -164,8 +164,8 @@
                         <asp:TextBox ID="taskIdTxtBox" TextMode="Number" runat="server" Placeholder="Enter Task ID" />
                     </div>
                     <div class="assignStaffContent textFont2">
-                        <asp:Label ID="employeeNameText" runat="server" Text="EMPLOYEE NAME: "/>
-                        <asp:TextBox ID="employeeNameTxtBox"  runat="server" Placeholder="Enter employee name (LN, FN MN)" />
+                        <asp:Label ID="employeeIdText" runat="server" Text="EMPLOYEE ID: "/>
+                        <asp:TextBox ID="employeeIdTxtBox"  runat="server" Placeholder="Enter Employee ID" />
                     </div>
                     <div class="assignStaffBtnLayout textFont">
                         <asp:Button ID="assignEmployeeBtn" runat="server" Text="ASSIGN" OnClick="assignEmployeeBtn_Click" />

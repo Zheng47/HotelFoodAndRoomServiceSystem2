@@ -104,13 +104,14 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String submitMaintenanceRequest = "INSERT INTO maintenancerequest(room_number, guest_name, issue_title, issue_description) VALUES(@1, @2, @3, @4)";
+                String submitMaintenanceRequest = "INSERT INTO maintenancerequest(room_number, guest_name, issue_title, issue_description, status) VALUES(@1, @2, @3, @4, @5)";
                 MySqlCommand cmd = new MySqlCommand(submitMaintenanceRequest, dbconn);
 
                 cmd.Parameters.AddWithValue("@1", roomNumber);
                 cmd.Parameters.AddWithValue("@2", guestName);
                 cmd.Parameters.AddWithValue("@3", issueTitle);
                 cmd.Parameters.AddWithValue("@4", issueDescription);
+                cmd.Parameters.AddWithValue("@5", "Pending");
                
                 int rowInserted = cmd.ExecuteNonQuery();
 

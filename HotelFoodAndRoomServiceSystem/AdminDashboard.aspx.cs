@@ -308,7 +308,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveFoodServiceRequestQuery = "SELECT * FROM guestfoodservicehistory";
+                String retrieveFoodServiceRequestQuery = "SELECT * FROM guestfoodservicehistory WHERE status = 'Pending'";
                 MySqlCommand cmd = new MySqlCommand(retrieveFoodServiceRequestQuery, dbconn);
 
 
@@ -320,39 +320,36 @@ namespace HotelFoodAndRoomServiceSystem
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    if (row["status"].Equals("Pending"))
-                    {
-                        divHtml.Append("<div class='foodRequestTable'>");
+                    divHtml.Append("<div class='foodRequestTable'>");
 
-                        divHtml.Append("<div id='foodRequestTableContent1' class='foodRequestTableContent foodRequestTableText textFont2'> ");
-                        divHtml.Append($"<div id='foodOrderIdLbl'>{"ORDER ID: " + row["order_id"]}</div>");
-                        divHtml.Append($"<div id='foodRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
-                        divHtml.Append("</div>");
+                    divHtml.Append("<div id='foodRequestTableContent1' class='foodRequestTableContent foodRequestTableText textFont2'> ");
+                    divHtml.Append($"<div id='foodOrderIdLbl'>{"ORDER ID: " + row["order_id"]}</div>");
+                    divHtml.Append($"<div id='foodRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
+                    divHtml.Append("</div>");
 
-                        divHtml.Append("<div class='foodRequestTableContent foodRequestTableText textFont2'>");
-                        divHtml.Append($"<div id='foodGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
-                        divHtml.Append("</div>");
+                    divHtml.Append("<div class='foodRequestTableContent foodRequestTableText textFont2'>");
+                    divHtml.Append($"<div id='foodGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
+                    divHtml.Append("</div>");
 
-                        divHtml.Append("<div class='requestTableContent2 textFont'>");
-                        divHtml.Append($"<div id='foodItemNameLbl'>{row["item_ordered"] + " " + "(" + row["quantity"] + ")"}</div>");
-                        divHtml.Append($"<div id='foodPriceLbl'>{"ITEM PRICE: ₱" + row["item_price"]}</div>");
-                        divHtml.Append($"<div id='foodTotalPriceLbl'>{"TOTAL: ₱" + row["total_price"]}</div>");
-                        divHtml.Append("</div>");
+                    divHtml.Append("<div class='requestTableContent2 textFont'>");
+                    divHtml.Append($"<div id='foodItemNameLbl'>{row["item_ordered"] + " " + "(" + row["quantity"] + ")"}</div>");
+                    divHtml.Append($"<div id='foodPriceLbl'>{"ITEM PRICE: ₱" + row["item_price"]}</div>");
+                    divHtml.Append($"<div id='foodTotalPriceLbl'>{"TOTAL: ₱" + row["total_price"]}</div>");
+                    divHtml.Append("</div>");
 
-                        divHtml.Append("<div class='foodRequestTableContent textFont2'>");
-                        divHtml.Append($"<div id='foodAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                        divHtml.Append($"<div id='foodRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
-                        divHtml.Append("</div>");
+                    divHtml.Append("<div class='foodRequestTableContent textFont2'>");
+                    divHtml.Append($"<div id='foodAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
+                    divHtml.Append("</div>");
 
-                        divHtml.Append("<div class='requestTableContent3 textFont2'>");
-                        DateTime requestDate = Convert.ToDateTime(row["order_date"]);
-                        divHtml.Append($"<div id='foodRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
-                        divHtml.Append("</div>");
+                    divHtml.Append("<div class='requestTableContent3 textFont2'>");
+                    DateTime requestDate = Convert.ToDateTime(row["order_date"]);
+                    divHtml.Append($"<div id='foodRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                    divHtml.Append($"<div id='foodRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
+                    divHtml.Append("</div>");
 
-                        divHtml.Append("</div>");
+                    divHtml.Append("</div>");
 
-                        foodRequestData.Text = divHtml.ToString();
-                    }
+                    foodRequestData.Text = divHtml.ToString();
                 }
             }
             catch (MySqlException e)
@@ -402,7 +399,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveRoomServiceRequestQuery = "SELECT * FROM guestroomservicehistory";
+                String retrieveRoomServiceRequestQuery = "SELECT * FROM guestroomservicehistory WHERE status = 'Pending'";
                 MySqlCommand cmd = new MySqlCommand(retrieveRoomServiceRequestQuery, dbconn);
                 MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -412,75 +409,72 @@ namespace HotelFoodAndRoomServiceSystem
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    if (row["status"].Equals("Pending"))
+                    if (row["service_type"].Equals("DRY CLEANING") || row["service_type"].Equals("WASH") || row["service_type"].Equals("STEAM IRON"))
                     {
-                        if (row["service_type"].Equals("DRY CLEANING") || row["service_type"].Equals("WASH") || row["service_type"].Equals("STEAM IRON"))
-                        {
-                            divHtml.Append("<div class='roomRequestTable'>");
+                        divHtml.Append("<div class='roomRequestTable'>");
 
-                            divHtml.Append("<div id='roomRequestTableContent1' class='roomRequestTableContent roomRequestTableText textFont2'> ");
-                            divHtml.Append($"<div id='roomRequestIdLbl'>{"REQUEST ID: " + row["request_id"]}</div>");
-                            divHtml.Append($"<div id='roomRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div id='roomRequestTableContent1' class='roomRequestTableContent roomRequestTableText textFont2'> ");
+                        divHtml.Append($"<div id='roomRequestIdLbl'>{"REQUEST ID: " + row["request_id"]}</div>");
+                        divHtml.Append($"<div id='roomRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='roomRequestTableContent roomRequestTableText textFont2'>");
-                            divHtml.Append($"<div id='roomGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='roomRequestTableContent roomRequestTableText textFont2'>");
+                        divHtml.Append($"<div id='roomGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='requestTableContent2 textFont'>");
-                            divHtml.Append($"<div id='roomServiceNameLbl'>{row["service_type"] + " " + "(" + row["quantity"] + "kg" + ")"}</div>");
-                            divHtml.Append($"<div id='roomPriceLbl'>{"SERVICE PRICE: ₱" + row["service_price"] + " per kg"}</div>");
-                            divHtml.Append($"<div id='roomTotalPriceLbl'>{"TOTAL: ₱" + row["total_charges"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='requestTableContent2 textFont'>");
+                        divHtml.Append($"<div id='roomServiceNameLbl'>{row["service_type"] + " " + "(" + row["quantity"] + "kg" + ")"}</div>");
+                        divHtml.Append($"<div id='roomPriceLbl'>{"SERVICE PRICE: ₱" + row["service_price"] + " per kg"}</div>");
+                        divHtml.Append($"<div id='roomTotalPriceLbl'>{"TOTAL: ₱" + row["total_charges"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='roomRequestTableContent textFont2'>");
-                            divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                            divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='roomRequestTableContent textFont2'>");
+                        divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='requestTableContent3 textFont2'>");
-                            DateTime requestDate = Convert.ToDateTime(row["request_date"]);
-                            divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='requestTableContent3 textFont2'>");
+                        DateTime requestDate = Convert.ToDateTime(row["request_date"]);
+                        divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("</div>");
+                        divHtml.Append("</div>");
 
-                            roomServiceRequestData.Text = divHtml.ToString();
+                        roomServiceRequestData.Text = divHtml.ToString();
 
-                        }
-                        else if (row["service_type"].Equals("SPA PEDICURE") || row["service_type"].Equals("SPA MANICURE") || row["service_type"].Equals("DEEP CLEANSING FACIAL SPA"))
-                        {
-                            divHtml.Append("<div class='roomRequestTable'>");
+                    }
+                    else if (row["service_type"].Equals("SPA PEDICURE") || row["service_type"].Equals("SPA MANICURE") || row["service_type"].Equals("DEEP CLEANSING FACIAL SPA"))
+                    {
+                        divHtml.Append("<div class='roomRequestTable'>");
 
-                            divHtml.Append("<div id='roomRequestTableContent1' class='roomRequestTableContent roomRequestTableText textFont2'> ");
-                            divHtml.Append($"<div id='roomRequestIdLbl'>{"REQUEST ID: " + row["request_id"]}</div>");
-                            divHtml.Append($"<div id='roomRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div id='roomRequestTableContent1' class='roomRequestTableContent roomRequestTableText textFont2'> ");
+                        divHtml.Append($"<div id='roomRequestIdLbl'>{"REQUEST ID: " + row["request_id"]}</div>");
+                        divHtml.Append($"<div id='roomRoomNumLbl'>{"ROOM # " + row["room_number"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='roomRequestTableContent roomRequestTableText textFont2'>");
-                            divHtml.Append($"<div id='roomGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='roomRequestTableContent roomRequestTableText textFont2'>");
+                        divHtml.Append($"<div id='roomGuestNameLbl'>{"GUEST NAME: " + row["guest_name"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='requestTableContent2 textFont'>");
-                            divHtml.Append($"<div id='roomServiceNameLbl'>{row["service_type"] + " " + "(" + row["quantity"] + ")"}</div>");
-                            divHtml.Append($"<div id='roomPriceLbl'>{"SERVICE PRICE: ₱" + row["service_price"] + " per guest"}</div>");
-                            divHtml.Append($"<div id='roomTotalPriceLbl'>{"TOTAL: ₱" + row["total_charges"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='requestTableContent2 textFont'>");
+                        divHtml.Append($"<div id='roomServiceNameLbl'>{row["service_type"] + " " + "(" + row["quantity"] + ")"}</div>");
+                        divHtml.Append($"<div id='roomPriceLbl'>{"SERVICE PRICE: ₱" + row["service_price"] + " per guest"}</div>");
+                        divHtml.Append($"<div id='roomTotalPriceLbl'>{"TOTAL: ₱" + row["total_charges"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='roomRequestTableContent textFont2'>");
-                            divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                            divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='roomRequestTableContent textFont2'>");
+                        divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("<div class='requestTableContent3 textFont2'>");
-                            DateTime requestDate = Convert.ToDateTime(row["request_date"]);
-                            divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
-                            divHtml.Append("</div>");
+                        divHtml.Append("<div class='requestTableContent3 textFont2'>");
+                        DateTime requestDate = Convert.ToDateTime(row["request_date"]);
+                        divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
+                        divHtml.Append("</div>");
 
-                            divHtml.Append("</div>");
+                        divHtml.Append("</div>");
 
-                            roomServiceRequestData.Text = divHtml.ToString();
-                        }
+                        roomServiceRequestData.Text = divHtml.ToString();
                     }
                 }
             }
@@ -558,12 +552,12 @@ namespace HotelFoodAndRoomServiceSystem
 
                     divHtml.Append("<div class='foodRequestTableContent textFont2'>");
                     divHtml.Append($"<div id='foodAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                    divHtml.Append($"<div id='foodRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                     divHtml.Append("</div>");
 
                     divHtml.Append("<div class='requestTableContent3 textFont2'>");
                     DateTime requestDate = Convert.ToDateTime(row["order_date"]);
                     divHtml.Append($"<div id='foodRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                    divHtml.Append($"<div id='foodRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                     divHtml.Append("</div>");
 
                     divHtml.Append("</div>");
@@ -595,28 +589,11 @@ namespace HotelFoodAndRoomServiceSystem
 
         }
 
-        private void totalRoomServiceInProgress()
-        {
-            try
-            {
-                String retrieveTotalRoomService = "SELECT COUNT(*) FROM guestroomservicehistory WHERE status = 'In-Progress'";
-                MySqlCommand cmd = new MySqlCommand(retrieveTotalRoomService, dbconn);
-
-                object result = cmd.ExecuteScalar();
-                int totalRoomService = result != DBNull.Value ? Convert.ToInt32(result) : 0;
-                roominProgressCountLbl.Text = totalRoomService.ToString();
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
         private void retrieveInProgressRoomService()
         {
             try
             {
-                String retrieveRoomServiceRequestQuery = "SELECT * FROM guestroomservicehistory";
+                String retrieveRoomServiceRequestQuery = "SELECT * FROM guestroomservicehistory WHERE status = 'In-Progress'";
                 MySqlCommand cmd = new MySqlCommand(retrieveRoomServiceRequestQuery, dbconn);
                 MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -647,17 +624,17 @@ namespace HotelFoodAndRoomServiceSystem
 
                         divHtml.Append("<div class='roomRequestTableContent textFont2'>");
                         divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                         divHtml.Append("</div>");
 
                         divHtml.Append("<div class='requestTableContent3 textFont2'>");
                         DateTime requestDate = Convert.ToDateTime(row["request_date"]);
                         divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                         divHtml.Append("</div>");
 
                         divHtml.Append("</div>");
 
-                        roomServiceRequestData.Text = divHtml.ToString();
+                        roomInProgressRequestData.Text = divHtml.ToString();
 
                     }
                     else if (row["service_type"].Equals("SPA PEDICURE") || row["service_type"].Equals("SPA MANICURE") || row["service_type"].Equals("DEEP CLEANSING FACIAL SPA"))
@@ -681,12 +658,12 @@ namespace HotelFoodAndRoomServiceSystem
 
                         divHtml.Append("<div class='roomRequestTableContent textFont2'>");
                         divHtml.Append($"<div id='roomAssignedStaffLbl'>{"ASSIGNED EMPLOYEE: " + row["assigned_employee"]}</div>");
-                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                         divHtml.Append("</div>");
 
                         divHtml.Append("<div class='requestTableContent3 textFont2'>");
                         DateTime requestDate = Convert.ToDateTime(row["request_date"]);
                         divHtml.Append($"<div id='roomRequestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                        divHtml.Append($"<div id='roomRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                         divHtml.Append("</div>");
 
                         divHtml.Append("</div>");
@@ -702,6 +679,22 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
+        private void totalRoomServiceInProgress()
+        {
+            try
+            {
+                String retrieveTotalRoomService = "SELECT COUNT(*) FROM guestroomservicehistory WHERE status = 'In-Progress'";
+                MySqlCommand cmd = new MySqlCommand(retrieveTotalRoomService, dbconn);
+
+                object result = cmd.ExecuteScalar();
+                int totalRoomService = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                roominProgressCountLbl.Text = totalRoomService.ToString();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
 
         //ASSIGN EMPLOYEE IN SERVICE REQUEST
@@ -723,6 +716,14 @@ namespace HotelFoodAndRoomServiceSystem
             String employeeId = foodServiceEmployeeIdTxtBox.Text;
 
             assignEmployeeTaskToFoodServiceRequest(orderId, employeeId);
+
+            retrieveFoodServiceRequest();
+
+            retrieveTotalFoodServiceRequest();
+            totalFoodServiceInProgress();
+
+            overlay.Visible = false;
+            foodServiceAssignStaffPanel.Visible = false;
         }
 
         protected void cancelFoodServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
@@ -733,6 +734,16 @@ namespace HotelFoodAndRoomServiceSystem
 
         protected void roomServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
         {
+            String requestID = requestIdTxtBox.Text;
+            String assignedEmployee = roomServiceEmployeeIdTxtBox.Text;
+
+            assignEmployeeTaskToRoomServiceRequest(requestID, assignedEmployee);
+
+            retrieveTotalRoomServiceRequest();
+            totalRoomServiceInProgress();
+
+            overlay.Visible = false;
+            roomServiceAssignStaffPanel.Visible = false;
 
         }
 
@@ -787,6 +798,7 @@ namespace HotelFoodAndRoomServiceSystem
                     divHtml.Append("<div class='requestTableContent3 textFont2'>");
                     DateTime requestDate = Convert.ToDateTime(row["request_date"]);
                     divHtml.Append($"<div id='requestDateLbl'>{requestDate: yyyy-MM-dd HH-mm-ss}</div>");
+                    divHtml.Append($"<div id='maintenanceRequestStatusLbl'>{"STATUS: " + row["status"]}</div>");
                     divHtml.Append("</div>");
 
                     divHtml.Append("</div>");
@@ -812,9 +824,9 @@ namespace HotelFoodAndRoomServiceSystem
         protected void assignEmployeeBtn_Click(object sender, EventArgs e)
         {
             String taskID = taskIdTxtBox.Text.ToString();
-            String assignedEmployee = employeeNameTxtBox.Text.ToString();
+            String employeeID = employeeIdTxtBox.Text.ToString();
 
-            assignEmployeeTaskToMaintenanceRequest(taskID, assignedEmployee);
+            assignEmployeeTaskToMaintenanceRequest(taskID, employeeID);
 
             overlay2.Visible = false;
             assignStaffPanel.Visible = false;
@@ -830,33 +842,38 @@ namespace HotelFoodAndRoomServiceSystem
 
 
         // ASSIGN TASK FOR EMPLOYEE
-        private void assignEmployeeTaskToMaintenanceRequest (String taskID,String assignedEmployee)
+        private void assignEmployeeTaskToMaintenanceRequest (String taskID,String employeeID)
         {
             try
             {
+                String fullName = "";
+                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
+                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
+                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeID);
+                using (MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string lastName = reader["last_name"].ToString();
+                        string firstName = reader["first_name"].ToString();
+                        string middleName = reader["middle_name"].ToString();
+
+                        fullName = lastName + ", " + firstName + " " + middleName;
+                    }
+                }
+
                 //ASSIGN EMPLOYEE TO TASK
-                String assignEmployeeOnTask = "UPDATE maintenancerequest SET assigned_employee = @assignedEmployee WHERE task_id = @taskId";
+                String assignEmployeeOnTask = "UPDATE maintenancerequest SET assigned_employee = @assignedEmployee, status = @status WHERE task_id = @taskId";
                 MySqlCommand cmd = new MySqlCommand(assignEmployeeOnTask, dbconn);
-                cmd.Parameters.AddWithValue("@assignedEmployee", assignedEmployee);
+                cmd.Parameters.AddWithValue("@assignedEmployee", fullName);
+                cmd.Parameters.AddWithValue("@status", "In-Progress");
                 cmd.Parameters.AddWithValue("@taskId", taskID);
                 cmd.ExecuteNonQuery();
 
-                //SPLIT THE FULL NAME OF EMPLOYEE 
-                string[] nameParts = assignedEmployee.Split(',');
-                string lastName = nameParts[0].Trim();
-
-                string firstNameMiddleName = nameParts[1].Trim();
-                string[] nameSplit = firstNameMiddleName.Split(' ');
-
-                string firstName = nameSplit[0];
-                string middleName = string.Join(" ", nameSplit.Skip(1));
-
-                string updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE last_name = @lastName AND first_name = @firstName AND middle_name = @middleName";
-                MySqlCommand updateStatusCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
-                updateStatusCmd.Parameters.AddWithValue("@lastName", lastName);
-                updateStatusCmd.Parameters.AddWithValue("@firstName", firstName);
-                updateStatusCmd.Parameters.AddWithValue("@middleName", middleName);
-                updateStatusCmd.ExecuteNonQuery();
+                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
+                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
+                updateCmd.Parameters.AddWithValue("@employeeId", employeeID);
+                updateCmd.ExecuteNonQuery();
 
             }
             catch (MySqlException e)
@@ -869,9 +886,25 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
+                String fullName = "";
+                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
+                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
+                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                using (MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string lastName = reader["last_name"].ToString();
+                        string firstName = reader["first_name"].ToString();
+                        string middleName = reader["middle_name"].ToString();
+
+                        fullName = lastName + ", " + firstName + " " + middleName;
+                    }
+                }
+
                 String assignEmployee = "UPDATE guestfoodservicehistory SET assigned_employee = @assignedEmployee, status = @status WHERE order_id = @orderId";
                 MySqlCommand cmd = new MySqlCommand(assignEmployee, dbconn);
-                cmd.Parameters.AddWithValue("@assignedEmployee", employeeId);
+                cmd.Parameters.AddWithValue("@assignedEmployee", fullName);
                 cmd.Parameters.AddWithValue("@status", "In-Progress");
                 cmd.Parameters.AddWithValue("@orderId", orderId);
                 cmd.ExecuteNonQuery();
@@ -880,6 +913,7 @@ namespace HotelFoodAndRoomServiceSystem
                 MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
                 updateCmd.Parameters.AddWithValue("@employeeId", employeeId);
                 updateCmd.ExecuteNonQuery();
+
             }
             catch (MySqlException e)
             {
@@ -888,5 +922,44 @@ namespace HotelFoodAndRoomServiceSystem
 
         }
 
+        private void assignEmployeeTaskToRoomServiceRequest(String requestId, String employeeId)
+        {
+            try
+            {
+                String fullName = "";
+                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
+                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
+                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                using(MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
+                {
+                    if(reader.Read())
+                    {
+                        string lastName = reader["last_name"].ToString();
+                        string firstName = reader["first_name"].ToString();
+                        string middleName = reader["middle_name"].ToString();
+
+                        fullName = lastName + ", " + firstName + " " + middleName;
+                    }
+                }
+
+                String assignEmployee = "UPDATE guestroomservicehistory SET assigned_employee = @assignedEmployee, status = @status WHERE request_id = @requestId";
+                MySqlCommand cmd = new MySqlCommand(assignEmployee, dbconn);
+                cmd.Parameters.AddWithValue("@assignedEmployee", fullName);
+                cmd.Parameters.AddWithValue("@status", "In-Progress");
+                cmd.Parameters.AddWithValue("@requestId", requestId);
+                cmd.ExecuteNonQuery();
+
+                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
+                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
+                updateCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                updateCmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
     }
 }

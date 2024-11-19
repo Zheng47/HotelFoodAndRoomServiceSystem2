@@ -645,22 +645,22 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.TextBox taskIdTxtBox;
 
         /// <summary>
-        /// employeeNameText control.
+        /// employeeIdText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label employeeNameText;
+        protected global::System.Web.UI.WebControls.Label employeeIdText;
 
         /// <summary>
-        /// employeeNameTxtBox control.
+        /// employeeIdTxtBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox employeeNameTxtBox;
+        protected global::System.Web.UI.WebControls.TextBox employeeIdTxtBox;
 
         /// <summary>
         /// assignEmployeeBtn control.

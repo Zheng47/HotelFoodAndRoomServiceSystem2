@@ -1031,6 +1031,11 @@ body {
         overflow-y: auto;
     }
 
+    #maintenanceRequestStatusLbl {
+        font-size: 2vh;
+        margin: 0vh 2vw 0vh auto;
+    }
+
     #assignedStaffLbl {
         font-size: 2vh;
         margin: 0vh 0vw 0vh 1vw;
@@ -1093,13 +1098,13 @@ body {
 
     }
 
-    #employeeNameText {
+    #employeeIdText {
         font-size: 3vh;
         font-weight: bold;
         margin: 2vh 0vw 0vh 2vw;
     }
 
-    #employeeNameTxtBox {
+    #employeeIdTxtBox {
         height: 30%;
         width: 80%;
         margin: 1vh 0vw 0vh 2vw;

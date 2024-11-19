@@ -19,7 +19,7 @@
                 <div id="servicesSelection">
                     <asp:Button ID="dashboardBtn" runat="server" class="servicesButtons" Text="Dashboard" OnClick="dashboardBtn_Click" /> <br />
                     <asp:Button ID="serviceRequestBtn" runat="server" class="servicesButtons" Text="Service Request" OnClick="serviceRequestBtn_Click"/> <br />
-                    <asp:Button ID="inventoryBtn" runat="server" class="servicesButtons" Text="Inventory" /> <br />
+                    <asp:Button ID="inventoryBtn" runat="server" class="servicesButtons" Text="Inventory" OnClick="inventoryBtn_Click" /> <br />
                     <asp:Button ID="maintenanceRequestBtn" runat="server" class="servicesButtons" Text="Maintenance Request" OnClick="maintenanceRequestBtn_Click" />
 
                     <footer id="adminInfoContainer">
@@ -142,8 +142,67 @@
                         <asp:Button ID="cancelRoomServiceAssignEmployeeBtn" runat="server" Text="CANCEL" OnClick="cancelRoomServiceAssignEmployeeBtn_Click" />
                     </div>
                </asp:Panel>
-
            </div>
+
+            <%-- INVENTORY PANEL --%>
+            <div id="inventoryPanel" class="textFont" runat="server">
+                <asp:Label ID="allItemsLbl" runat="server" Text="All Items" />
+                <div class="lineDesign"></div>
+                <div id="inventoryContainer1">
+                    <asp:TextBox ID="searchItem" OnTextChanged="searchItem_TextChanged" AutoPostBack="True" runat="server" Placeholder="Search Item">
+                    </asp:TextBox>
+                    <asp:Button ID="addItemBtn" runat="server" Text="ADD ITEM" OnClick="addItemBtn_Click" />
+                </div>
+                <div id="inventoryContainer2">
+                    <div id="inventoryTable">
+                        <div class="inventoryRow">
+                            <div class="inventoryContent">
+                                <asp:Label ID="itemIdLbl" runat="server" Text="Item ID" />
+                            </div>
+                            <div class="inventoryContent">
+                                <asp:Label ID="itemImage" runat="server" Text="Image" />
+                            </div>
+                            <div class="inventoryContent">
+                                <asp:Label ID="itemNameLbl" runat="server" Text="Item Name" />
+                            </div>
+                            <div class="inventoryContent">
+                                <asp:Label ID="itemAmountLbl" runat="server" Text="Amount" />
+                            </div>
+                        </div>
+
+                        <asp:Literal ID="inventoryData" runat="server"></asp:Literal>
+                    </div>
+                    <asp:Button ID="refreshInventoryBtn" runat="server" Text="REFRESH" OnClick="refreshInventoryBtn_Click" />
+                </div>
+            </div>
+
+            <asp:Panel ID="addItemPanel" runat="server" Visible="false">
+                <div id="addItemContent">
+                    <div id="addItemContent1" class="textFont">
+                        <asp:Label ID="addNewItemLbl" runat="server" Text=" Add New Item" />
+                        <asp:Button ID="closeAddItemBtn" runat="server" Text="X" OnClick="closeAddItemBtn_Click" />
+                    </div>
+                    <div id="addItemContent2" class="textFont">
+                        <div class="addItemMainContent">
+                            <asp:Label ID="insertItemIdLbl" CssClass="addItemLbl" runat="server" Text="Item ID:" />
+                            <asp:TextBox ID="insertItemIdTxtBox" CssClass="addItemTxtBox" runat="server" TextMode="Number" Placeholder="Enter Item ID" />
+                            <asp:Label ID="insertItemImgLbl" CssClass="addItemLbl" runat="server" Text="Item Image:" />
+                            <asp:FileUpload ID="insertItemImgFile" runat="server" />
+                            <asp:Label ID="insertItemPriceLbl" CssClass="addItemLbl" runat="server" Text="Item Price:" />
+                            <asp:TextBox ID="insertItemPriceTxtBox" CssClass="addItemTxtBox" runat="server" TextMode="Number" Placeholder="Enter Item Price" />
+                        </div>
+                        <div class="addItemMainContent">
+                            <asp:Label ID="insertItemName" CssClass="addItemLbl" runat="server" Text="Item Name:" />
+                            <asp:TextBox ID="insertItemNameTxtBox" CssClass="addItemTxtBox" runat="server" Placeholder="Enter Item Name" />
+                            <asp:Label ID="insertAmountLbl" CssClass="addItemLbl" runat="server" Text="Amount:" />
+                            <asp:TextBox ID="insertAmountTxtBox" CssClass="addItemTxtBox" runat="server" TextMode="Number" Placeholder="Enter Amount" />
+                        </div>
+                    </div>
+                </div>
+                <div id="addItemBtnLayout">
+                    <asp:Button ID="addThisItemBtn" runat="server" Text="ADD ITEM" OnClick="addThisItemBtn_Click" />
+                </div>
+            </asp:Panel>
 
             <%-- MAINTENANCE REQUEST PANEL --%>
             <div id="maintenanceRequestPanel" runat="server" >

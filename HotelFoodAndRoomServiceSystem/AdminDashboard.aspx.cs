@@ -42,6 +42,9 @@ namespace HotelFoodAndRoomServiceSystem
                 retrieveTotalRoomServiceRequest();
                 retrieveRoomServiceRequest();
 
+                //FOR INVENTORY
+                retrieveInventoryData();
+
                 //FOR IN PROGRESS SERVICE REQUEST
                 retrieveInProgressFoodService();
                 totalFoodServiceInProgress();
@@ -200,6 +203,12 @@ namespace HotelFoodAndRoomServiceSystem
             totalRoomServiceInProgress();
         }
 
+        protected void inventoryBtn_Click(object sender, EventArgs e)
+        {
+            ShowOnlyInventory();
+            retrieveInventoryData();
+        }
+
         protected void maintenanceRequestBtn_Click(object sender, EventArgs e)
         {
             ShowOnlyMaintenanceRequestPanel();
@@ -214,16 +223,19 @@ namespace HotelFoodAndRoomServiceSystem
             // BACKGROUND COLOR OF BUTTONS
             dashboardBtn.Style["background-color"] = "#EAEAEA";
             serviceRequestBtn.Style["background-color"] = "transparent";
+            inventoryBtn.Style["background-color"] = "transparent";
             maintenanceRequestBtn.Style["background-color"] = "transparent";
 
             // TEXT COLOR OF BUTTON
             dashboardBtn.Style["color"] = "blue";
             serviceRequestBtn.Style["color"] = "black";
+            inventoryBtn.Style["color"] = "black";
             maintenanceRequestBtn.Style["color"] = "black";
 
             // DISPLAY PANEL WHEN CLICKING THE BUTTON
             dashboardPanel.Style["display"] = "block";
             serviceRequestPanel.Style["display"] = "none";
+            inventoryPanel.Style["display"] = "none";
             maintenanceRequestPanel.Style["display"] = "none";
 
             retrieveEmployeesData();
@@ -231,22 +243,45 @@ namespace HotelFoodAndRoomServiceSystem
             retrieveStatusCount();
         }
 
-
         private void ShowOnlyServiceRequestPanel()
         {
             // BACKGROUND COLOR OF BUTTONS
             dashboardBtn.Style["background-color"] = "transparent";
             serviceRequestBtn.Style["background-color"] = "#EAEAEA";
+            inventoryBtn.Style["background-color"] = "transparent";
             maintenanceRequestBtn.Style["background-color"] = "transparent";
 
             // TEXT COLOR OF BUTTON
             dashboardBtn.Style["color"] = "black";
             serviceRequestBtn.Style["color"] = "blue";
+            inventoryBtn.Style["color"] = "black";
             maintenanceRequestBtn.Style["color"] = "black";
 
             // DISPLAY PANEL WHEN CLICKING THE BUTTON
             dashboardPanel.Style["display"] = "none";
             serviceRequestPanel.Style["display"] = "block";
+            inventoryPanel.Style["display"] = "none";
+            maintenanceRequestPanel.Style["display"] = "none";
+        }
+
+        private void ShowOnlyInventory()
+        {
+            // BACKGROUND COLOR OF BUTTONS
+            dashboardBtn.Style["background-color"] = "transparent";
+            serviceRequestBtn.Style["background-color"] = "transparent";
+            inventoryBtn.Style["background-color"] = "#EAEAEA";
+            maintenanceRequestBtn.Style["background-color"] = "transparent";
+
+            // TEXT COLOR OF BUTTON
+            dashboardBtn.Style["color"] = "black";
+            serviceRequestBtn.Style["color"] = "black";
+            inventoryBtn.Style["color"] = "blue";
+            maintenanceRequestBtn.Style["color"] = "black";
+
+            // DISPLAY PANEL WHEN CLICKING THE BUTTON
+            dashboardPanel.Style["display"] = "none";
+            serviceRequestPanel.Style["display"] = "none";
+            inventoryPanel.Style["display"] = "block";
             maintenanceRequestPanel.Style["display"] = "none";
         }
 
@@ -255,18 +290,21 @@ namespace HotelFoodAndRoomServiceSystem
             // BACKGROUND COLOR OF BUTTONS
             dashboardBtn.Style["background-color"] = "transparent";
             serviceRequestBtn.Style["background-color"] = "transparent";
+            inventoryBtn.Style["background-color"] = "transparent";
             maintenanceRequestBtn.Style["background-color"] = "#EAEAEA";
 
 
             // TEXT COLOR OF BUTTON
             dashboardBtn.Style["color"] = "black";
             serviceRequestBtn.Style["color"] = "black";
+            inventoryBtn.Style["color"] = "black";
             maintenanceRequestBtn.Style["color"] = "blue";
 
 
             // DISPLAY PANEL WHEN CLICKING THE BUTTON
             dashboardPanel.Style["display"] = "none";
             serviceRequestPanel.Style["display"] = "none";
+            inventoryPanel.Style["display"] = "none";
             maintenanceRequestPanel.Style["display"] = "block";
         }
 
@@ -755,6 +793,120 @@ namespace HotelFoodAndRoomServiceSystem
 
 
 
+        // RETRIEVING INVENTORY DATA 
+        private void retrieveInventoryData(String searchTerm = "")
+        {
+            try
+            {
+                String retrieveInventory = "SELECT * FROM inventory WHERE item_name LIKE @searchTerm";
+                MySqlCommand cmd = new MySqlCommand(retrieveInventory, dbconn);
+                cmd.Parameters.AddWithValue("@searchTerm", "%"+searchTerm+"%");
+                MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                dataAdapater.Fill(dataTable);
+
+                StringBuilder divHtml = new StringBuilder();
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    divHtml.Append("<div class='inventoryRow'>");
+
+                    divHtml.Append("<div class='inventoryContent'>");
+                    divHtml.Append($"<div id='itemIdLbl'>{row["item_id"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='inventoryContent'>");
+                    if (row["image_data"] != DBNull.Value)
+                    {
+                        byte[] imageData = (byte[])row["image_data"];
+                        string base64Image = Convert.ToBase64String(imageData);
+                        divHtml.Append($"<img id='itemImage' src='data:image/jpeg;base64,{base64Image}' class='inventoryImgLayout'/>");
+                    }
+                    else
+                    {
+                        divHtml.Append("<img id='itemImage' src='/path/to/default/image.jpg' alt='No Image Available' style='width:100px; height:100px;' />");
+                    }
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='inventoryContent'>");
+                    divHtml.Append($"<div id='itemNameLbl'>{row["item_name"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("<div class='inventoryContent'>");
+                    divHtml.Append($"<div id='itemAmountLbl'>{row["amount"]}</div>");
+                    divHtml.Append("</div>");
+
+                    divHtml.Append("</div>");
+
+                    inventoryData.Text= divHtml.ToString();
+                }
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        protected void refreshInventoryBtn_Click(object sender, EventArgs e)
+        {
+            retrieveInventoryData();
+        }
+
+        //FOR SEARCHING ITEMS IN INVENTORY
+        protected void searchItem_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = searchItem.Text.Trim();
+            retrieveInventoryData(searchTerm);
+        }
+
+        //ADD ITEM IN INVENTORY
+        protected void addItemBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = true;
+            addItemPanel.Visible = true;
+        }
+
+        protected void closeAddItemBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            addItemPanel.Visible = false;
+        }
+
+        protected void addThisItemBtn_Click(object sender, EventArgs e)
+        {
+            String itemID = insertItemIdTxtBox.Text;
+            String itemName = insertItemNameTxtBox.Text;
+            byte[] imageData = insertItemImgFile.FileBytes;
+            String itemAmount = insertAmountTxtBox.Text;
+            String price = insertItemPriceTxtBox.Text;
+
+            insertItemsToInventory(itemID, itemName, imageData, itemAmount, price);
+            retrieveInventoryData();
+
+            overlay.Visible = false;
+            addItemPanel.Visible = false;
+        }
+
+        private void insertItemsToInventory(String itemID,String itemName, byte[] imageData, String itemAmount, String price)
+        {
+            try
+            {
+                String insertItem = "INSERT INTO inventory(item_id, item_name, image_data, amount, price) VALUES (@1, @2, @3, @4, @5)";
+                MySqlCommand cmd = new MySqlCommand(insertItem, dbconn);
+                cmd.Parameters.AddWithValue("@1", itemID);
+                cmd.Parameters.AddWithValue("@2", itemName);
+                cmd.Parameters.AddWithValue("@3", imageData);
+                cmd.Parameters.AddWithValue("@4", itemAmount);
+                cmd.Parameters.AddWithValue("@5", price);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
 
 

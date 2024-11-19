@@ -755,6 +755,184 @@ body {
         overflow-y: auto;
     }
 
+    /*FOOD REQUEST ASSIGN EMPLOYEE CSS*/
+
+    #foodServiceAssignStaffPanel {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        width: 30%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .foodServiceAssignStaffContent {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #orderIdText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #orderIdTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+    }
+
+    #foodServiceEmployeeIdText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #foodServiceEmployeeIdTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+    }
+
+    .foodServiceAssignStaffBtnLayout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #foodServiceAssignEmployeeBtn {
+        background-color: #101450;
+        color: white;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+        #foodassignEmployeeBtn:hover {
+            color: blue;
+        }
+
+    #cancelFoodServiceAssignEmployeeBtn {
+        background-color: white;
+        color: black;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+        #cancelFoodServiceAssignEmployeeBtn:hover {
+            color: blue;
+        }
+
+    /*ROOM REQUEST ASSIGN EMPLOYEE CSS*/
+
+    #roomServiceAssignStaffPanel {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        width: 30%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .roomServiceAssignStaffContent {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #requestIdText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #requestIdTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+    }
+
+    #roomServiceEmployeeIdText {
+        font-size: 3vh;
+        font-weight: bold;
+        margin: 2vh 0vw 0vh 2vw;
+    }
+
+    #roomServiceEmployeeIdTxtBox {
+        height: 30%;
+        width: 80%;
+        margin: 1vh 0vw 0vh 2vw;
+        font-family: Poppins;
+    }
+
+    .roomServiceAssignStaffBtnLayout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: auto;
+        margin: 0vh 0vw 1vh 0vw;
+    }
+
+    #roomServiceAssignEmployeeBtn {
+        background-color: #101450;
+        color: white;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+    #roomassignEmployeeBtn:hover {
+        color: blue;
+    }
+
+    #cancelRoomServiceAssignEmployeeBtn {
+        background-color: white;
+        color: black;
+        height: 50%;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0vh 1vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+        #cancelRoomServiceAssignEmployeeBtn:hover {
+            color: blue;
+        }
+
 
 /*MAINTENANCE REQUEST PANEL*/
     #maintenanceRequestPanel {

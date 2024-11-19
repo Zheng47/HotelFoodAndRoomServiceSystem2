@@ -184,8 +184,20 @@ namespace HotelFoodAndRoomServiceSystem
         protected void serviceRequestBtn_Click(object sender, EventArgs e)
         {
             ShowOnlyServiceRequestPanel();
+
+            //FOR SERVICE REQUEST UNDER FOOD AND BEVERAGES SERVICES
+            retrieveTotalFoodServiceRequest();
             retrieveFoodServiceRequest();
-            retrieveTotalFoodServiceRequest() ;
+
+            //FOR SERVICE REQUEST UNDER ROOM SERVICES
+            retrieveTotalRoomServiceRequest();
+            retrieveRoomServiceRequest();
+
+            //FOR IN PROGRESS SERVICE REQUEST
+            retrieveInProgressFoodService();
+            totalFoodServiceInProgress();
+            retrieveInProgressRoomService();
+            totalRoomServiceInProgress();
         }
 
         protected void maintenanceRequestBtn_Click(object sender, EventArgs e)
@@ -266,6 +278,10 @@ namespace HotelFoodAndRoomServiceSystem
             roomServiceRequestPanel.Visible = false;
             foodInProgressServiceRequestPanel.Visible = false;
             roomInProgressServiceRequestPanel.Visible = false;
+
+            //ASSIGN EMPLOYEE BTN IN SERVICE REQUEST
+            foodServiceAssignBtn.Visible = true;
+            roomServiceAssignBtn.Visible = false;
 
             retrieveTotalFoodServiceRequest();
             retrieveFoodServiceRequest();
@@ -356,6 +372,10 @@ namespace HotelFoodAndRoomServiceSystem
             roomServiceRequestPanel.Visible = true;
             foodInProgressServiceRequestPanel.Visible = false;
             roomInProgressServiceRequestPanel.Visible = false;
+
+            //ASSIGN EMPLOYEE BTN IN SERVICE REQUEST
+            foodServiceAssignBtn.Visible = false;
+            roomServiceAssignBtn.Visible = true;
 
             retrieveTotalRoomServiceRequest();
             retrieveRoomServiceRequest();
@@ -480,6 +500,10 @@ namespace HotelFoodAndRoomServiceSystem
             foodInProgressServiceRequestPanel.Visible = true;
             roomInProgressServiceRequestPanel.Visible = false;
 
+            //ASSIGN EMPLOYEE BTN IN SERVICE REQUEST
+            foodServiceAssignBtn.Visible = false;
+            roomServiceAssignBtn.Visible = false;
+
             totalFoodServiceInProgress();
             retrieveInProgressFoodService();
         }
@@ -490,6 +514,10 @@ namespace HotelFoodAndRoomServiceSystem
             roomServiceRequestPanel.Visible = false;
             foodInProgressServiceRequestPanel.Visible = false;
             roomInProgressServiceRequestPanel.Visible = true;
+
+            //ASSIGN EMPLOYEE BTN IN SERVICE REQUEST
+            foodServiceAssignBtn.Visible = false;
+            roomServiceAssignBtn.Visible = false;
 
             totalRoomServiceInProgress();
             retrieveInProgressRoomService();
@@ -553,7 +581,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveTotalFoodService = "SELECT COUNT(*) FROM guestfoodservicehistory WHERE status = 'Pending'";
+                String retrieveTotalFoodService = "SELECT COUNT(*) FROM guestfoodservicehistory WHERE status = 'In-Progress'";
                 MySqlCommand cmd = new MySqlCommand(retrieveTotalFoodService, dbconn);
 
                 object result = cmd.ExecuteScalar();
@@ -676,6 +704,49 @@ namespace HotelFoodAndRoomServiceSystem
 
 
 
+        //ASSIGN EMPLOYEE IN SERVICE REQUEST
+        protected void foodServiceAssignBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = true;
+            foodServiceAssignStaffPanel.Visible = true;
+        }
+
+        protected void roomServiceAssignBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = true;
+            roomServiceAssignStaffPanel.Visible = true;
+        }
+
+        protected void foodServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            String orderId = orderIdTxtBox.Text;
+            String employeeId = foodServiceEmployeeIdTxtBox.Text;
+
+            assignEmployeeTaskToFoodServiceRequest(orderId, employeeId);
+        }
+
+        protected void cancelFoodServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            foodServiceAssignStaffPanel.Visible = false;
+        }
+
+        protected void roomServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cancelRoomServiceAssignEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            overlay.Visible = false;
+            roomServiceAssignStaffPanel.Visible = false;
+        }
+
+
+
+
+
+
         //RETRIEVING GUEST MAINTENANCE REQUEST
         private void retrieveMaintenanceRequest()
         {
@@ -793,5 +864,29 @@ namespace HotelFoodAndRoomServiceSystem
                 Console.WriteLine(e.Message);
             }
         }
+
+        private void assignEmployeeTaskToFoodServiceRequest(String orderId, String employeeId)
+        {
+            try
+            {
+                String assignEmployee = "UPDATE guestfoodservicehistory SET assigned_employee = @assignedEmployee, status = @status WHERE order_id = @orderId";
+                MySqlCommand cmd = new MySqlCommand(assignEmployee, dbconn);
+                cmd.Parameters.AddWithValue("@assignedEmployee", employeeId);
+                cmd.Parameters.AddWithValue("@status", "In-Progress");
+                cmd.Parameters.AddWithValue("@orderId", orderId);
+                cmd.ExecuteNonQuery();
+
+                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
+                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
+                updateCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                updateCmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
     }
 }

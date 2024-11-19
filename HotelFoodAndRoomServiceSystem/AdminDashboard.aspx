@@ -82,32 +82,67 @@
            <div id="serviceRequestPanel" runat="server">
                <asp:Label ID="taskBoardLbl" runat="server" Text="Task Board" />
                <div class="lineDesign"></div>
-                   <div id="taskBoardStatusLayout">
-                       <asp:Button ID="foodAndBeveragesTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food And Beverages" OnClick="foodAndBeveragesTaskBtn_Click" />
-                       <asp:Label ID="foodAndBeveragesCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="roomServiceTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service" OnClick="roomServiceTaskBtn_Click" />
-                       <asp:Label ID="roomServiceCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="foodinProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food Service In-Progress" OnClick="foodinProgressTaskBtn_Click" />
-                       <asp:Label ID="foodinProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="roominProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service In-Progress" OnClick="roominProgressTaskBtn_Click" />
-                       <asp:Label ID="roominProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                   </div>
+                <div id="taskBoardStatusLayout">
+                    <asp:Button ID="foodAndBeveragesTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food And Beverages" OnClick="foodAndBeveragesTaskBtn_Click" />
+                    <asp:Label ID="foodAndBeveragesCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                    <asp:Button ID="roomServiceTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service" OnClick="roomServiceTaskBtn_Click" />
+                    <asp:Label ID="roomServiceCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                    <asp:Button ID="foodinProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food Service In-Progress" OnClick="foodinProgressTaskBtn_Click" />
+                    <asp:Label ID="foodinProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                    <asp:Button ID="roominProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service In-Progress" OnClick="roominProgressTaskBtn_Click" />
+                    <asp:Label ID="roominProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                </div>
                     
-                    <%-- FOOD SERVICE --%>
-                   <asp:Panel ID="foodServiceRequestPanel" runat="server" Visible="true">
-                        <asp:Literal ID="foodRequestData" runat="server"></asp:Literal>
-                   </asp:Panel>
-                    <%-- ROOM SERVICE --%>
-                   <asp:Panel ID="roomServiceRequestPanel" runat="server" Visible="false">
-                       <asp:Literal ID="roomServiceRequestData" runat="server"></asp:Literal>
-                   </asp:Panel>
-                   <%-- IN PROGRESS SERVICE REQUEST --%>
-                   <asp:Panel ID="foodInProgressServiceRequestPanel" runat="server" Visible="false">
-                       <asp:Literal ID="foodInProgressRequestData" runat="server"></asp:Literal>
-                   </asp:Panel>
-                   <asp:Panel ID="roomInProgressServiceRequestPanel" runat="server" Visible="false">
-                       <asp:Literal ID="roomInProgressRequestData" runat="server"></asp:Literal>
-                   </asp:Panel>
+                <%-- FOOD SERVICE --%>
+                <asp:Panel ID="foodServiceRequestPanel" runat="server" Visible="true">
+                    <asp:Literal ID="foodRequestData" runat="server"></asp:Literal>
+                </asp:Panel>
+                <%-- ROOM SERVICE --%>
+                <asp:Panel ID="roomServiceRequestPanel" runat="server" Visible="false">
+                    <asp:Literal ID="roomServiceRequestData" runat="server"></asp:Literal>
+                </asp:Panel>
+                <%-- IN PROGRESS SERVICE REQUEST --%>
+                <asp:Panel ID="foodInProgressServiceRequestPanel" runat="server" Visible="false">
+                    <asp:Literal ID="foodInProgressRequestData" runat="server"></asp:Literal>
+                </asp:Panel>
+                <asp:Panel ID="roomInProgressServiceRequestPanel" runat="server" Visible="false">
+                    <asp:Literal ID="roomInProgressRequestData" runat="server"></asp:Literal>
+                </asp:Panel>
+
+               <%-- ASSIGN EMPLOYEE BTN FOR SERVICE REQUEST --%>
+               <asp:Button ID="foodServiceAssignBtn" CssClass="assignBtn" runat="server" Text="ASSIGN" Visible="true" OnClick="foodServiceAssignBtn_Click"/>
+               <asp:Button ID="roomServiceAssignBtn" CssClass="assignBtn" runat="server" Text="ASSIGN" Visible="false" OnClick="roomServiceAssignBtn_Click" />
+
+               <asp:Panel ID="foodServiceAssignStaffPanel" runat="server" Visible="false">
+                    <div class="foodServiceAssignStaffContent textFont2">
+                        <asp:Label ID="orderIdText" runat="server" Text="ORDER ID:" />
+                        <asp:TextBox ID="orderIdTxtBox" TextMode="Number" runat="server" Placeholder="Enter Order ID" />
+                    </div>
+                    <div class="foodServiceAssignStaffContent textFont2">
+                        <asp:Label ID="foodServiceEmployeeIdText" runat="server" Text="EMPLOYEE ID: "/>
+                        <asp:TextBox ID="foodServiceEmployeeIdTxtBox" TextMode="Number"  runat="server" Placeholder="Enter Employee ID" />
+                    </div>
+                    <div class="foodServiceAssignStaffBtnLayout textFont">
+                        <asp:Button ID="foodServiceAssignEmployeeBtn" runat="server" Text="ASSIGN" OnClick="foodServiceAssignEmployeeBtn_Click" />
+                        <asp:Button ID="cancelFoodServiceAssignEmployeeBtn" runat="server" Text="CANCEL" OnClick="cancelFoodServiceAssignEmployeeBtn_Click" />
+                    </div>
+               </asp:Panel>
+
+               <asp:Panel ID="roomServiceAssignStaffPanel" runat="server" Visible="false">
+                    <div class="roomServiceAssignStaffContent textFont2">
+                        <asp:Label ID="requestIdText" runat="server" Text="REQUEST ID:" />
+                        <asp:TextBox ID="requestIdTxtBox" TextMode="Number" runat="server" Placeholder="Enter Request ID" />
+                    </div>
+                    <div class="roomServiceAssignStaffContent textFont2">
+                        <asp:Label ID="roomServiceEmployeeIdText" runat="server" Text="EMPLOYEE ID: "/>
+                        <asp:TextBox ID="roomServiceEmployeeIdTxtBox" TextMode="Number"  runat="server" Placeholder="Enter Employee ID" />
+                    </div>
+                    <div class="roomServiceAssignStaffBtnLayout textFont">
+                        <asp:Button ID="roomServiceAssignEmployeeBtn" runat="server" Text="ASSIGN" OnClick="roomServiceAssignEmployeeBtn_Click" />
+                        <asp:Button ID="cancelRoomServiceAssignEmployeeBtn" runat="server" Text="CANCEL" OnClick="cancelRoomServiceAssignEmployeeBtn_Click" />
+                    </div>
+               </asp:Panel>
+
            </div>
 
             <%-- MAINTENANCE REQUEST PANEL --%>

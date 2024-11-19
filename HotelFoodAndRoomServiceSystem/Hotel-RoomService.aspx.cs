@@ -146,11 +146,11 @@ namespace HotelFoodAndRoomServiceSystem
             guestNameTxtBox.Text = Session["Username"].ToString();
         }
 
-        private void submitrequestService (String serviceType, String price, String quantity, String totalCharges, String guestName)
+        private void submitrequestService (String serviceType, String price, String quantity, String totalCharges, String guestName, String roomNumber)
         {
             try
             {
-                String submitRequest = "INSERT INTO guestroomservicehistory(request_id, request_date, service_type, status, total_charges, quantity, guest_name, service_price) VALUES (@1, @2, @3, @4, @5, @6, @7, @8)";
+                String submitRequest = "INSERT INTO guestroomservicehistory(request_id, request_date, service_type, status, total_charges, quantity, guest_name, service_price, room_number) VALUES (@1, @2, @3, @4, @5, @6, @7, @8, @9)";
                 MySqlCommand cmd = new MySqlCommand(submitRequest, dbconn);
                 cmd.Parameters.AddWithValue("@1", Guid.NewGuid());
                 cmd.Parameters.AddWithValue("@2", DateTime.Now);
@@ -160,6 +160,8 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@6", quantity);
                 cmd.Parameters.AddWithValue("@7", guestName);
                 cmd.Parameters.AddWithValue("@8", price);
+                cmd.Parameters.AddWithValue("@9", roomNumber);
+
 
                 cmd.ExecuteNonQuery();
             }
@@ -172,13 +174,14 @@ namespace HotelFoodAndRoomServiceSystem
         protected void requestBtn_Click(object sender, EventArgs e)
         {
             String guestName = guestNameTxtBox.Text;
+            String roomNumber = Session["RoomNumber"].ToString();
             String serviceType = roomServiceTypeTxtBox.Text;
             String price = roomServicePrice.Text;
             String quantity = amountTxtBox.Text;
             int total = int.Parse(price) * int.Parse(quantity);
             String totalCharges = total.ToString();
 
-            submitrequestService(serviceType, price, quantity, totalCharges, guestName);
+            submitrequestService(serviceType, price, quantity, totalCharges, guestName, roomNumber);
 
             overlay.Visible = false;
             inquireForm.Visible = false;

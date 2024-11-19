@@ -321,40 +321,40 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label roomServiceCountLbl;
 
         /// <summary>
-        /// inProgressTaskBtn control.
+        /// foodinProgressTaskBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inProgressTaskBtn;
+        protected global::System.Web.UI.WebControls.Button foodinProgressTaskBtn;
 
         /// <summary>
-        /// inProgressCountLbl control.
+        /// foodinProgressCountLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label inProgressCountLbl;
+        protected global::System.Web.UI.WebControls.Label foodinProgressCountLbl;
 
         /// <summary>
-        /// completedTaskBtn control.
+        /// roominProgressTaskBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button completedTaskBtn;
+        protected global::System.Web.UI.WebControls.Button roominProgressTaskBtn;
 
         /// <summary>
-        /// completedCountLbl control.
+        /// roominProgressCountLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label completedCountLbl;
+        protected global::System.Web.UI.WebControls.Label roominProgressCountLbl;
 
         /// <summary>
         /// foodServiceRequestPanel control.
@@ -373,6 +373,60 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal foodRequestData;
+
+        /// <summary>
+        /// roomServiceRequestPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel roomServiceRequestPanel;
+
+        /// <summary>
+        /// roomServiceRequestData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal roomServiceRequestData;
+
+        /// <summary>
+        /// foodInProgressServiceRequestPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel foodInProgressServiceRequestPanel;
+
+        /// <summary>
+        /// foodInProgressRequestData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal foodInProgressRequestData;
+
+        /// <summary>
+        /// roomInProgressServiceRequestPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel roomInProgressServiceRequestPanel;
+
+        /// <summary>
+        /// roomInProgressRequestData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal roomInProgressRequestData;
 
         /// <summary>
         /// maintenanceRequestPanel control.

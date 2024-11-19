@@ -83,18 +83,30 @@
                <asp:Label ID="taskBoardLbl" runat="server" Text="Task Board" />
                <div class="lineDesign"></div>
                    <div id="taskBoardStatusLayout">
-                       <asp:Button ID="foodAndBeveragesTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food And Beverages" />
+                       <asp:Button ID="foodAndBeveragesTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food And Beverages" OnClick="foodAndBeveragesTaskBtn_Click" />
                        <asp:Label ID="foodAndBeveragesCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="roomServiceTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service" />
+                       <asp:Button ID="roomServiceTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service" OnClick="roomServiceTaskBtn_Click" />
                        <asp:Label ID="roomServiceCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="inProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="In-Progress" />
-                       <asp:Label ID="inProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
-                       <asp:Button ID="completedTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Completed" />
-                       <asp:Label ID="completedCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                       <asp:Button ID="foodinProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Food Service In-Progress" OnClick="foodinProgressTaskBtn_Click" />
+                       <asp:Label ID="foodinProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
+                       <asp:Button ID="roominProgressTaskBtn" CssClass="taskStatusButtons" runat="server" Text="Room Service In-Progress" OnClick="roominProgressTaskBtn_Click" />
+                       <asp:Label ID="roominProgressCountLbl" class="taskStatusCount" runat="server" Text="0" />
                    </div>
-
+                    
+                    <%-- FOOD SERVICE --%>
                    <asp:Panel ID="foodServiceRequestPanel" runat="server" Visible="true">
                         <asp:Literal ID="foodRequestData" runat="server"></asp:Literal>
+                   </asp:Panel>
+                    <%-- ROOM SERVICE --%>
+                   <asp:Panel ID="roomServiceRequestPanel" runat="server" Visible="false">
+                       <asp:Literal ID="roomServiceRequestData" runat="server"></asp:Literal>
+                   </asp:Panel>
+                   <%-- IN PROGRESS SERVICE REQUEST --%>
+                   <asp:Panel ID="foodInProgressServiceRequestPanel" runat="server" Visible="false">
+                       <asp:Literal ID="foodInProgressRequestData" runat="server"></asp:Literal>
+                   </asp:Panel>
+                   <asp:Panel ID="roomInProgressServiceRequestPanel" runat="server" Visible="false">
+                       <asp:Literal ID="roomInProgressRequestData" runat="server"></asp:Literal>
                    </asp:Panel>
            </div>
 

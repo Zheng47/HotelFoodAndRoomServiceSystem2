@@ -86,7 +86,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveEmployeeData = "SELECT CONCAT(last_name, ', ', first_name, ' ', middle_name) AS FullName, schedule, status FROM employees";
+                String retrieveEmployeeData = "SELECT CONCAT(last_name, ', ', first_name, ' ', middle_name) AS FullName, employee_id, schedule, status FROM employees";
                 MySqlCommand cmd = new MySqlCommand(retrieveEmployeeData, dbconn);
                 MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -98,6 +98,7 @@ namespace HotelFoodAndRoomServiceSystem
                 foreach (DataRow row in dataTable.Rows)
                 {
                     divHtml.Append("<div class='employeesTable'>");
+                    divHtml.Append($"<div id='employeeIdLayout'>{row["employee_id"]}</div>");
                     divHtml.Append($"<div id='employeeNameLayout'>{row["FullName"]}</div>");
                     divHtml.Append($"<div id='scheduleLayout'>{row["schedule"]}</div>");
                     divHtml.Append($"<div id='statusLayout'>{row["status"]}</div>");

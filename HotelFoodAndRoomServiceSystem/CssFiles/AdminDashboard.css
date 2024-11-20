@@ -385,6 +385,7 @@ body {
     /*FOR STAFF DETAILS*/
     #staffDetails {
         display: flex;
+        flex-direction: row;
         align-items: center;
         float: right;
         background-color: white;
@@ -397,22 +398,33 @@ body {
         box-shadow: 0px 7px 0px rgb(0, 0, 0, 0.1);
     }
 
+    .employeeIdLbl {
+        font-family: Poppins;
+        font-size: 3vh;
+        margin: 0vh 0vw 0vh 2vw;
+    }
+
     .employeeNameLbl {
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 18vw 0vh 2vw;
+        margin: 0vh 0vw 0vh 10vw;
     }
 
     .scheduleLbl {
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 20vw 0vh 2vw;
+        margin: 0vh 0vw 0vh 10vw;
     }
 
     .statusLbl{
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 3vw;
+        margin: 0vh 0vw 0vh 10vw;
+    }
+
+    #employeeIdLbl {
+        font-weight: bold;
+        color: grey;
     }
 
     #employeeNameLbl {
@@ -433,6 +445,7 @@ body {
     /*FOR STAFF INFORMATION AND STATUS GRID TABLE*/
     .employeesTable {
         display: flex;
+        flex-direction: row;
         align-items: center;
         float: right;
         background-color: white;
@@ -445,26 +458,34 @@ body {
         box-shadow: 0px 7px 0px rgb(0, 0, 0, 0.1);
     }
 
-    #employeeNameLayout {
+    #employeeIdLayout {
         height: 100%;
-        width: 30%;
+        width: 10%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 7vw 0vh 2vw;
+        margin: 0vh 0vw 0vh 5vw;
+    }
+
+    #employeeNameLayout {
+        height: 100%;
+        width: 25%;
+        font-family: Poppins;
+        font-size: 3vh;
+        margin: 0vh 0vw 0vh 8vw;
     }
 
     #scheduleLayout {
         width: 15%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 17vw 0vh 2vw;
+        margin: 0vh 0vw 0vh 3vw;
     }
 
     #statusLayout {
         width: 10%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 2vw;
+        margin: 0vh 0vw 0vh 6vw;
     }
 
     /*REFRESH BUTTON*/

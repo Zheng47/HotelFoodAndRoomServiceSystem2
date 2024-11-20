@@ -67,6 +67,7 @@
                     </div>
                 </div>
                 <div id="staffDetails" >
+                    <asp:Label ID="employeeIdLbl" CssClass="employeeIdLbl" runat="server" Text="Employee ID" />
                     <asp:Label id="employeeNameLbl" CssClass="employeeNameLbl" runat="server" Text="Employee Name"/>
                     <asp:Label id="scheduleLbl" CssClass="scheduleLbl" runat="server" Text="Schedule"/>
                     <asp:Label id="statusLbl" CssClass="statusLbl" runat="server" Text="Status"/>

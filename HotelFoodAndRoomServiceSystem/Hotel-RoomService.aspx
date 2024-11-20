@@ -44,7 +44,7 @@
             </div>
 
             <%-- FOR HOUSEKEEPING SERVICE --%>
-            <div class="roomServiceContainer">
+<%--            <div class="roomServiceContainer">
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/pexels-liliana-drew-9462759.jpg" class="roomServiceImgLayout" />
                 <div class="roomServiceInfoContainer textFont textColor">
                     <asp:Label ID="houseKeepinLbl" CssClass="roomServiceTitle" runat="server" Text="Housekeeping Services" />
@@ -53,7 +53,7 @@
                         <asp:Button ID="houseeKeepingServiceBtn" CssClass="roomServiceBtn" runat="server" OnClick="houseeKeepingServiceBtn_Click" />
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </asp:Panel>
 
         <%-- LAUNDRY AND DRY CLEANING CONTENT --%>
@@ -101,7 +101,7 @@
         </asp:Panel>
 
         <%-- HOUSEKEEPING SERVICE CONTENT --%>
-        <asp:Panel ID="housekeepingPanel" runat="server" CssClass="mainContainer" Visible="false">
+<%--        <asp:Panel ID="housekeepingPanel" runat="server" CssClass="mainContainer" Visible="false">
             <div class="housekeepingContent textFont textColor">
                 <asp:Label ID="amenitiesLbl" CssClass="housekeepingContentTitle" runat="server" Text="EXTRA AMENITIES DELIVERY" />
                 <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/pexels-olly-3770106.jpg" class="housekeepingContentImgLayout" />
@@ -114,7 +114,7 @@
                 <asp:Label ID="roomCleaningDescription" CssClass="housekeepingContentDescription" runat="server" Text="Regular cleaning of the room, including making the bed, vacuuming, dusting, and cleaning the bathroom" />
                 <asp:Button ID="roomCleaningBtn" CssClass="housekeepingContentBtn" runat="server" Text="Inquire" />
             </div>
-        </asp:Panel>
+        </asp:Panel>--%>
 
         <%-- IF INQUIRE BUTTON IS CLICKED --%>
         <asp:Panel ID="overlay" CssClass="overlay" runat="server" Visible="false" />

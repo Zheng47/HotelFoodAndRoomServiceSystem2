@@ -123,33 +123,6 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Button spaServiceBtn;
 
         /// <summary>
-        /// houseKeepinLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label houseKeepinLbl;
-
-        /// <summary>
-        /// houseKeepingDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label houseKeepingDescription;
-
-        /// <summary>
-        /// houseeKeepingServiceBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button houseeKeepingServiceBtn;
-
-        /// <summary>
         /// laundryAndDryCleaningServicesPanel control.
         /// </summary>
         /// <remarks>
@@ -328,69 +301,6 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button deepCleansingBtn;
-
-        /// <summary>
-        /// housekeepingPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel housekeepingPanel;
-
-        /// <summary>
-        /// amenitiesLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label amenitiesLbl;
-
-        /// <summary>
-        /// amenitiesDescrition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label amenitiesDescrition;
-
-        /// <summary>
-        /// amenitiesBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button amenitiesBtn;
-
-        /// <summary>
-        /// roomCleaningLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label roomCleaningLbl;
-
-        /// <summary>
-        /// roomCleaningDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label roomCleaningDescription;
-
-        /// <summary>
-        /// roomCleaningBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button roomCleaningBtn;
 
         /// <summary>
         /// overlay control.

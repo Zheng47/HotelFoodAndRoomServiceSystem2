@@ -56,7 +56,7 @@ namespace HotelFoodAndRoomServiceSystem
             roomServiceSelection.Visible = true;
             laundryAndDryCleaningServicesPanel.Visible = false;
             spaServicePanel.Visible = false;
-            housekeepingPanel.Visible = false;
+            //housekeepingPanel.Visible = false;
         }
 
         protected void laundryDryCleaningServiceBtn_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace HotelFoodAndRoomServiceSystem
             roomServiceBtn.Visible = true;
 
             roomServiceSelection.Visible = false;
-            housekeepingPanel.Visible = true;
+            //housekeepingPanel.Visible = true;
         }
 
         // LAUNDRY AND DRY CLEANING CONTENT INQUIRE BUTTONS

@@ -91,7 +91,7 @@ namespace HotelFoodAndRoomServiceSystem
         protected void dryCleaningBtn_Click(object sender, EventArgs e)
         {
             String serviceType = dryCleaningLbl.Text;
-            roomServicePrice.Text = "50";
+            roomServicePrice.Text = "30";
             inquireServiceForm(serviceType);
         }
 
@@ -105,7 +105,7 @@ namespace HotelFoodAndRoomServiceSystem
         protected void steamIronBtn_Click(object sender, EventArgs e)
         {
             String serviceType = steamIronLbl.Text;
-            roomServicePrice.Text = "50";
+            roomServicePrice.Text = "60";
             inquireServiceForm(serviceType);
         }
 
@@ -123,7 +123,8 @@ namespace HotelFoodAndRoomServiceSystem
         {
             String serviceType = spaManicureLbl.Text;
             amountLbl.Text = "Number of Guest*";
-            amountTxtBox.Attributes["Placeholder"] = "₱150 per Guest";
+            amountTxtBox.Attributes["Placeholder"] = "₱200 per Guest";
+            roomServicePrice.Text = "200";
             inquireServiceForm(serviceType);
         }
 
@@ -131,8 +132,8 @@ namespace HotelFoodAndRoomServiceSystem
         {
             String serviceType = deepCleansingLbl.Text;
             amountLbl.Text = "Number of Guest*";
-            amountTxtBox.Attributes["Placeholder"] = "₱200 per Guest";
-            roomServicePrice.Text = "200";
+            amountTxtBox.Attributes["Placeholder"] = "₱250 per Guest";
+            roomServicePrice.Text = "250";
             inquireServiceForm(serviceType);
         }
 
@@ -161,7 +162,6 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@7", guestName);
                 cmd.Parameters.AddWithValue("@8", price);
                 cmd.Parameters.AddWithValue("@9", roomNumber);
-
 
                 cmd.ExecuteNonQuery();
             }

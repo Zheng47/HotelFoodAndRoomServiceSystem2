@@ -43,17 +43,6 @@
                 </div>
             </div>
 
-            <%-- FOR HOUSEKEEPING SERVICE --%>
-<%--            <div class="roomServiceContainer">
-                <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/pexels-liliana-drew-9462759.jpg" class="roomServiceImgLayout" />
-                <div class="roomServiceInfoContainer textFont textColor">
-                    <asp:Label ID="houseKeepinLbl" CssClass="roomServiceTitle" runat="server" Text="Housekeeping Services" />
-                    <div class="descriptionAndBtnLayout">
-                        <asp:Label ID="houseKeepingDescription" CssClass="roomServiceDescription" runat="server" Text="Request room cleaning and fresh linens for a comfortable stay" />
-                        <asp:Button ID="houseeKeepingServiceBtn" CssClass="roomServiceBtn" runat="server" OnClick="houseeKeepingServiceBtn_Click" />
-                    </div>
-                </div>
-            </div>--%>
         </asp:Panel>
 
         <%-- LAUNDRY AND DRY CLEANING CONTENT --%>
@@ -99,22 +88,6 @@
                 <asp:Button ID="deepCleansingBtn" CssClass="spaServiceContentBtn" runat="server" Text="Inquire" OnClick="deepCleansingBtn_Click" />
             </div>
         </asp:Panel>
-
-        <%-- HOUSEKEEPING SERVICE CONTENT --%>
-<%--        <asp:Panel ID="housekeepingPanel" runat="server" CssClass="mainContainer" Visible="false">
-            <div class="housekeepingContent textFont textColor">
-                <asp:Label ID="amenitiesLbl" CssClass="housekeepingContentTitle" runat="server" Text="EXTRA AMENITIES DELIVERY" />
-                <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/pexels-olly-3770106.jpg" class="housekeepingContentImgLayout" />
-                <asp:Label ID="amenitiesDescrition" CssClass="housekeepingContentDescription" runat="server" Text="Delivering additional items such as toiletries, pillows, blankets, or bathrobes to the guest's room." />
-                <asp:Button ID="amenitiesBtn" CssClass="housekeepingContentBtn" runat="server" Text="Inquire" />
-            </div>
-            <div class="housekeepingContent textFont textColor">
-                <asp:Label ID="roomCleaningLbl" CssClass="housekeepingContentTitle" runat="server" Text="ROOM CLEANING" />
-                <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/ROOM%20SERVICES/pexels-cottonbro-6466479.jpg" class="housekeepingContentImgLayout" />
-                <asp:Label ID="roomCleaningDescription" CssClass="housekeepingContentDescription" runat="server" Text="Regular cleaning of the room, including making the bed, vacuuming, dusting, and cleaning the bathroom" />
-                <asp:Button ID="roomCleaningBtn" CssClass="housekeepingContentBtn" runat="server" Text="Inquire" />
-            </div>
-        </asp:Panel>--%>
 
         <%-- IF INQUIRE BUTTON IS CLICKED --%>
         <asp:Panel ID="overlay" CssClass="overlay" runat="server" Visible="false" />

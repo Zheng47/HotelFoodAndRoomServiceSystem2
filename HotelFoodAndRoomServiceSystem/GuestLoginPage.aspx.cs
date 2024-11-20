@@ -97,7 +97,7 @@ namespace HotelFoodAndRoomServiceSystem
             {
 
                 //FOR EMAIL VERIFICATION
-                String verifyEmail = "SELECT COUNT(*) FROM guestaccounts WHERE email=@Email";
+                String verifyEmail = "SELECT COUNT(*) FROM guestroominformation WHERE email=@Email";
                 MySqlCommand emailcmd = new MySqlCommand(verifyEmail, dbconn);
                 emailcmd.Parameters.AddWithValue("@Email", email);
 
@@ -109,7 +109,7 @@ namespace HotelFoodAndRoomServiceSystem
                 if (emailCount == 0) { return LoginStatus.AccountNotFound; }
 
                 //FOR PASSWORD VERIFICATION
-                String verifyPassword = "SELECT password FROM guestaccounts WHERE email=@Email";
+                String verifyPassword = "SELECT password FROM guestroominformation WHERE email=@Email";
                 MySqlCommand passwordcmd = new MySqlCommand(verifyPassword, dbconn);
                 passwordcmd.Parameters.AddWithValue("@Email", email);
 

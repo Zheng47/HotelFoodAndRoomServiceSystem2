@@ -11,7 +11,7 @@ body {
 /*For header contents*/
     #header {
         margin: 0;
-        height: 20vh;
+        height: 17vh;
         width: 100%;
         background-color: white;
         display:flex;
@@ -99,15 +99,14 @@ body {
         margin: 0;
         height: 120vh;
         width: 100%;
-/*        background-color: #b37979;*/
         display: grid;
         justify-content: center;
     }
 
     #guestDetailsContainer {
-        margin-top: 10vh;
+        margin: 10vh auto 0vh auto;
         height: 40vh;
-        width: 90vw;
+        width: 90%;
         background-color: white;
         border-radius: 10px;
         box-shadow: 5px 5px 30px rgb(0, 0, 0, 0.5);
@@ -163,9 +162,9 @@ body {
     #servicesBtnContainer {
         display: flex;  
         flex-direction: row;
-        margin: 4vh 0vw 1vh 0vw;
+        margin: 4vh auto 1vh auto;
         height: 35vh;
-        width: 100%;
+        width: 90%;
         border-radius: 10px;
     }
 
@@ -173,7 +172,7 @@ body {
         background-color: white;
         height: 100%;
         width: 30%;
-        margin: 0vh 4vw 0vh 0vw;
+        margin: 0vh 5vw 0vh 0vw;
         display: flex;
         flex-direction: column;
         border: 0px;
@@ -246,7 +245,7 @@ body {
 #logoutBtn {
     background-color: #101540;
     float: right;
-    margin: 3vh 0vw 1vh auto;
+    margin: 3vh 5vw 1vh auto;
     height: 5vh;
     width: 15vw;
     border: 1px solid white;

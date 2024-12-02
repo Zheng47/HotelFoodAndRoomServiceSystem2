@@ -222,6 +222,15 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label occupiedStaffCount;
 
         /// <summary>
+        /// employeeIdLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label employeeIdLbl;
+
+        /// <summary>
         /// employeeNameLbl control.
         /// </summary>
         /// <remarks>
@@ -285,58 +294,22 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label taskBoardLbl;
 
         /// <summary>
-        /// foodAndBeveragesTaskBtn control.
+        /// additionalRequestServiceTaskBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodAndBeveragesTaskBtn;
+        protected global::System.Web.UI.WebControls.Button additionalRequestServiceTaskBtn;
 
         /// <summary>
-        /// foodAndBeveragesCountLbl control.
+        /// additionalRequestCountLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodAndBeveragesCountLbl;
-
-        /// <summary>
-        /// roomServiceTaskBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button roomServiceTaskBtn;
-
-        /// <summary>
-        /// roomServiceCountLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label roomServiceCountLbl;
-
-        /// <summary>
-        /// foodinProgressTaskBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodinProgressTaskBtn;
-
-        /// <summary>
-        /// foodinProgressCountLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodinProgressCountLbl;
+        protected global::System.Web.UI.WebControls.Label additionalRequestCountLbl;
 
         /// <summary>
         /// roominProgressTaskBtn control.
@@ -357,24 +330,6 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Label roominProgressCountLbl;
 
         /// <summary>
-        /// foodServiceRequestPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel foodServiceRequestPanel;
-
-        /// <summary>
-        /// foodRequestData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal foodRequestData;
-
-        /// <summary>
         /// roomServiceRequestPanel control.
         /// </summary>
         /// <remarks>
@@ -391,24 +346,6 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal roomServiceRequestData;
-
-        /// <summary>
-        /// foodInProgressServiceRequestPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel foodInProgressServiceRequestPanel;
-
-        /// <summary>
-        /// foodInProgressRequestData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal foodInProgressRequestData;
 
         /// <summary>
         /// roomInProgressServiceRequestPanel control.
@@ -429,85 +366,13 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.Literal roomInProgressRequestData;
 
         /// <summary>
-        /// foodServiceAssignBtn control.
+        /// additionalRequestServiceAssignBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodServiceAssignBtn;
-
-        /// <summary>
-        /// roomServiceAssignBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button roomServiceAssignBtn;
-
-        /// <summary>
-        /// foodServiceAssignStaffPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel foodServiceAssignStaffPanel;
-
-        /// <summary>
-        /// orderIdText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label orderIdText;
-
-        /// <summary>
-        /// orderIdTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox orderIdTxtBox;
-
-        /// <summary>
-        /// foodServiceEmployeeIdText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodServiceEmployeeIdText;
-
-        /// <summary>
-        /// foodServiceEmployeeIdTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox foodServiceEmployeeIdTxtBox;
-
-        /// <summary>
-        /// foodServiceAssignEmployeeBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodServiceAssignEmployeeBtn;
-
-        /// <summary>
-        /// cancelFoodServiceAssignEmployeeBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cancelFoodServiceAssignEmployeeBtn;
+        protected global::System.Web.UI.WebControls.Button additionalRequestServiceAssignBtn;
 
         /// <summary>
         /// roomServiceAssignStaffPanel control.

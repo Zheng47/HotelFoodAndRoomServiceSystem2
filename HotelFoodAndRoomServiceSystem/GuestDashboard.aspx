@@ -43,19 +43,20 @@
             </div>
 
             <div id="servicesBtnContainer">
-                <div id="foodServicesContainer" class="serviceContainer">
-                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/food-service.png" class="servicesLogo" />
-                    <asp:Label ID="foodServicesLbl" CssClass="servicesLbl" runat="server" Text="Food Services" />
-                    <div class="serviceContainer2">
-                        <asp:Label ID="foodServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Order meals and beverages delivered to your room."/>
-                        <asp:Button ID="foodServicesBtn" CssClass="servicesBtnLayout" runat="server" OnClick="foodServicesBtn_Click" />
-                    </div>
+                <div id="foodServiceContainer" class="serviceContainer">
+                    <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/food-service.png" class="servicesLogo"/>
+                    <asp:Label ID="foodServiceLbl" CssClass="servicesLbl" runat="server" Text="Food Service" />
+                        <div class="serviceContainer2">
+                            <asp:Label ID="foodServiceDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Order food in different online food and grocery delivery platform!" />
+                            <asp:Button ID="foodServiceBtn" runat="server" CssClass="servicesBtnLayout" OnClick="foodServiceBtn_Click"/>
+                        </div>
                 </div>
+
                 <div id="roomServicesContainer" class="serviceContainer">
                     <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Icons/roomservice.png" class="servicesLogo" />
-                    <asp:Label ID="roomServiceLbl" CssClass="servicesLbl" runat="server" Text="Room Services" />
+                    <asp:Label ID="roomServiceLbl" CssClass="servicesLbl" runat="server" Text="Additional Request" />
                         <div class="serviceContainer2">
-                            <asp:Label ID="roomServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Request room cleaning and other services for your stay" />
+                            <asp:Label ID="roomServicesDescriptionLbl" CssClass="servicesDescriptionLbl" runat="server" Text="Request additional necessities for your comfortable stay!" />
                             <asp:Button ID="roomServicesBtn" runat="server" CssClass="servicesBtnLayout" OnClick="roomServicesBtn_Click"/>
                         </div>
                 </div>
@@ -75,6 +76,29 @@
 
         <asp:Panel ID="overlay" runat="server" CssClass="overlay" Visible="false"></asp:Panel>
 
+        <%-- FOR FOOD SERVICE PLATFORM --%>
+
+        <asp:Panel ID="foodServicePlatform" runat="server" CssClass="form-container" Visible="false">
+            <div id="foodServicePlatformLayout">
+                <asp:Button ID="closefoodServicePlatformBtn" runat="server" CssClass="closeBtn" Text="X" OnClick="exitFormBtn_Click" />
+                <div id="foodServiceSelectionLayout">
+                    <div class="foodServiceSelected">
+                        <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/Food%20Service%20Icons/grab.jpg" class="foodServiceIcon"/>
+                        <asp:Button ID="grabFoodOrderLink" CssClass="orderBtn textFont" Text="ORDER !" runat="server" OnClick="grabFoodOrderLink_Click" />
+                    </div>
+                    <div class="foodServiceSelected">
+                        <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/Food%20Service%20Icons/foodpanda.jpg" class="foodServiceIcon"/>
+                        <asp:Button ID="foodPandaOrderLink" CssClass="orderBtn textFont" Text="ORDER !" runat="server" OnClick="foodPandaOrderLink_Click" />
+                    </div>
+                    <div class="foodServiceSelected">
+                        <img src="CssFiles/Gallery/Food%20And%20Room%20Services%20Elements/Images/Food%20Service%20Icons/lalamove.jpg" class="foodServiceIcon" />
+                        <asp:Button ID="lalamoveOrderLink" CssClass="orderBtn textFont" Text="ORDER !" runat="server" OnClick="lalamoveOrderLink_Click" />
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+
+        <%-- FOR MAINTENANCE FORM --%>
         <asp:Panel ID="maintenanceRequestForm" runat="server" CssClass="form-container" Visible="false">
             <div id="formSubContainer">
                 <asp:Label id="mainteRequestFormLbl" runat="server" Text="Maintenance Request Fill Up Form" />

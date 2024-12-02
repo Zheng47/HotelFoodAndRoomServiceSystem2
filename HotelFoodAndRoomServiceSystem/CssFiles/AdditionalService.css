@@ -148,8 +148,8 @@ body {
         cursor: pointer;
     }
 
-/*LAUNDRY AND DRY CLEANING SERVICES CONTENT*/
-    .laundryContent{
+/*ADDITIONAL SERVICES CONTENT*/
+    .additionalContent{
         background-color: #101450;
         height: 80%;
         width: 30%;
@@ -159,12 +159,12 @@ body {
         align-items: center;
     }
 
-    .laundryContent:hover {
+    .additionalContent:hover {
         background: linear-gradient(to top, black, #101450);
         transition: 0.9s ease-in;
     }
 
-    .laundryContentTitle {
+    .additionalContentTitle {
         height: 20%;
         width: 100%;
         font-size: 5vh;
@@ -174,12 +174,12 @@ body {
         justify-content: center;
     }
 
-    .laundryContentImgLayout {
+    .additionalContentImgLayout {
         height: 45%;
         width: 70%;
     }
 
-    .laundryContentDescription {
+    .additionalContentDescription {
         height: 20%;
         width: 70%;
         display: flex;
@@ -190,7 +190,7 @@ body {
         margin: 1vh 0vw 0vh 0vw;
     }
 
-    .laundryContentBtn {
+    .additionalContentBtn {
         background-color: #101450;
         color: white;
         height: 7%;
@@ -201,129 +201,10 @@ body {
         cursor: pointer;
     }
 
-    .laundryContentBtn:hover {
+    .additionalContentBtn:hover {
         border: 0;
         color: blue;
     }
-
-/*FOR SPA SERVICE CONTENT*/
-    .spaServiceContent {
-        background-color: #101450;
-        height: 80%;
-        width: 30%;
-        margin: 0vh 2vw 0vh 0vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-        .spaServiceContent:hover {
-            background: linear-gradient(to top, black, #101450);
-            transition: 0.9s ease-in;
-        }
-
-    .spaServiceContentTitle {
-        height: 20%;
-        width: 70%;
-        text-align: center;
-        font-size: 5vh;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .spaServiceContentImgLayout {
-        height: 45%;
-        width: 70%;
-    }
-
-    .spaServiceContentDescription {
-        height: 20%;
-        width: 70%;
-        display: flex;
-        align-items: center;
-        font-size: 2.5vh;
-        text-align: justify;
-        overflow-y: auto;
-        margin: 1vh 0vw 0vh 0vw;
-    }
-
-    .spaServiceContentBtn {
-        background-color: #101450;
-        color: white;
-        height: 7%;
-        width: 20%;
-        border: 1px solid white;
-        border-radius: 20px;
-        margin: 2vh 2vw 0vh auto;
-        cursor: pointer;
-    }
-
-        .spaServiceContentBtn:hover {
-            border: 0;
-            color: blue;
-        }
-
-
-/*HOUSEKEEPING SERVICE CONTENT*/
-    .housekeepingContent {
-        background-color: #101450;
-        height: 80%;
-        width: 30%;
-        margin: 0vh 2vw 0vh 0vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-        .housekeepingContent:hover {
-            background: linear-gradient(to top, black, #101450);
-            transition: 0.9s ease-in;
-        }
-
-    .housekeepingContentTitle {
-        height: 20%;
-        width: 70%;
-        text-align: center;
-        font-size: 5vh;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .housekeepingContentImgLayout {
-        height: 45%;
-        width: 70%;
-    }
-
-    .housekeepingContentDescription {
-        height: 20%;
-        width: 70%;
-        display: flex;
-        align-items: center;
-        font-size: 2.5vh;
-        text-align: justify;
-        overflow-y: auto;
-        margin: 1vh 0vw 0vh 0vw;
-    }
-
-    .housekeepingContentBtn {
-        background-color: #101450;
-        color: white;
-        height: 7%;
-        width: 20%;
-        border: 1px solid white;
-        border-radius: 20px;
-        margin: 2vh 2vw 0vh auto;
-        cursor: pointer;
-    }
-
-        .housekeepingContentBtn:hover {
-            border: 0;
-            color: blue;
-        }
 
 
 /*INQUIRE FORM*/

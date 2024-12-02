@@ -48,92 +48,26 @@ namespace HotelFoodAndRoomServiceSystem
             Response.Redirect("GuestDashboard.aspx");
         }
 
-        protected void roomServiceBtn_Click(object sender, EventArgs e)
-        {
-            dashBoardBtn.Visible = true;
-            roomServiceBtn.Visible = false;
-
-            roomServiceSelection.Visible = true;
-            laundryAndDryCleaningServicesPanel.Visible = false;
-            spaServicePanel.Visible = false;
-            //housekeepingPanel.Visible = false;
-        }
-
-        protected void laundryDryCleaningServiceBtn_Click(object sender, EventArgs e)
-        {
-            dashBoardBtn.Visible = false;
-            roomServiceBtn.Visible = true;
-
-            roomServiceSelection.Visible = false;
-            laundryAndDryCleaningServicesPanel.Visible = true;
-
-        }
-
-        protected void spaServiceBtn_Click(object sender, EventArgs e)
-        {
-            dashBoardBtn.Visible = false;
-            roomServiceBtn.Visible = true;
-
-            roomServiceSelection.Visible = false;
-            spaServicePanel.Visible = true;
-        }
-
-        protected void houseeKeepingServiceBtn_Click(object sender, EventArgs e)
-        {
-            dashBoardBtn.Visible = false;
-            roomServiceBtn.Visible = true;
-
-            roomServiceSelection.Visible = false;
-            //housekeepingPanel.Visible = true;
-        }
 
         // LAUNDRY AND DRY CLEANING CONTENT INQUIRE BUTTONS
-        protected void dryCleaningBtn_Click(object sender, EventArgs e)
+        protected void additionalPillowBtn_Click(object sender, EventArgs e)
         {
-            String serviceType = dryCleaningLbl.Text;
-            roomServicePrice.Text = "30";
+            String serviceType = pillowLbl.Text;
+            roomServicePrice.Text = "100";
             inquireServiceForm(serviceType);
         }
 
-        protected void washBtn_Click(object sender, EventArgs e)
+        protected void additionalBathTowelBtn_Click(object sender, EventArgs e)
         {
-            String serviceType = washLbl.Text;
-            roomServicePrice.Text = "50";
+            String serviceType = bathTowelLbl.Text;
+            roomServicePrice.Text = "100";
             inquireServiceForm(serviceType);
         }
 
-        protected void steamIronBtn_Click(object sender, EventArgs e)
+        protected void additionalComforterBtn_Click(object sender, EventArgs e)
         {
-            String serviceType = steamIronLbl.Text;
-            roomServicePrice.Text = "60";
-            inquireServiceForm(serviceType);
-        }
-
-        // SPA SERVICE CONTENT INQUIRE BUTTONS
-        protected void spaPedicureBtn_Click(object sender, EventArgs e)
-        {
-            String serviceType = spaPedicureLbl.Text;
-            amountLbl.Text = "Number of Guest*";
-            amountTxtBox.Attributes["Placeholder"] = "₱150 per Guest";
+            String serviceType = comforterLbl.Text;
             roomServicePrice.Text = "150";
-            inquireServiceForm(serviceType);
-        }
-
-        protected void spaManicureBtn_Click(object sender, EventArgs e)
-        {
-            String serviceType = spaManicureLbl.Text;
-            amountLbl.Text = "Number of Guest*";
-            amountTxtBox.Attributes["Placeholder"] = "₱200 per Guest";
-            roomServicePrice.Text = "200";
-            inquireServiceForm(serviceType);
-        }
-
-        protected void deepCleansingBtn_Click(object sender, EventArgs e)
-        {
-            String serviceType = deepCleansingLbl.Text;
-            amountLbl.Text = "Number of Guest*";
-            amountTxtBox.Attributes["Placeholder"] = "₱250 per Guest";
-            roomServicePrice.Text = "250";
             inquireServiceForm(serviceType);
         }
 

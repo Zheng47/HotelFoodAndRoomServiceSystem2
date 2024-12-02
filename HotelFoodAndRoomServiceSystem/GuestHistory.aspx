@@ -27,22 +27,10 @@
 
             <div id="historyContainer">
                 <div id="serviceBtnLayout">
-                    <asp:Button ID="foodServiceHistoryBtn" CssClass="textFont serviceHistoryBtn" runat="server" Text="Food Service" OnClick="foodServiceHistoryBtn_Click" />
                     <asp:Button ID="roomServiceHistoryBtn" CssClass="textFont serviceHistoryBtn" runat="server" Text="Room Service" OnClick="roomServiceHistoryBtn_Click" />
                 </div>
 
-                <div id="foodServiceHistoryView" runat="server" class="tableContainer" style="display:block">
-                    <div class="historyTable">
-                        <div class="textFont orderIdColumn">ORDER ID</div>
-                        <div class="textFont orderDateTimeColumn">ORDERED DATE AND TIME</div>
-                        <div class="textFont itemOrderedColumn">ITEM ORDERED</div>
-                        <div class="textFont statusColumn">STATUS</div>
-                        <div class="textFont totalCostColumn">TOTAL COST</div>
-                    </div>
-                    <asp:Literal ID="foodServiceHistory" runat="server"/>
-                </div>
-
-                <div id="roomServiceHistoryView" runat="server" class="tableContainer" style="display:none">
+                <div id="roomServiceHistoryView" runat="server" class="tableContainer" style="display:block">
                     <div class="historyTable">
                         <div class="textFont requestIdColumn">REQUEST ID</div>
                         <div class="textFont requestDateTimeColumn">REQUEST DATE AND TIME</div>
@@ -52,10 +40,8 @@
                     </div>
                     <asp:Literal ID="roomServiceHistory" runat="server" />
                 </div>
-                <asp:Panel id="foodServiceRefreshDeleteLayout" CssClass="refreshAndDeleteBtnLayout" runat="server" Visible="true" >
-                    <asp:Button ID="foodServiceRefreshBtn" CssClass="refreshBtn" runat="server" Onclick="foodServiceRefreshBtn_Click" />
-                </asp:Panel>
-                <asp:Panel id="roomServiceRefreshDeleteLayout" CssClass="refreshAndDeleteBtnLayout" runat="server" Visible="false" >
+
+                <asp:Panel id="roomServiceRefreshDeleteLayout" CssClass="refreshAndDeleteBtnLayout" runat="server" Visible="true" >
                     <asp:Button ID="roomServiceRefreshBtn" CssClass="refreshBtn" runat="server" OnClick="roomServiceRefreshBtn_Click" />
                 </asp:Panel>
             </div>

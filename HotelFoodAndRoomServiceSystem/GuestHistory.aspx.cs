@@ -19,7 +19,6 @@ namespace HotelFoodAndRoomServiceSystem
             {
                 OpenDB();
                 String guestName = Session["Username"].ToString();
-                retrieveGuestFoodHistory(guestName);
                 retrieveGuestRoomServiceHistory(guestName);
 
                 userLbl.Text = "Welcome, " + Session["Username"].ToString();
@@ -58,70 +57,14 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
-
-        protected void foodServiceHistoryBtn_Click(object sender, EventArgs e)
-        {
-            foodServiceHistoryBtn.Style["border-bottom"] = "2px solid #101450";
-            roomServiceHistoryBtn.Style["border-bottom"] = "2px solid transparent";
-
-            foodServiceHistoryView.Style["display"] = "block";
-            roomServiceHistoryView.Style["display"] = "none";
-
-            String guestName = Session["Username"].ToString();
-            retrieveGuestFoodHistory(guestName);
-        }
-
         protected void roomServiceHistoryBtn_Click(object sender, EventArgs e)
         {
-            foodServiceHistoryBtn.Style["border-bottom"] = "2px solid transparent";
             roomServiceHistoryBtn.Style["border-bottom"] = "2px solid #101450";
 
-            foodServiceHistoryView.Style["display"] = "none";
             roomServiceHistoryView.Style["display"] = "block";
 
             String guestName = Session["Username"].ToString();
             retrieveGuestRoomServiceHistory(guestName);
-        }
-
-
-        private void retrieveGuestFoodHistory(String guestName)
-        {
-            try
-            {
-                String retrieveGuestFoodOrderHistory = "SELECT * FROM guestfoodservicehistory WHERE guest_name = @1";
-
-                MySqlCommand cmd = new MySqlCommand(retrieveGuestFoodOrderHistory, dbconn);
-                cmd.Parameters.AddWithValue("@1", guestName);
-
-                MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                dataAdapater.Fill(dataTable);
-
-                StringBuilder divHtml = new StringBuilder();
-
-                // Generate rows for each employee
-                foreach (DataRow row in dataTable.Rows)
-                {   
-                    divHtml.Append("<div class='historyTable'>");
-                    divHtml.Append($"<div class='textFont orderIdColumn'> {row["order_id"]} </div>");
-
-                    DateTime orderDate = Convert.ToDateTime(row["order_date"]);
-                    divHtml.Append($"<div class='textFont orderDateTimeColumn'> {orderDate:yyyy-MM-dd HH:mm:ss} </div>");
-
-                    divHtml.Append($"<div class='textFont itemOrderedColumn'> {row["item_ordered"] + " " + "₱" + row["item_price"] + " "  + "("+row["quantity"]+")" } </div>");
-
-                    divHtml.Append($"<div class='textFont statusColumn'> {row["status"]} </div>");
-
-                    divHtml.Append($"<div class='textFont totalCostColumn'> {"₱" + row["total_price"]} </div>");
-                    divHtml.Append("</div>");
-                }
-
-                foodServiceHistory.Text = divHtml.ToString(); // Set HTML to Literal control
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
 
         private void retrieveGuestRoomServiceHistory (String guestName)
@@ -164,18 +107,8 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
-        protected void foodServiceRefreshBtn_Click(object sender, EventArgs e)
-        {
-            foodServiceRefreshDeleteLayout.Visible = true;
-            roomServiceRefreshDeleteLayout.Visible = false;
-
-            String guestName = Session["Username"].ToString();
-            retrieveGuestFoodHistory(guestName);
-        }
-
         protected void roomServiceRefreshBtn_Click(object sender, EventArgs e)
         {
-            foodServiceRefreshDeleteLayout.Visible = false;
             roomServiceRefreshDeleteLayout.Visible = true;
 
             String guestName = Session["Username"].ToString();

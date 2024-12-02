@@ -162,6 +162,7 @@ body {
     #servicesBtnContainer {
         display: flex;  
         flex-direction: row;
+        justify-content: center;
         margin: 4vh auto 1vh auto;
         height: 35vh;
         width: 90%;
@@ -232,14 +233,6 @@ body {
         margin: 0vh 0vw 0vh 0vw;
     }
 
-    #roomServicesBtn {
-
-    }
-
-    #mainteReqBtn {
-
-    }
-
 
 /*For Log Out Button*/
 #logoutBtn {
@@ -258,6 +251,66 @@ body {
 #logoutBtn:hover {
     color: skyblue;
 }
+
+/*FOR FOOD SERVICE PLATFORM*/
+
+    #foodServicePlatformLayout {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #foodServiceSelectionLayout {
+        margin: 7vh 0vw 0vh 0vw;
+        height: 70%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foodServiceSelected {
+        background: linear-gradient(to bottom, #F1F2F3, #8CA5AD);
+        height: 100%;
+        width: 30%;
+        margin: 0vh 1vw 0vh 0vw;
+        border: 1px solid #8CA5AD;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .foodServiceSelected:hover {
+            background: linear-gradient(to top, #101450, white);
+            transition: 0.3s ease;
+            box-shadow: 10px 15px 30px rgb(3, 0, 0, 0.5);
+        }
+
+    .foodServiceIcon {
+        margin: 2vh 0vw 2vh 0vw;
+        border: 0;
+        border-radius: 10px;
+        height: 60%;
+        width: 80%;
+    }
+
+    .orderBtn {
+        background-color: #101450;
+        color: white;
+        height: 10%;
+        width: 60%;
+        border: 0;
+        border-radius: 50px;
+        margin: 6vh 0vw 0vh 0vw;
+        cursor: pointer;
+    }
+
+    .orderBtn:hover {
+        color: blue;
+    }
 
 
 

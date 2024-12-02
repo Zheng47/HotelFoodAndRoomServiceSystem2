@@ -64,14 +64,16 @@ namespace HotelFoodAndRoomServiceSystem
             CloseDB();
             Response.Redirect("GuestLoginPage.aspx");
         }
-        protected void foodServicesBtn_Click(object sender, EventArgs e)
+
+        protected void foodServiceBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Hotel-FoodService.aspx");
+            overlay.Visible = true;
+            foodServicePlatform.Visible = true;
         }
 
         protected void roomServicesBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Hotel-RoomService.aspx");
+            Response.Redirect("Hotel-AdditionalRequest.aspx");
         }
 
         protected void mainteReqBtn_Click(object sender, EventArgs e)
@@ -84,6 +86,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             overlay.Visible = false;
             maintenanceRequestForm.Visible = false;
+            foodServicePlatform.Visible = false;
         }
 
         protected void submitBtn_Click(object sender, EventArgs e)
@@ -129,5 +132,22 @@ namespace HotelFoodAndRoomServiceSystem
             }
         }
 
+        protected void grabFoodOrderLink_Click(object sender, EventArgs e)
+        {
+            string grabLink = "https://food.grab.com/ph/en/";
+            Response.Redirect(grabLink);
+        }
+
+        protected void foodPandaOrderLink_Click(object sender, EventArgs e)
+        {
+            string foodPandaLink = "https://www.foodpanda.ph/";
+            Response.Redirect(foodPandaLink);
+        }
+
+        protected void lalamoveOrderLink_Click(object sender, EventArgs e)
+        {
+            string lalamoveLink = "https://www.lalamove.com/en-ph/";
+            Response.Redirect(lalamoveLink);
+        }
     }
 }

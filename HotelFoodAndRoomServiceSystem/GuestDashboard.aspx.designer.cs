@@ -132,31 +132,31 @@ namespace HotelFoodAndRoomServiceSystem
         protected global::System.Web.UI.WebControls.ListItem amenitiesLbl;
 
         /// <summary>
-        /// foodServicesLbl control.
+        /// foodServiceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodServicesLbl;
+        protected global::System.Web.UI.WebControls.Label foodServiceLbl;
 
         /// <summary>
-        /// foodServicesDescriptionLbl control.
+        /// foodServiceDescriptionLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label foodServicesDescriptionLbl;
+        protected global::System.Web.UI.WebControls.Label foodServiceDescriptionLbl;
 
         /// <summary>
-        /// foodServicesBtn control.
+        /// foodServiceBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button foodServicesBtn;
+        protected global::System.Web.UI.WebControls.Button foodServiceBtn;
 
         /// <summary>
         /// roomServiceLbl control.
@@ -229,6 +229,51 @@ namespace HotelFoodAndRoomServiceSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel overlay;
+
+        /// <summary>
+        /// foodServicePlatform control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel foodServicePlatform;
+
+        /// <summary>
+        /// closefoodServicePlatformBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button closefoodServicePlatformBtn;
+
+        /// <summary>
+        /// grabFoodOrderLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button grabFoodOrderLink;
+
+        /// <summary>
+        /// foodPandaOrderLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button foodPandaOrderLink;
+
+        /// <summary>
+        /// lalamoveOrderLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button lalamoveOrderLink;
 
         /// <summary>
         /// maintenanceRequestForm control.

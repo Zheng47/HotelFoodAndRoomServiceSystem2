@@ -407,19 +407,19 @@ body {
     .employeeNameLbl {
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 10vw;
+        margin: 0vh 0vw 0vh 20vw;
     }
 
-    .scheduleLbl {
+/*    .scheduleLbl {
         font-family: Poppins;
         font-size: 3vh;
         margin: 0vh 0vw 0vh 10vw;
-    }
+    }*/
 
     .statusLbl{
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 10vw;
+        margin: 0vh 0vw 0vh 19vw;
     }
 
     #employeeIdLbl {
@@ -471,21 +471,21 @@ body {
         width: 25%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 8vw;
+        margin: 0vh 0vw 0vh 20vw;
     }
 
-    #scheduleLayout {
+/*    #scheduleLayout {
         width: 15%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 3vw;
-    }
+        margin: 0vh 0vw 0vh 10vw;
+    }*/
 
     #statusLayout {
         width: 10%;
         font-family: Poppins;
         font-size: 3vh;
-        margin: 0vh 0vw 0vh 6vw;
+        margin: 0vh 0vw 0vh 10vw;
     }
 
     /*REFRESH BUTTON*/

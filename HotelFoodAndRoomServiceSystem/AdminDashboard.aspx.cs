@@ -49,15 +49,17 @@ namespace HotelFoodAndRoomServiceSystem
             }
 
         }
-        
+
         //DATABASE CONNECTION
         public MySqlConnection dbconn = new MySqlConnection("server=localhost;username=root;password=;database=hotelmanagement");
+        public MySqlConnection dbconn2 = new MySqlConnection("server=localhost;username=root;password=;database=awebform");
 
         private void OpenDB()
         {
             try
             {
                 dbconn.Open();
+                dbconn2.Open();
             }
             catch (SqlException e)
             {
@@ -70,6 +72,7 @@ namespace HotelFoodAndRoomServiceSystem
             try
             {
                 dbconn.Close();
+                dbconn2.Close();
             }
             catch (SqlException e)
             {
@@ -82,30 +85,30 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveEmployeeData = "SELECT CONCAT(last_name, ', ', first_name, ' ', middle_name) AS FullName, employee_id, schedule, status FROM employees";
-                MySqlCommand cmd = new MySqlCommand(retrieveEmployeeData, dbconn);
+                String retrieveStaffData = "SELECT ID, Name, service_status FROM employees WHERE Position = 'Staff' ";
+                MySqlCommand cmd = new MySqlCommand(retrieveStaffData, dbconn2);
                 MySqlDataAdapter dataAdapater = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 dataAdapater.Fill(dataTable);
 
+
                 StringBuilder divHtml = new StringBuilder();
 
-                // Generate rows for each employee
                 foreach (DataRow row in dataTable.Rows)
                 {
                     divHtml.Append("<div class='employeesTable'>");
-                    divHtml.Append($"<div id='employeeIdLayout'>{row["employee_id"]}</div>");
-                    divHtml.Append($"<div id='employeeNameLayout'>{row["FullName"]}</div>");
-                    divHtml.Append($"<div id='scheduleLayout'>{row["schedule"]}</div>");
-                    divHtml.Append($"<div id='statusLayout'>{row["status"]}</div>");
+                    divHtml.Append($"<div id='employeeIdLayout'>{row["ID"]}</div>");
+                    divHtml.Append($"<div id='employeeNameLayout'>{row["Name"]}</div>");
+                    divHtml.Append($"<div id='statusLayout'>{row["service_status"]}</div>");
                     divHtml.Append("</div>");
                 }
 
                 employeeContainer.Text = divHtml.ToString(); // Set HTML to Literal control
             }
-            catch (SqlException ex)
+
+            catch (MySqlException e)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(e.Message);
             }
         }
 
@@ -114,13 +117,13 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveAvailableStaffStatus = "SELECT COUNT(*) FROM employees WHERE status = 'Available' ";
-                MySqlCommand cmdAvailable = new MySqlCommand( retrieveAvailableStaffStatus, dbconn);
+                String retrieveAvailableStaffStatus = "SELECT COUNT(*) FROM employees WHERE service_status = 'Available' ";
+                MySqlCommand cmdAvailable = new MySqlCommand( retrieveAvailableStaffStatus, dbconn2);
                 int availbleStaffTotal= Convert.ToInt32(cmdAvailable.ExecuteScalar());
 
-                String retrieveOccupiedStaffStatus = "SELECT COUNT(*) FROM employees WHERE status = 'Occupied' ";
-                MySqlCommand cmdOccupied = new MySqlCommand( retrieveOccupiedStaffStatus, dbconn);
-                int occupiedStaffTotal = Convert.ToInt32 (cmdOccupied.ExecuteScalar());
+                String retrieveOccupiedStaffStatus = "SELECT COUNT(*) FROM employees WHERE service_status = 'Occupied' ";
+                MySqlCommand cmdOccupied = new MySqlCommand( retrieveOccupiedStaffStatus, dbconn2);
+                int occupiedStaffTotal = Convert.ToInt32(cmdOccupied.ExecuteScalar());
 
                 availableStaffCount.Text = availbleStaffTotal.ToString();
                 occupiedStaffCount.Text = occupiedStaffTotal.ToString();
@@ -137,8 +140,8 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String countTotalemployees = "SELECT COUNT(*) FROM employees";
-                MySqlCommand cmd = new MySqlCommand(countTotalemployees, dbconn);
+                String countTotalemployees = "SELECT COUNT(*) FROM employees WHERE Position = 'Staff'";
+                MySqlCommand cmd = new MySqlCommand(countTotalemployees, dbconn2);
 
 
                 object result = cmd.ExecuteScalar();
@@ -710,18 +713,14 @@ namespace HotelFoodAndRoomServiceSystem
             try
             {
                 String fullName = "";
-                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
-                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
-                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeID);
+                String selectEmployeeNameUsingEmployeeId = "SELECT Name FROM employees WHERE ID = @ID";
+                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn2);
+                selectEmployeeCmd.Parameters.AddWithValue("@ID", employeeID);
                 using (MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        string lastName = reader["last_name"].ToString();
-                        string firstName = reader["first_name"].ToString();
-                        string middleName = reader["middle_name"].ToString();
-
-                        fullName = lastName + ", " + firstName + " " + middleName;
+                        fullName = reader["Name"].ToString();
                     }
                 }
 
@@ -733,9 +732,9 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@taskId", taskID);
                 cmd.ExecuteNonQuery();
 
-                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
+                String updateEmployeeStatus = "UPDATE employees SET service_status = 'Occupied' WHERE ID = @ID";
                 MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
-                updateCmd.Parameters.AddWithValue("@employeeId", employeeID);
+                updateCmd.Parameters.AddWithValue("@ID", employeeID);
                 updateCmd.ExecuteNonQuery();
 
             }
@@ -743,46 +742,6 @@ namespace HotelFoodAndRoomServiceSystem
             {
                 Console.WriteLine(e.Message);
             }
-        }
-
-        private void assignEmployeeTaskToFoodServiceRequest(String orderId, String employeeId)
-        {
-            try
-            {
-                String fullName = "";
-                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
-                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
-                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
-                using (MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        string lastName = reader["last_name"].ToString();
-                        string firstName = reader["first_name"].ToString();
-                        string middleName = reader["middle_name"].ToString();
-
-                        fullName = lastName + ", " + firstName + " " + middleName;
-                    }
-                }
-
-                String assignEmployee = "UPDATE guestfoodservicehistory SET assigned_employee = @assignedEmployee, status = @status WHERE order_id = @orderId";
-                MySqlCommand cmd = new MySqlCommand(assignEmployee, dbconn);
-                cmd.Parameters.AddWithValue("@assignedEmployee", fullName);
-                cmd.Parameters.AddWithValue("@status", "In-Progress");
-                cmd.Parameters.AddWithValue("@orderId", orderId);
-                cmd.ExecuteNonQuery();
-
-                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
-                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
-                updateCmd.Parameters.AddWithValue("@employeeId", employeeId);
-                updateCmd.ExecuteNonQuery();
-
-            }
-            catch (MySqlException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
         }
 
         private void assignEmployeeTaskToRoomServiceRequest(String requestId, String employeeId)
@@ -790,18 +749,14 @@ namespace HotelFoodAndRoomServiceSystem
             try
             {
                 String fullName = "";
-                String selectEmployeeNameUsingEmployeeId = "SELECT last_name, first_name, middle_name FROM employees WHERE employee_id = @employeeId";
-                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn);
-                selectEmployeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                String selectEmployeeNameUsingEmployeeId = "SELECT Name FROM employees WHERE ID = @ID";
+                MySqlCommand selectEmployeeCmd = new MySqlCommand(selectEmployeeNameUsingEmployeeId, dbconn2);
+                selectEmployeeCmd.Parameters.AddWithValue("@ID", employeeId);
                 using(MySqlDataReader reader = selectEmployeeCmd.ExecuteReader())
                 {
                     if(reader.Read())
                     {
-                        string lastName = reader["last_name"].ToString();
-                        string firstName = reader["first_name"].ToString();
-                        string middleName = reader["middle_name"].ToString();
-
-                        fullName = lastName + ", " + firstName + " " + middleName;
+                        fullName = reader["Name"].ToString();
                     }
                 }
 
@@ -812,9 +767,9 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@requestId", requestId);
                 cmd.ExecuteNonQuery();
 
-                String updateEmployeeStatus = "UPDATE employees SET status = 'Occupied' WHERE employee_id = @employeeId";
-                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn);
-                updateCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                String updateEmployeeStatus = "UPDATE employees SET service_status = 'Occupied' WHERE ID = @ID";
+                MySqlCommand updateCmd = new MySqlCommand(updateEmployeeStatus, dbconn2);
+                updateCmd.Parameters.AddWithValue("@ID", employeeId);
                 updateCmd.ExecuteNonQuery();
 
             }
@@ -822,7 +777,6 @@ namespace HotelFoodAndRoomServiceSystem
             {
                 Console.WriteLine(e.Message);
             }
-
         }
     }
 }

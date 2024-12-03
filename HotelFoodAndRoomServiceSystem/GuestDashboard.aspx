@@ -108,12 +108,12 @@
             <div id="formSubContainer2">
                 <div id="roomNumberContainer">
                     <asp:Label ID="roomNumberLabel"  Cssclass="textContent" runat="server" Text="Room Number*" />
-                    <asp:TextBox ID="roomNumberTxtBox" Cssclass="txtBoxContent" TextMode="Number" runat="server" Placeholder="Enter Room Number" />
+                    <asp:TextBox ID="roomNumberTxtBox" Cssclass="txtBoxContent" ReadOnly="true" TextMode="Number" runat="server" Placeholder="Enter Room Number" />
                 </div>
 
                 <div id="guestNameContainer">
                     <asp:Label ID="guestNameLabel" CssClass="textContent" runat="server" Text="Guest Name*" />
-                    <asp:TextBox ID="guestNameTxtBox" CssClass="txtBoxContent" runat="server" Placeholder="Enter your name" />
+                    <asp:TextBox ID="guestNameTxtBox" CssClass="txtBoxContent" ReadOnly="true" runat="server" Placeholder="Enter your name" />
                 </div>
             </div>
 

@@ -78,12 +78,16 @@ namespace HotelFoodAndRoomServiceSystem
 
         protected void mainteReqBtn_Click(object sender, EventArgs e)
         {
+            roomNumberTxtBox.Text = Session["RoomNumber"].ToString();
+            guestNameTxtBox.Text = Session["Username"].ToString();
             overlay.Visible = true;
             maintenanceRequestForm.Visible = true;
         }
 
         protected void exitFormBtn_Click(object sender, EventArgs e)
         {
+            issueTitleTxtBox.Text = "";
+            issueDescriptionTxtBox.Text = "";
             overlay.Visible = false;
             maintenanceRequestForm.Visible = false;
             foodServicePlatform.Visible = false;

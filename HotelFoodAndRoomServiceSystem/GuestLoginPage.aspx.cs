@@ -98,7 +98,7 @@ namespace HotelFoodAndRoomServiceSystem
             {
 
                 //FOR EMAIL VERIFICATION
-                String verifyEmail = "SELECT COUNT(*) FROM guestroominformation WHERE email=@Email";
+                String verifyEmail = "SELECT COUNT(*) FROM users WHERE email=@Email";
                 MySqlCommand emailcmd = new MySqlCommand(verifyEmail, dbconn);
                 emailcmd.Parameters.AddWithValue("@Email", email);
 
@@ -110,7 +110,7 @@ namespace HotelFoodAndRoomServiceSystem
                 if (emailCount == 0) { return LoginStatus.AccountNotFound; }
 
                 //FOR PASSWORD VERIFICATION
-                String verifyPassword = "SELECT password FROM guestroominformation WHERE email=@Email";
+                String verifyPassword = "SELECT password FROM users WHERE email=@Email";
                 MySqlCommand passwordcmd = new MySqlCommand(verifyPassword, dbconn);
                 passwordcmd.Parameters.AddWithValue("@Email", email);
 
@@ -147,25 +147,55 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String retrieveUserDetails = "SELECT * FROM guestroominformation WHERE email = @1";
-                MySqlCommand cmd = new MySqlCommand(retrieveUserDetails, dbconn);
+                String retrieveUserId = "SELECT id, email, first_name, last_name FROM users WHERE email = @1";
+                String userId = null;
+                MySqlCommand cmd = new MySqlCommand(retrieveUserId, dbconn);
                 cmd.Parameters.AddWithValue("@1", email);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-
                 if (reader.Read())
                 {
-                    Session["Email"] = reader["email"];
-                    Session["Username"] = reader["username"];
-                    Session["RoomNumber"] = reader["room_number"];
-                    Session["CheckInDate"] = reader["chk_in_date"];
-                    Session["CheckOutDate"] = reader["chk_out_date"];
-                    Session["RoomType"] = reader["room_type"];
-                    Session["Occupancy"] = reader["occupancy"];
-                    Session["Amenities"] = reader["amenities"];
-
-                    Response.Redirect("GuestDashboard.aspx");
+                    Session["Email"] = reader["email"].ToString();
+                    Session["Username"] = reader["first_name"].ToString() + reader["last_name"].ToString();
+                    userId = reader["id"].ToString();
                 }
+
+                reader.Close();
+
+                if(!String.IsNullOrEmpty(userId))
+                {
+                    String retrieveUserDetails = "SELECT * FROM reservations WHERE UserId = @1";
+                    MySqlCommand cmd2 = new MySqlCommand(retrieveUserDetails, dbconn);
+                    cmd2.Parameters.AddWithValue("@1", userId);
+
+                    MySqlDataReader reader2 = cmd2.ExecuteReader();
+                    if(reader2.Read())
+                    {
+                        Session["RoomNumber"] = reader2["RoomId"].ToString();
+                        Session["CheckInDate"] = reader2["CheckInDate"].ToString();
+                        Session["CheckOutDate"] = reader2["CheckOutDate"].ToString();
+                        Session["RoomType"] = reader2["room_type"].ToString();
+                        Session["Occupancy"] = reader2["GuestCount"].ToString();
+                        Response.Redirect("GuestDashboard.aspx");
+                    }
+                    reader2.Close();
+                }
+
+                //MySqlDataReader reader = cmd.ExecuteReader();
+
+                //if (reader.Read())
+                //{
+                //    Session["Email"] = reader["email"];
+                //    Session["Username"] = reader["username"];
+                //    Session["RoomNumber"] = reader["room_number"];
+                //    Session["CheckInDate"] = reader["chk_in_date"];
+                //    Session["CheckOutDate"] = reader["chk_out_date"];
+                //    Session["RoomType"] = reader["room_type"];
+                //    Session["Occupancy"] = reader["occupancy"];
+                //    Session["Amenities"] = reader["amenities"];
+
+                //    Response.Redirect("GuestDashboard.aspx");
+                //}
             }
             catch (SqlException ex)
             {

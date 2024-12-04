@@ -23,7 +23,6 @@ namespace HotelFoodAndRoomServiceSystem
                 chkOutDateLbl.Text = "Check-out Date: " + Session["CheckOutDate"].ToString();
                 roomTypeLbl.Text = "Room Type: " + Session["RoomType"].ToString();
                 occupancyLbl.Text = "Occupancy: " + Session["Occupancy"].ToString();
-                amenitiesLbl.Text = "Amenities: " + Session["Amenities"].ToString();
             }
         }
 

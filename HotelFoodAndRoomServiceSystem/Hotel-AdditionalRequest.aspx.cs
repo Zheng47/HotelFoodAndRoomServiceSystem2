@@ -85,7 +85,7 @@ namespace HotelFoodAndRoomServiceSystem
         {
             try
             {
-                String submitRequest = "INSERT INTO guestroomservicehistory(request_id, request_date, service_type, status, total_charges, quantity, guest_name, service_price, room_number) VALUES (@1, @2, @3, @4, @5, @6, @7, @8, @9)";
+                String submitRequest = "INSERT INTO guestroomservicehistory(request_id, request_date, service_type, status, total_charges, quantity, guest_name, service_price, room_number, request_type) VALUES (@1, @2, @3, @4, @5, @6, @7, @8, @9, @10)";
                 MySqlCommand cmd = new MySqlCommand(submitRequest, dbconn);
                 cmd.Parameters.AddWithValue("@1", Guid.NewGuid());
                 cmd.Parameters.AddWithValue("@2", DateTime.Now);
@@ -96,6 +96,8 @@ namespace HotelFoodAndRoomServiceSystem
                 cmd.Parameters.AddWithValue("@7", guestName);
                 cmd.Parameters.AddWithValue("@8", price);
                 cmd.Parameters.AddWithValue("@9", roomNumber);
+                cmd.Parameters.AddWithValue("@10", "Additional Request");
+
 
                 cmd.ExecuteNonQuery();
             }

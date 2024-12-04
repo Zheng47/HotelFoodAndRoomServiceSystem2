@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>HotelService - Login</title>
+    <title>HotelService - GuestLogin</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="CssFiles/GuestLogin.css" />
 </head>

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>HotelMotel - AdminLogin</title>
+    <title>HotelService - AdminLogin</title>
     <link rel="stylesheet" type="text/css" href="CssFiles/AdminLogin.css" />
 </head>
 <body>
